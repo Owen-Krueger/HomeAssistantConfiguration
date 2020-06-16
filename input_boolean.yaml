@@ -36,4 +36,4 @@ automation_lights_living_room_on_evening:
 
 automation_lights_bedroom_on_before_work:
   name: Turn on bedroom lights before work
-  icon: mdi:ceiling-lamp
+  icon: mdi:floor-lamp

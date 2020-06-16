@@ -55,15 +55,15 @@
   trigger:
     - platform: time
       at: '08:45:00'
-
+      
   condition:
   - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   - condition: state
     entity_id: person.owen
     state: 'home'
