@@ -1,0 +1,38 @@
+#################################################
+## Run Beto on Weekdays
+#################################################
+
+- alias: Beto - Run on Weekdays
+
+  trigger:
+    - platform: time
+      at: '10:00'
+  
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: vacuum.beto
+      state: 'docked'
+    - condition: numeric_state
+      entity_id: sensor.beto_battery_level
+      above: 99
+    - condition: state
+      entity_id: input_boolean.disable_beto
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.automation_beto_on_weekdays
+      state: 'on'
+
+  action:
+    - service: vacuum.start
+      entity_id:
+        - vacuum.beto

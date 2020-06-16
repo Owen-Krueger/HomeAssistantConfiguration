@@ -1,0 +1,35 @@
+#################################################
+## Modes
+#################################################
+
+guest_mode:
+  name: Guest Mode
+  icon: mdi:account-tie
+
+vacation_mode:
+  name: Vacation Mode
+  icon: mdi:airplane
+
+#################################################
+## Beto
+#################################################
+
+disable_beto:
+  name: Disable Beto
+  icon: mdi:robot-vacuum-variant
+
+#################################################
+## Automations
+#################################################
+
+automation_beto_on_weekdays:
+  name: Run Beto on weekdays
+  icon: mdi:robot-vacuum-variant
+
+automation_lights_off_after_sunrise:
+  name: Turn off lights after sunrise
+  icon: mdi:weather-sunset-up
+
+automation_lights_living_room_on_evening:
+  name: Turn on living room lights in evening
+  icon: mdi:weather-sunset-down
