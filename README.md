@@ -1,6 +1,5 @@
-# :boom: Owen's Home Assistant Configuration :boom:
-
 <div align="center">
+<h1>Owen's Home Assistant Configuration</h1>
 <a href="https://github.com/Owen-Krueger/HomeAssistantConfiguration/commits/master"><img src="https://img.shields.io/github/last-commit/Owen-Krueger/HomeAssistantConfiguration.svg"/></a>
 </div>
 
