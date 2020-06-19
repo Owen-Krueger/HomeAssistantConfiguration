@@ -22,6 +22,11 @@ spotify:
   client_id: !secret spotify_client_id
   client_secret: !secret spotify_client_secret
 
+media_player:
+  - platform: androidtv
+    name: Fire TV Stick
+    host: !secret amazon_fire_tv_ip
+
 #################################################
 ## Includes
 #################################################
