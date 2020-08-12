@@ -36,3 +36,22 @@
     - service: vacuum.start
       entity_id:
         - vacuum.beto
+
+#################################################
+## Run Beto on command
+#################################################
+
+- alias: Run Beto on command
+
+  trigger:
+  - event_data:
+      action: run_beto
+    event_type: ifttt_webhook_received
+    platform: event
+      
+  condition: []
+  
+  action:
+    - service: vacuum.start
+      entity_id:
+        - vacuum.beto
