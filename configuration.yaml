@@ -9,6 +9,9 @@ default_config:
 tts:
   - platform: google_translate
 
+ifttt:
+  key: !secret ifttt_api_key
+
 #################################################
 ## Components
 #################################################
