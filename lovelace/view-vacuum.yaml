@@ -1,0 +1,21 @@
+title: Vacuum
+id: vacuum
+path: vacuum
+icon: 'mdi:robot-vacuum-variant'
+cards:
+  - cards:
+      - entities:
+          - entity: vacuum.beto
+          - entity: sensor.beto_battery
+          - entity: input_boolean.disable_beto
+          - entity: input_select.beto_schedule
+        show_header_toggle: false
+        title: Beto
+        type: entities
+      - aspect_ratio: 50%
+        entity: camera.beto_cleaning_map
+        name: Cleaning Map
+        show_name: true
+        show_state: true
+        type: picture-entity
+    type: vertical-stack

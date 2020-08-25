@@ -1,0 +1,21 @@
+title: Weather
+id: weather
+path: weather
+icon: 'mdi:weather-sunny'
+cards:
+  - cards:
+      - entity: weather.home
+        type: weather-forecast
+      - entities:
+          - entity: sun.sun
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Sun
+        type: history-graph
+      - entities:
+          - entity: weather.home
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Weather
+        type: history-graph
+    type: vertical-stack

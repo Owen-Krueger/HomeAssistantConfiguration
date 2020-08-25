@@ -1,0 +1,22 @@
+title: Automation
+id: automation
+path: automation
+icon: 'mdi:robot'
+cards:
+  - cards:
+      - entities:
+          - entity: input_boolean.vacation_mode
+          - entity: input_boolean.guest_mode
+        show_header_toggle: false
+        title: Modes
+        type: entities
+      - entities:
+          - entity: input_boolean.disable_beto
+          - entity: input_boolean.automation_beto_on_weekdays
+          - entity: input_boolean.automation_lights_off_after_sunrise
+          - entity: input_boolean.automation_lights_living_room_on_evening
+          - entity: input_boolean.automation_lights_bedroom_on_before_work
+        show_header_toggle: false
+        title: Automation Overrides
+        type: entities
+    type: vertical-stack
