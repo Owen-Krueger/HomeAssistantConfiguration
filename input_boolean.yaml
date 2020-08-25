@@ -37,7 +37,3 @@ automation_lights_living_room_on_evening:
 automation_lights_bedroom_on_before_work:
   name: Turn on bedroom lights before work
   icon: mdi:floor-lamp
-
-automation_lights_bedroom_off_at_night:
-  name: Turn off bedroom lights at night
-  icon: mdi:weather-sunset-down
