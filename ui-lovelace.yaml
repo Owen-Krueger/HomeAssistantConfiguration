@@ -1,0 +1,246 @@
+views:
+  - badges: []
+    cards:
+      - cards:
+          - entities:
+              - entity: group.interior_lights
+                icon: 'mdi:home-lightbulb'
+              - entity: light.living_room_lamps
+                icon: 'mdi:floor-lamp'
+              - entity: light.bedroom_lights
+                icon: 'mdi:ceiling-light'
+            show_header_toggle: false
+            title: Lights
+            type: entities
+          - entity: media_player.living_room_tv
+            type: media-control
+          - entity: media_player.fire_tv_stick
+            type: media-control
+          - entity: media_player.spotify_owen
+            type: media-control
+        type: vertical-stack
+      - elements:
+          - entity: light.living_room_lamps
+            style:
+              left: 73%
+              top: 72%
+            tap_action:
+              action: toggle
+            type: state-badge
+          - entity: light.bedroom_lights
+            style:
+              left: 20%
+              top: 70%
+            tap_action:
+              action: toggle
+            type: state-badge
+          - entity: vacuum.beto
+            style:
+              left: 90%
+              top: 85%
+            type: state-badge
+          - entity: media_player.living_room_tv
+            style:
+              left: 55%
+              top: 72%
+            type: state-icon
+          - entity: media_player.fire_tv_stick
+            style:
+              left: 55%
+              top: 62%
+            type: state-badge
+          - entity: media_player.spotify_owen
+            style:
+              left: 90%
+              top: 33%
+            type: state-icon
+        image: /local/images/FloorPlan.png
+        type: picture-elements
+    icon: 'mdi:home'
+    path: home
+    title: Home
+  - badges: []
+    cards:
+      - cards:
+          - entities:
+              - entity: group.interior_lights
+                icon: 'mdi:home-lightbulb'
+              - entity: light.living_room_lamps
+                icon: 'mdi:floor-lamp'
+              - entity: light.bedroom_lights
+                icon: 'mdi:ceiling-light'
+            show_header_toggle: false
+            title: Quick Lights
+            type: entities
+          - entity: light.living_room_lamps
+            icon: 'mdi:floor-lamp'
+            type: light
+          - entity: light.bedroom_lights
+            icon: 'mdi:ceiling-light'
+            type: light
+        type: vertical-stack
+    icon: 'mdi:floor-lamp'
+    path: lights
+    title: Lights
+  - badges: []
+    cards:
+      - cards:
+          - entities:
+              - entity: person.owen
+              - entity: sensor.moto_z3_geocoded_location
+              - entity: sensor.moto_z3_battery_level
+              - entity: sensor.moto_z3_battery_state
+              - entity: sensor.moto_z3_wifi_connection
+            title: Overview
+            type: glance
+          - entities:
+              - entity: input_boolean.vacation_mode
+              - entity: input_boolean.guest_mode
+            show_header_toggle: false
+            title: Modes
+            type: entities
+          - dark_mode: false
+            entities:
+              - device_tracker.moto_z3
+            hours_to_show: 0
+            title: Location
+            type: map
+          - entities:
+              - entity: device_tracker.moto_z3
+              - entity: sensor.moto_z3_geocoded_location
+            hours_to_show: 24
+            refresh_interval: 0
+            title: Location History
+            type: history-graph
+        type: vertical-stack
+    icon: 'mdi:account'
+    path: people
+    title: People
+  - badges: []
+    cards:
+      - cards:
+          - entity: media_player.living_room_tv
+            type: media-control
+          - entity: media_player.fire_tv_stick
+            type: media-control
+          - entity: media_player.spotify_owen
+            type: media-control
+        type: vertical-stack
+      - cards:
+          - entities:
+              - entity: input_select.spotify_source
+              - entity: input_number.spotify_volume
+              - entity: input_select.spotify_playlist
+              - entity: script.spotify_music
+            title: Spotify
+            type: entities
+        type: vertical-stack
+    icon: 'mdi:play'
+    path: media
+    title: Media
+  - badges: []
+    cards:
+      - cards:
+          - entities:
+              - entity: vacuum.beto
+              - entity: sensor.beto_battery
+              - entity: input_boolean.disable_beto
+              - entity: input_select.beto_schedule
+            show_header_toggle: false
+            title: Beto
+            type: entities
+          - aspect_ratio: 50%
+            entity: camera.beto_cleaning_map
+            name: Cleaning Map
+            show_name: true
+            show_state: true
+            type: picture-entity
+        type: vertical-stack
+    icon: 'mdi:robot-vacuum-variant'
+    path: vacuum
+    title: Vacuum
+  - badges: []
+    cards:
+      - cards:
+          - entity: weather.home
+            type: weather-forecast
+          - entities:
+              - entity: sun.sun
+            hours_to_show: 24
+            refresh_interval: 0
+            title: Sun
+            type: history-graph
+          - entities:
+              - entity: weather.home
+            hours_to_show: 24
+            refresh_interval: 0
+            title: Weather
+            type: history-graph
+        type: vertical-stack
+    icon: 'mdi:weather-sunny'
+    path: weather
+    title: Weather
+  - badges: []
+    cards:
+      - cards:
+          - entities:
+              - entity: sensor.processor_use
+              - entity: sensor.memory_use_percent
+              - entity: sensor.disk_use_percent_home
+            show_header_toggle: false
+            title: Home Assistant Stats
+            type: entities
+        type: vertical-stack
+      - cards:
+          - entities:
+              - entity: switch.adguard_protection
+            title: AdGuard
+            type: entities
+          - entity: sensor.adguard_dns_queries
+            type: entity
+          - entity: sensor.adguard_average_processing_speed
+            type: entity
+          - entities:
+              - sensor.adguard_dns_queries
+            hours_to_show: 24
+            refresh_interval: 0
+            type: history-graph
+        type: vertical-stack
+      - cards:
+          - entities:
+              - entity: switch.homeassistant
+                icon: 'mdi:home-assistant'
+                name: Home Assistant
+              - entity: switch.tvswitch
+                icon: 'mdi:television-clean'
+                name: TV Switch
+            show_header_toggle: false
+            title: POE Devices
+            type: entities
+        type: vertical-stack
+    icon: 'mdi:server'
+    path: server
+    title: Server
+  - badges: []
+    cards:
+      - cards:
+          - entities:
+              - entity: input_boolean.vacation_mode
+              - entity: input_boolean.guest_mode
+            show_header_toggle: false
+            title: Modes
+            type: entities
+          - entities:
+              - entity: input_boolean.disable_beto
+              - entity: input_boolean.automation_beto_on_weekdays
+              - entity: input_boolean.automation_lights_off_after_sunrise
+              - entity: input_boolean.automation_lights_living_room_on_evening
+              - entity: input_boolean.automation_lights_bedroom_on_before_work
+              - entity: input_boolean.automation_lights_bedroom_off_at_night
+            show_header_toggle: false
+            title: Automation Overrides
+            type: entities
+        type: vertical-stack
+    icon: 'mdi:robot'
+    path: automation
+    title: Automation
