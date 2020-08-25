@@ -22,41 +22,47 @@ cards:
       type: media-control
   type: vertical-stack
 - elements:
-    - entity: light.living_room_lamps
+    - type: state-icon
+      entity: light.living_room_lamps
+      title: Living Room Lamps
+      icon: mdi:floor-lamp
+      tap_action:
+        action: toggle
       style:
         left: 73%
         top: 70%
+        --iron-icon-height: 200px
+        --iron-icon-width: 200px
+    - type: state-icon
+      entity: light.bedroom_lights
+      title: Bedroom Lights
+      icon: mdi:lightbulb
       tap_action:
         action: toggle
-      type: state-icon
-    - entity: light.bedroom_lights
       style:
-        left: 20%
-        top: 70%
-      tap_action:
-        action: toggle
-      type: state-badge
-    - entity: vacuum.beto
-      icon: 'mdi:robot-vacuum-variant'
+        left: 27%
+        top: 69%
+    - type: state-icon
+      entity: vacuum.beto
       title: 'Beto'
+      icon: mdi:robot-vacuum-variant
       style:
         left: 90%
         top: 85%
-      type: state-icon
-    - entity: media_player.living_room_tv
+    - type: state-icon
+      entity: media_player.living_room_tv
       style:
         left: 55%
         top: 72%
-      type: state-icon
-    - entity: media_player.fire_tv_stick
+    - type: state-badge
+      entity: media_player.fire_tv_stick
       style:
         left: 55%
         top: 62%
-      type: state-badge
-    - entity: media_player.spotify_owen
+    - type: state-icon
+      entity: media_player.spotify_owen
       style:
         left: 90%
         top: 33%
-      type: state-icon
   image: /local/images/FloorPlan.png
   type: picture-elements
