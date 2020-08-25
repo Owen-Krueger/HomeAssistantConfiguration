@@ -1,0 +1,62 @@
+title: Home
+id: home
+path: home
+icon: 'mdi:home'
+cards:
+- cards:
+    - entities:
+        - entity: group.interior_lights
+          icon: 'mdi:home-lightbulb'
+        - entity: light.living_room_lamps
+          icon: 'mdi:floor-lamp'
+        - entity: light.bedroom_lights
+          icon: 'mdi:ceiling-light'
+      show_header_toggle: false
+      title: Lights
+      type: entities
+    - entity: media_player.living_room_tv
+      type: media-control
+    - entity: media_player.fire_tv_stick
+      type: media-control
+    - entity: media_player.spotify_owen
+      type: media-control
+  type: vertical-stack
+- elements:
+    - entity: light.living_room_lamps
+      style:
+        left: 73%
+        top: 70%
+      tap_action:
+        action: toggle
+      type: state-icon
+    - entity: light.bedroom_lights
+      style:
+        left: 20%
+        top: 70%
+      tap_action:
+        action: toggle
+      type: state-badge
+    - entity: vacuum.beto
+      icon: 'mdi:robot-vacuum-variant'
+      title: 'Beto'
+      style:
+        left: 90%
+        top: 85%
+      type: state-icon
+    - entity: media_player.living_room_tv
+      style:
+        left: 55%
+        top: 72%
+      type: state-icon
+    - entity: media_player.fire_tv_stick
+      style:
+        left: 55%
+        top: 62%
+      type: state-badge
+    - entity: media_player.spotify_owen
+      style:
+        left: 90%
+        top: 33%
+      type: state-icon
+  image: /local/images/FloorPlan.png
+  type: picture-elements

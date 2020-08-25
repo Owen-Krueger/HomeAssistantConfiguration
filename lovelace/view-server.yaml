@@ -1,0 +1,41 @@
+title: Server
+id: server
+path: server
+icon: 'mdi:server'
+cards:
+  - cards:
+      - entities:
+          - entity: sensor.processor_use
+          - entity: sensor.memory_use_percent
+          - entity: sensor.disk_use_percent_home
+        show_header_toggle: false
+        title: Home Assistant Stats
+        type: entities
+    type: vertical-stack
+  - cards:
+      - entities:
+          - entity: switch.adguard_protection
+        title: AdGuard
+        type: entities
+      - entity: sensor.adguard_dns_queries
+        type: entity
+      - entity: sensor.adguard_average_processing_speed
+        type: entity
+      - entities:
+          - sensor.adguard_dns_queries
+        hours_to_show: 24
+        refresh_interval: 0
+        type: history-graph
+    type: vertical-stack
+  - cards:
+      - entities:
+          - entity: switch.homeassistant
+            icon: 'mdi:home-assistant'
+            name: Home Assistant
+          - entity: switch.tvswitch
+            icon: 'mdi:television-clean'
+            name: TV Switch
+        show_header_toggle: false
+        title: POE Devices
+        type: entities
+    type: vertical-stack

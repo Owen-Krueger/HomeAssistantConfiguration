@@ -1,0 +1,23 @@
+title: Lights
+id: lights
+path: lights
+icon: 'mdi:floor-lamp'
+cards:
+  - cards:
+      - entities:
+          - entity: group.interior_lights
+            icon: 'mdi:home-lightbulb'
+          - entity: light.living_room_lamps
+            icon: 'mdi:floor-lamp'
+          - entity: light.bedroom_lights
+            icon: 'mdi:ceiling-light'
+        show_header_toggle: false
+        title: Quick Lights
+        type: entities
+      - entity: light.living_room_lamps
+        icon: 'mdi:floor-lamp'
+        type: light
+      - entity: light.bedroom_lights
+        icon: 'mdi:ceiling-light'
+        type: light
+    type: vertical-stack

@@ -1,0 +1,34 @@
+title: People
+id: people
+path: people
+icon: 'mdi:account'
+cards:
+  - cards:
+      - entities:
+          - entity: person.owen
+          - entity: sensor.moto_z3_geocoded_location
+          - entity: sensor.moto_z3_battery_level
+          - entity: sensor.moto_z3_battery_state
+          - entity: sensor.moto_z3_wifi_connection
+        title: Overview
+        type: glance
+      - entities:
+          - entity: input_boolean.vacation_mode
+          - entity: input_boolean.guest_mode
+        show_header_toggle: false
+        title: Modes
+        type: entities
+      - dark_mode: false
+        entities:
+          - device_tracker.moto_z3
+        hours_to_show: 0
+        title: Location
+        type: map
+      - entities:
+          - entity: device_tracker.moto_z3
+          - entity: sensor.moto_z3_geocoded_location
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Location History
+        type: history-graph
+    type: vertical-stack
