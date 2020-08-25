@@ -1,4 +1,14 @@
 
+homeassistant:
+  name: Hassiowen
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: imperial
+  time_zone: America/Chicago
+  external_url: !secret external_url
+  internal_url: !secret internal_url
+
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
