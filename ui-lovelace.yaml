@@ -126,15 +126,6 @@ views:
           - entity: media_player.spotify_owen
             type: media-control
         type: vertical-stack
-      - cards:
-          - entities:
-              - entity: input_select.spotify_source
-              - entity: input_number.spotify_volume
-              - entity: input_select.spotify_playlist
-              - entity: script.spotify_music
-            title: Spotify
-            type: entities
-        type: vertical-stack
     icon: 'mdi:play'
     path: media
     title: Media
@@ -236,7 +227,6 @@ views:
               - entity: input_boolean.automation_lights_off_after_sunrise
               - entity: input_boolean.automation_lights_living_room_on_evening
               - entity: input_boolean.automation_lights_bedroom_on_before_work
-              - entity: input_boolean.automation_lights_bedroom_off_at_night
             show_header_toggle: false
             title: Automation Overrides
             type: entities
