@@ -40,8 +40,8 @@ automation_lights_off_after_sunrise:
 
 automation_lights_off_at_night_during_vacation:
   name: Turn off lights at night during vacation
-  icon: mdi:floor-lamp
+  icon: mdi:airplane
 
 automation_lights_on_in_evening_during_vacation:
   name: Turn on lights in evening during vacation
-  icon: mdi:floor-lamp
+  icon: mdi:airplane
