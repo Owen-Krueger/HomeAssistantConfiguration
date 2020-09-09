@@ -23,10 +23,10 @@
         - light.living_room_lamps
 
 #################################################
-## Turn on lights at night during vacation
+## Turn off lights at night during vacation
 #################################################
 
-- alias: Turn on lights at night during vacation
+- alias: Turn off lights at night during vacation
 
   trigger:
     - platform: time
