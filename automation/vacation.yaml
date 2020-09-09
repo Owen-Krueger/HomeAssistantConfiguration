@@ -1,0 +1,46 @@
+#################################################
+## Turn on lights in evening during vacation
+#################################################
+
+- alias: Turn on lights in evening during vacation
+
+  trigger:
+    - platform: sun
+      event: 'sunset'
+      offset: '+00:30:00'
+
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.automation_lights_on_in_evening_during_vacation
+    state: 'on'
+  
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.living_room_lamps
+
+#################################################
+## Turn off lights at night during vacation
+#################################################
+
+- alias: Turn off lights at night during vacation
+
+  trigger:
+    - platform: time
+      at: '21:30:00'
+      
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.automation_lights_off_at_night_during_vacation
+    state: 'on'
+  
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.living_room_lamps
