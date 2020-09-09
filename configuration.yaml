@@ -55,3 +55,4 @@ sensor: !include sensor.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+zone: !include zones.yaml
