@@ -7,7 +7,7 @@
   trigger:
     - platform: sun
       event: 'sunset'
-      offset: '-00:30:00'
+      offset: '+00:30:00'
 
   condition:
   - condition: state
@@ -23,14 +23,14 @@
         - light.living_room_lamps
 
 #################################################
-## Turn on bedroom lights before work
+## Turn on lights at night during vacation
 #################################################
 
-- alias: Turn on bedroom lights before work
+- alias: Turn on lights at night during vacation
 
   trigger:
     - platform: time
-      at: '09:30:00'
+      at: '21:30:00'
       
   condition:
   - condition: state
