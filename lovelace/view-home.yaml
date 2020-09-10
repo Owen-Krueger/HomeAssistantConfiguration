@@ -6,11 +6,12 @@ cards:
 - cards:
     - entities:
         - entity: group.interior_lights
-          icon: 'mdi:home-lightbulb'
+          icon: mdi:home-lightbulb
         - entity: light.living_room_lamps
-          icon: 'mdi:floor-lamp'
+          icon: mdi:floor-lamp
         - entity: light.bedroom_lights
-          icon: 'mdi:ceiling-light'
+          icon: mdi:ceiling-light
+        - entity: script.night_lighting
       show_header_toggle: false
       title: Lights
       type: entities
