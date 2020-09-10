@@ -1,11 +1,12 @@
 home-assistant.log
 home-assistant_v2.db
-secrets.yaml
 .cloud
 .storage
 deps
 tts
-www/images
 home-assistant_v2.db-wal
 home-assistant_v2.db-shm
+www/images
+persons.yaml
+secrets.yaml
 zones.yaml
