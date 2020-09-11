@@ -1,0 +1,20 @@
+#################################################
+## Turn off lights at sunrise
+#################################################
+
+alias: Turn off lights after sunrise
+initial_state: 'on'
+trigger:
+  - platform: sun
+    event: 'sunrise'
+    offset: '+00:45:00'
+
+condition:
+  - condition: state
+    entity_id: input_boolean.lights_automation_living_room_off_after_sunrise
+    state: 'on'
+
+action:
+  - service: light.turn_off
+    entity_id:
+      - light.living_room_lamps

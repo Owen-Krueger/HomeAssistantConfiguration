@@ -1,58 +1,18 @@
-
-homeassistant:
-  name: Hassiowen
-  latitude: !secret latitude
-  longitude: !secret longitude
-  elevation: !secret elevation
-  unit_system: imperial
-  time_zone: America/Chicago
-  external_url: !secret external_url
-  internal_url: !secret internal_url
-
-# Configure a default setup of Home Assistant (frontend, api, etc)
+homeassistant: !include homeassistant.yaml
 default_config:
 
-# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
-
-lovelace:
-  mode: yaml
-
-tts:
-  - platform: google_translate
-
-ifttt:
-  key: !secret ifttt_api_key
-
-#################################################
-## Components
-#################################################
-hue:
-  bridges:
-    - host: !secret philips_hue_ip
-      allow_hue_groups: false
-      allow_unreachable: true
-
-spotify:
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
-
-media_player:
-  - platform: androidtv
-    name: Fire TV Stick
-    host: !secret amazon_fire_tv_ip
-
-#################################################
-## Includes
-#################################################
-automation: !include_dir_merge_list automation
-input_boolean: !include input_boolean.yaml
-group: !include groups.yaml
-light: !include light_group.yaml
+automation: !include_dir_list automation
+group: !include_dir_named group
+hue: !include hue.yaml
+input_boolean: !include_dir_named input_boolean
+light: !include_dir_merge_list light
+lovelace: !include lovelace.yaml
+media_player: !include_dir_merge_list media_player
 person: !include persons.yaml
 scene: !include scenes.yaml
-script: !include scripts.yaml
+script: !include_dir_named script
 sensor: !include sensor.yaml
+spotify: !include spotify.yaml
 switch: !include switch.yaml
+tts: !include tts.yaml
 zone: !include zones.yaml

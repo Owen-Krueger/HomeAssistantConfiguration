@@ -1,0 +1,8 @@
+#################################################
+## Living Room
+#################################################
+- platform: group
+  name: Living Room Lamps
+  entities: 
+    - light.living_room_1
+    - light.living_room_2

@@ -13,8 +13,8 @@ cards:
         title: Overview
         type: glance
       - entities:
-          - entity: input_boolean.vacation_mode
-          - entity: input_boolean.guest_mode
+          - entity: input_boolean.mode_vacation
+          - entity: input_boolean.mode_guest
         show_header_toggle: false
         title: Modes
         type: entities

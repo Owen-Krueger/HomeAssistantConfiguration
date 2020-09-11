@@ -1,4 +1,4 @@
-title: Our Home
+title: Admin
 views:
   - !include lovelace/view-home.yaml
   - !include lovelace/view-lights.yaml
@@ -6,3 +6,5 @@ views:
   - !include lovelace/view-media.yaml
   - !include lovelace/view-vacuum.yaml
   - !include lovelace/view-weather.yaml
+  - !include lovelace/view-server.yaml
+  - !include lovelace/view-automations.yaml

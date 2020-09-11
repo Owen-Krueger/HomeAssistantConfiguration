@@ -1,0 +1,16 @@
+mode: yaml
+dashboards:
+  lovelace-automations:
+    mode: yaml
+    filename: ui-automations.yaml
+    title: Automations
+    icon: mdi:robot
+    show_in_sidebar: true
+    require_admin: true
+  lovelace-admin:
+    mode: yaml
+    filename: ui-admin.yaml
+    title: Admin
+    icon: mdi:desktop-classic
+    show_in_sidebar: true
+    require_admin: true

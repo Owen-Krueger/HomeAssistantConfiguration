@@ -1,0 +1,8 @@
+#################################################
+## Bedroom
+#################################################
+- platform: group
+  name: Bedroom Lights
+  entities:
+    - light.bedroom_1
+    - light.bedroom_2
