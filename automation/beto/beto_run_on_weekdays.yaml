@@ -21,7 +21,7 @@ condition:
     state: 'docked'
   - condition: numeric_state
     entity_id: sensor.beto_battery_level
-    above: 99
+    above: 90
   - condition: state
     entity_id: input_boolean.beto_automation_disable
     state: 'off'

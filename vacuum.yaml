@@ -1,0 +1,3 @@
+- platform: neato
+  name: Beto
+  host: !secret beto_ip
