@@ -1,2 +1,4 @@
-- host: !secret pihole_ip
+- host: !secret primary_pihole_ip
   name: Primary Pi-Hole
+- host: !secret secondary_pihole_ip
+  name: Secondary Pi-Hole
