@@ -9,6 +9,7 @@ home-assistant_v2.db-shm
 www/images
 neato.yaml
 persons.yaml
+pihole.yaml
 secrets.yaml
 spotify.yaml
 zones.yaml

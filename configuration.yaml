@@ -10,6 +10,7 @@ lovelace: !include lovelace.yaml
 media_player: !include_dir_merge_list media_player
 neato: !include neato.yaml
 person: !include persons.yaml
+pi_hole: !include pihole.yaml
 scene: !include scenes.yaml
 script: !include_dir_named script
 sensor: !include sensor.yaml
