@@ -31,12 +31,14 @@ cards:
     - entities:
       - entity: binary_sensor.primary_pi_hole
         name: State
+      - entity: sensor.primary_pi_hole_dns_queries_today
+        name: Queries today
+      - entity: sensor.primary_pi_hole_dns_queries_forwarded
+        name: Queries forwarded
       - entity: sensor.primary_pi_hole_ads_blocked_today
         name: Ads blocked today
       - entity: sensor.primary_pi_hole_ads_percentage_blocked_today
         name: Percentage blocked today
-      - entity: sensor.primary_pi_hole_dns_queries_today
-        name: Queries today
       - entity: sensor.primary_pi_hole_dns_unique_clients
         name: Unique clients
       show_header_toggle: false
