@@ -1,0 +1,12 @@
+#################################################
+## Lights
+#################################################
+
+#Interior Lights:
+#  - light.living_room_lamps
+#  - light.bedroom_lights
+
+name: Interior Lights
+entities:
+- light.living_room_lamps
+- light.bedroom_lights
