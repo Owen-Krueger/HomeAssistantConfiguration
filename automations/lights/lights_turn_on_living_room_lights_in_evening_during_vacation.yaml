@@ -1,0 +1,23 @@
+#################################################
+## Turn on living room lights in evening during vacation
+#################################################
+
+alias: Turn on living room lights in evening during vacation
+initial_state: 'on'
+trigger:
+  - platform: sun
+    event: 'sunset'
+    offset: '+00:30:00'
+
+condition:
+- condition: state
+  entity_id: input_boolean.mode_vacation
+  state: 'on'
+- condition: state
+  entity_id: input_boolean.lights_automation_living_room_on_in_evening_during_vacation
+  state: 'on'
+
+action:
+  - service: light.turn_on
+    entity_id:
+      - light.living_room_lamps

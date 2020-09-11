@@ -1,4 +1,3 @@
-
 homeassistant: !include homeassistant.yaml
   
 
@@ -38,8 +37,8 @@ media_player:
 #################################################
 ## Includes
 #################################################
-automation: !include_dir_merge_list automation
-input_boolean: !include input_boolean.yaml
+automation: !include_dir_list automations
+input_boolean: !include_dir_named input_booleans
 group: !include_dir_named groups
 light: !include light_group.yaml
 person: !include persons.yaml

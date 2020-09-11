@@ -5,24 +5,24 @@ icon: 'mdi:robot'
 cards:
   - cards:
       - entities:
-        - entity: input_boolean.vacation_mode
-        - entity: input_boolean.guest_mode
+        - entity: input_boolean.mode_vacation
+        - entity: input_boolean.mode_guest
         show_header_toggle: false
         title: Modes
         type: entities
       - entities:
-        - entity: input_boolean.disable_beto
-        - entity: input_boolean.automation_beto_on_weekdays
-        - entity: input_boolean.automation_lights_off_after_sunrise
-        - entity: input_boolean.automation_lights_living_room_on_evening
-        - entity: input_boolean.automation_lights_bedroom_on_before_work
-        - entity: input_boolean.automation_lights_on_in_evening_during_vacation
-        - entity: input_boolean.automation_lights_off_at_night_during_vacation
+        - entity: input_boolean.beto_automation_disable
+        - entity: input_boolean.beto_automation_run_on_weekdays
+        - entity: input_boolean.lights_automation_living_room_off_after_sunrise
+        - entity: input_boolean.lights_automation_living_room_on_in_evening
+        - entity: input_boolean.lights_automation_bedroom_on_before_work
+        - entity: input_boolean.lights_automation_living_room_on_in_evening_during_vacation
+        - entity: input_boolean.lights_automation_living_room_off_at_night_during_vacation
         show_header_toggle: false
         title: Automation Overrides
         type: entities
       - entities:
-        - entity: script.night_lighting
+        - entity: script.lights_night_lighting
         show_header_toggle: false
         title: Scripts
         type: entities

@@ -11,7 +11,7 @@ cards:
           icon: mdi:floor-lamp
         - entity: light.bedroom_lights
           icon: mdi:ceiling-light
-        - entity: script.night_lighting
+        - entity: script.lights_night_lighting
       show_header_toggle: false
       title: Lights
       type: entities
