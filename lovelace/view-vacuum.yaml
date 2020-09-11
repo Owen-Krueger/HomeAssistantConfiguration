@@ -7,8 +7,8 @@ cards:
       - entities:
           - entity: vacuum.beto
           - entity: sensor.beto_battery
-          - entity: input_boolean.disable_beto
-          - entity: input_select.beto_schedule
+          - entity: input_boolean.beto_automation_disable
+          - entity: script.beto_run_on_command
         show_header_toggle: false
         title: Beto
         type: entities
