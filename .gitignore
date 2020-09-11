@@ -7,8 +7,6 @@ tts
 home-assistant_v2.db-wal
 home-assistant_v2.db-shm
 www/images
-neato.yaml
 persons.yaml
 secrets.yaml
-spotify.yaml
 zones.yaml

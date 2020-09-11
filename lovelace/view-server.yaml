@@ -28,13 +28,52 @@ cards:
         type: history-graph
     type: vertical-stack
   - cards:
+    - entities:
+      - entity: binary_sensor.primary_pi_hole
+        name: State
+      - entity: sensor.primary_pi_hole_dns_queries_today
+        name: Queries today
+      - entity: sensor.primary_pi_hole_dns_queries_forwarded
+        name: Queries forwarded
+      - entity: sensor.primary_pi_hole_ads_blocked_today
+        name: Ads blocked today
+      - entity: sensor.primary_pi_hole_ads_percentage_blocked_today
+        name: Percentage blocked today
+      - entity: sensor.primary_pi_hole_dns_unique_clients
+        name: Unique clients
+      show_header_toggle: false
+      title: Primary Pi-Hole
+      type: entities
+    type: vertical-stack
+  - cards:
+    - entities:
+      - entity: binary_sensor.secondary_pi_hole
+        name: State
+      - entity: sensor.secondary_pi_hole_dns_queries_today
+        name: Queries today
+      - entity: sensor.secondary_pi_hole_dns_queries_forwarded
+        name: Queries forwarded
+      - entity: sensor.secondary_pi_hole_ads_blocked_today
+        name: Ads blocked today
+      - entity: sensor.secondary_pi_hole_ads_percentage_blocked_today
+        name: Percentage blocked today
+      - entity: sensor.secondary_pi_hole_dns_unique_clients
+        name: Unique clients
+      show_header_toggle: false
+      title: Secondary Pi-Hole
+      type: entities
+    type: vertical-stack
+  - cards:
       - entities:
           - entity: switch.homeassistant
-            icon: 'mdi:home-assistant'
+            icon: mdi:home-assistant
             name: Home Assistant
           - entity: switch.tvswitch
-            icon: 'mdi:television-clean'
+            icon: mdi:television-clean
             name: TV Switch
+          - entity: switch.raspberrypi
+            icon: mdi:raspberry-pi
+            name: Primary Pi-Hole
         show_header_toggle: false
         title: POE Devices
         type: entities
