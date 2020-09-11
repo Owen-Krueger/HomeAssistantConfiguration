@@ -1,8 +1,8 @@
 #################################################
-## Turn off lights at sunrise
+## Turn off living room lights at sunrise
 #################################################
 
-alias: Turn off lights after sunrise
+alias: Turn off living room lights after sunrise
 initial_state: 'on'
 trigger:
   - platform: sun
