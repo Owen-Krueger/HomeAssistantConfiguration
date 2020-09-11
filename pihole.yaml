@@ -1,0 +1,2 @@
+- host: !secret pihole_ip
+  name: Primary Pi-Hole
