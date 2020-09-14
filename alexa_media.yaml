@@ -1,0 +1,5 @@
+# Custom component: https://github.com/custom-components/alexa_media_player
+accounts:
+  - email: !secret amazon_email
+    password: !secret amazon_password
+    url: amazon.com
