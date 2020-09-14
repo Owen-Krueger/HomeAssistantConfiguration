@@ -13,21 +13,6 @@ cards:
         type: entities
     type: vertical-stack
   - cards:
-      - entities:
-          - entity: switch.adguard_protection
-        title: AdGuard
-        type: entities
-      - entity: sensor.adguard_dns_queries
-        type: entity
-      - entity: sensor.adguard_average_processing_speed
-        type: entity
-      - entities:
-          - sensor.adguard_dns_queries
-        hours_to_show: 24
-        refresh_interval: 0
-        type: history-graph
-    type: vertical-stack
-  - cards:
     - entities:
       - entity: binary_sensor.primary_pi_hole
         name: State
