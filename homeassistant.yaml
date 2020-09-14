@@ -6,3 +6,4 @@ unit_system: imperial
 time_zone: America/Chicago
 external_url: !secret external_url
 internal_url: !secret internal_url
+customize: !include customize.yaml
