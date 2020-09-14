@@ -1,7 +1,6 @@
 .cloud
 .storage
-custom_components/hacs
-custom_components/alexa_media/__pycache__
+custom_components
 deps
 home-assistant.log
 home-assistant_v2.db-wal
