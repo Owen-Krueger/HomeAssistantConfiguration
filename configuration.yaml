@@ -1,7 +1,6 @@
 homeassistant: !include homeassistant.yaml
 default_config:
 
-alexa_media: !include alexa_media.yaml
 automation: !include_dir_list automation
 group: !include_dir_named group
 hacs: !include hacs.yaml
