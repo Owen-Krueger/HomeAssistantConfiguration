@@ -63,7 +63,27 @@ cards:
     - type: state-icon
       entity: media_player.spotify_owen
       style:
+        left: 70%
+        top: 33%
+    - type: state-icon
+      entity: media_player.owen_s_echo_show
+      style:
         left: 90%
         top: 33%
+    - type: state-icon
+      entity: media_player.sound_system
+      style:
+        left: 89%
+        top: 57%
+    - type: state-icon
+      entity: media_player.owen_s_bedroom_echo_show
+      style:
+        left: 7%
+        top: 80%
+    - type: state-icon
+      entity: media_player.owen_s_echo_dot
+      style:
+        left: 45%
+        top: 79%
   image: /local/images/FloorPlan.png
   type: picture-elements

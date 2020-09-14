@@ -3,6 +3,7 @@ default_config:
 
 automation: !include_dir_list automation
 group: !include_dir_named group
+hacs: !include hacs.yaml
 hue: !include hue.yaml
 input_boolean: !include_dir_named input_boolean
 light: !include_dir_merge_list light
