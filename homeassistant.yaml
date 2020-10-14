@@ -1,4 +1,4 @@
-name: Hassiowen
+name: Home
 latitude: !secret latitude
 longitude: !secret longitude
 elevation: !secret elevation
