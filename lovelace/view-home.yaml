@@ -6,11 +6,9 @@ cards:
 - cards:
     - entities:
         - entity: group.interior_lights
-          icon: mdi:home-lightbulb
         - entity: light.living_room_lamps
-          icon: mdi:floor-lamp
-        - entity: light.bedroom_lights
-          icon: mdi:ceiling-light
+        - entity: light.bedroom
+        - entity: light.hallway
         - entity: script.lights_night_lighting
       show_header_toggle: false
       title: Lights
@@ -26,7 +24,6 @@ cards:
     - type: state-icon
       entity: light.living_room_lamps
       title: Living Room Lamps
-      icon: mdi:floor-lamp
       tap_action:
         action: toggle
       style:
@@ -35,9 +32,8 @@ cards:
         --iron-icon-height: 200px
         --iron-icon-width: 200px
     - type: state-icon
-      entity: light.bedroom_lights
+      entity: light.bedroom
       title: Bedroom Lights
-      icon: mdi:lightbulb
       tap_action:
         action: toggle
       style:
@@ -46,7 +42,6 @@ cards:
     - type: state-icon
       entity: vacuum.beto
       title: 'Beto'
-      icon: mdi:robot-vacuum-variant
       style:
         left: 90%
         top: 85%

@@ -1,21 +1,59 @@
+#################################################
+## Amazon Echos
+#################################################
 media_player.everywhere:
   friendly_name: Everywhere
   icon: mdi:amazon-alexa
+
 media_player.living_room_echo:
   friendly_name: Living Room Echo
   icon: mdi:amazon-alexa
+
 media_player.owen_s_bedroom_echo_show:
   friendly_name: Bedroom Echo Show
   icon: mdi:amazon-alexa
+
 media_player.owen_s_echo_dot:
   friendly_name: Echo Dot
   icon: mdi:amazon-alexa
+
 media_player.owen_s_echo_show:
   friendly_name: Echo Show
   icon: mdi:amazon-alexa
+
 media_player.owen_s_echo_sub:
   friendly_name: Echo Sub
   icon: mdi:amazon-alexa
+
 media_player.sound_system:
   friendly_name: Living Room Sound System
   icon: mdi:amazon-alexa
+
+#################################################
+## Beto
+#################################################
+vacuum.beto:
+  friendly_name: Beto
+  icon: mdi:robot-vacuum-variant
+
+#################################################
+## Groups
+#################################################
+group.interior_lights:
+  friendly_name: Interior Lights
+  icon: mdi:home-lightbulb
+
+#################################################
+## Lights
+#################################################
+light.bedroom:
+  friendly_name: Bedroom Lights
+  icon: mdi:ceiling-light
+
+light.hallway:
+  friendly_name: Hallway Lamp
+  icon: mdi:lamp
+
+light.living_room_lamps:
+  friendly_name: Living Room Lamps
+  icon: mdi:floor-lamp
