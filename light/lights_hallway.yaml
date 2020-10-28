@@ -1,8 +1,7 @@
 #################################################
-## Lights
+## Hallway
 #################################################
-name: Interior Lights
-entities:
-- light.living_room_lamps
-- light.bedroom
-- light.hallway
+- platform: group
+  name: Hallway
+  entities:
+    - light.hallway_lamp

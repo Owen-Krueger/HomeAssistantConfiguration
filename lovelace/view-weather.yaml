@@ -1,7 +1,7 @@
 title: Weather
 id: weather
 path: weather
-icon: 'mdi:weather-sunny'
+icon: mdi:weather-sunny
 cards:
   - cards:
       - entity: weather.home
