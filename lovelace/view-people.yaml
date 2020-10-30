@@ -6,10 +6,10 @@ cards:
   - cards:
       - entities:
           - entity: person.owen
-          - entity: sensor.moto_z3_geocoded_location
-          - entity: sensor.moto_z3_battery_level
-          - entity: sensor.moto_z3_battery_state
-          - entity: sensor.moto_z3_wifi_connection
+          - entity: sensor.pixel_5_geocoded_location
+          - entity: sensor.pixel_5_battery_level
+          - entity: sensor.pixel_5_battery_state
+          - entity: sensor.pixel_5_wifi_connection
         title: Overview
         type: glance
       - entities:
@@ -20,13 +20,13 @@ cards:
         type: entities
       - dark_mode: false
         entities:
-          - device_tracker.moto_z3
+          - device_tracker.pixel_5
         hours_to_show: 0
         title: Location
         type: map
       - entities:
-          - entity: device_tracker.moto_z3
-          - entity: sensor.moto_z3_geocoded_location
+          - entity: device_tracker.pixel_5
+          - entity: sensor.pixel_5_geocoded_location
         hours_to_show: 24
         refresh_interval: 0
         title: Location History
