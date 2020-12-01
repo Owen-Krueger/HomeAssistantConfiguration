@@ -3,20 +3,23 @@ id: lights
 path: lights
 icon: 'mdi:floor-lamp'
 cards:
-  - cards:
-      - entities:
-          - entity: group.interior_lights
-          - entity: light.living_room_lamps
-          - entity: light.bedroom
-          - entity: light.hallway
-          - entity: script.lights_night_lighting
-        show_header_toggle: false
-        title: Quick Lights
-        type: entities
+  - type: entities
+    entities:
+      - entity: group.interior_lights
       - entity: light.living_room_lamps
-        type: light
       - entity: light.bedroom
-        type: light
       - entity: light.hallway
-        type: light
-    type: vertical-stack
+      - entity: script.lights_night_lighting
+    show_header_toggle: false
+    title: Quick Lights
+  - type: entities
+    entities:
+    - entity: light.living_room_lamps
+    - entity: light.bedroom
+    - entity: light.hallway
+    - type: section
+      label: Bedroom Lamps
+    - entity: light.bedroom_1
+      secondary_info: brightness
+    - entity: light.bedroom_2
+      secondary_info: brightness

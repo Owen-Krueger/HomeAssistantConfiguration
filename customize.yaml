@@ -50,6 +50,14 @@ light.bedroom:
   friendly_name: Bedroom Lights
   icon: mdi:ceiling-light
 
+light.bedroom_1:
+  friendly_name: Allison Lamp
+  icon: mdi:lamp
+
+light.bedroom_2:
+  friendly_name: Owen Lamp
+  icon: mdi:lamp
+
 light.hallway:
   friendly_name: Hallway Lamp
   icon: mdi:lamp
