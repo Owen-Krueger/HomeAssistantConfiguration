@@ -58,6 +58,14 @@ light.bedroom_2:
   friendly_name: Owen Lamp
   icon: mdi:lamp
 
+light.living_room_1:
+  friendly_name: Table Lamp
+  icon: mdi:lamp
+
+light.living_room_2:
+  friendly_name: Tall Lamp
+  icon: mdi:floor-lamp
+
 light.hallway:
   friendly_name: Hallway Lamp
   icon: mdi:lamp

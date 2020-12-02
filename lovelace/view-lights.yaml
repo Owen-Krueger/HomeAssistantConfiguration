@@ -3,23 +3,50 @@ id: lights
 path: lights
 icon: 'mdi:floor-lamp'
 cards:
-  - type: entities
-    entities:
+  - type: vertical-stack
+    cards:
+    - type: entity-filter
+      card:
+        type: glance
+        title: Currently On
+      entities:
+        - entity: light.living_room_1
+        - entity: light.living_room_2
+        - entity: light.bedroom_1
+        - entity: light.bedroom_2
+        - entity: light.hallway
+      show_empty: true
+      state_filter:
+        - 'on'
+    - type: entities
+      entities:
+      - type: section
+        label: Rooms
       - entity: group.interior_lights
+        secondary_info: brightness
       - entity: light.living_room_lamps
+        secondary_info: brightness
       - entity: light.bedroom
+        secondary_info: brightness
       - entity: light.hallway
+        secondary_info: brightness
+      - type: section
+        label: Bedroom Lamps
+      - entity: light.bedroom_1
+        secondary_info: brightness
+      - entity: light.bedroom_2
+        secondary_info: brightness
+      - type: section
+        label: Scripts
       - entity: script.lights_night_lighting
-    show_header_toggle: false
-    title: Quick Lights
-  - type: entities
-    entities:
-    - entity: light.living_room_lamps
-    - entity: light.bedroom
-    - entity: light.hallway
-    - type: section
-      label: Bedroom Lamps
-    - entity: light.bedroom_1
-      secondary_info: brightness
-    - entity: light.bedroom_2
-      secondary_info: brightness
+        secondary_info: last-triggered
+      - entity: script.lights_dim_bedroom_lamps
+        secondary_info: last-triggered
+  - type: vertical-stack
+    cards:
+    - type: light
+      entity: light.bedroom_1
+    - type: light
+      entity: light.bedroom_2
+    - type: light
+      entity: light.living_room_lamps

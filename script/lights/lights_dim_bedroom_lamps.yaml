@@ -1,0 +1,13 @@
+#################################################
+## Dim bedroom lamps
+#################################################
+
+alias: Dim Bedroom Lamps
+description: 'Dim bedroom lamps'
+icon: mdi:lamp
+
+sequence:
+  - service: light.turn_on
+    data:
+      entity_id: light.bedroom
+      brightness: 40

@@ -12,5 +12,5 @@ sequence:
       - group.interior_lights
   - service: light.turn_on
     data:
-      entity_id: light.bedroom_lights
+      entity_id: light.bedroom
       brightness: 40
