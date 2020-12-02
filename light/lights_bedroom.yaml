@@ -5,3 +5,4 @@
   name: Bedroom
   entities:
     - light.bedroom_1
+    - light.bedroom_2
