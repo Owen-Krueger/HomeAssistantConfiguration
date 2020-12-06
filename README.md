@@ -10,7 +10,7 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 ### Home Assistant
 | Device | Link | Notes |
 | ---  | :---: | --- |
-| Raspberry Pi 4 (4GB) | [Link](https://www.digikey.com/product-detail/en/raspberry-pi/RASPBERRY-PI-4B-4GB/1690-RASPBERRYPI4B-4GB-ND/10258781) | Home Assistant |
+| Raspberry Pi 4 (4GB) | [Link](https://www.digikey.com/product-detail/en/raspberry-pi/RASPBERRY-PI-4B-4GB/1690-RASPBERRYPI4B-4GB-ND/10258781) | Flashed with Home Assistant. Powered via POE. Interacts with all smart home devices. |
 | Samsung MicroSDKC Card (64 GB) | [Link](https://www.amazon.com/gp/product/B06XX29S9Q/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1) | Flashed with the Home Assistant image |
 | USB C PoE Splitter | [Link](https://www.amazon.com/gp/product/B07TJ3ZNJ4/ref=ppx_yo_dt_b_asin_title_o09_s01?ie=UTF8&psc=1) | Power Raspberry Pi from PoE switch instead of standard charger |
 
