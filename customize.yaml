@@ -30,6 +30,21 @@ media_player.sound_system:
   icon: mdi:amazon-alexa
 
 #################################################
+## Google Devices
+#################################################
+media_player.google_home_hallway:
+  friendly_name: Hallway Google Home Mini
+  icon: mdi:google-home
+
+media_player.google_home_living_room:
+  friendly_name: Living Room Google Home Mini
+  icon: mdi:google-home
+
+media_player.living_room_tv:
+  friendly_name: Living Room Chromecast
+  icon: mdi:television
+
+#################################################
 ## Beto
 #################################################
 vacuum.beto:

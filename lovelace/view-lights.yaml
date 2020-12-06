@@ -50,3 +50,5 @@ cards:
       entity: light.bedroom_2
     - type: light
       entity: light.living_room_lamps
+    - type: light
+      entity: light.hallway
