@@ -1,0 +1,12 @@
+#################################################
+## Turn off all interior lights
+#################################################
+
+alias: Turn off all interior lights
+description: 'Turn off all interior lights'
+icon: mdi:lightbulb-off
+
+sequence:
+  - service: light.turn_off
+    entity_id:
+      - group.interior_lights
