@@ -9,7 +9,6 @@ hue: !include hue.yaml
 input_boolean: !include_dir_named input_boolean
 light: !include_dir_merge_list light
 lovelace: !include lovelace.yaml
-media_player: !include_dir_merge_list media_player
 neato: !include neato.yaml
 person: !include persons.yaml
 pi_hole: !include pihole.yaml
