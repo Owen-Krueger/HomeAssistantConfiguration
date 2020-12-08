@@ -1,0 +1,11 @@
+alexa:
+  filter:
+    include_entities:
+      - light.bedroom_1
+      - light.bedroom_2
+      - light.living_room_1
+      - light.living_room_2
+      - light.hallway_lamp
+    include_domains:
+      - input_boolean
+      - script
