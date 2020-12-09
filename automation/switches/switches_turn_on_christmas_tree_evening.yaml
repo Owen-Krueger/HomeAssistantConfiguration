@@ -1,0 +1,20 @@
+#################################################
+## Turn on Christmas tree in the evening
+#################################################
+
+alias: Turn on Christmas tree in the evening
+initial_state: 'on'
+trigger:
+  - platform: sun
+    event: 'sunset'
+    offset: '-01:00:00'
+
+condition:
+  - condition: state
+    entity_id: input_boolean.switches_automation_christmas_tree
+    state: 'on'
+
+action:
+  - service: switch.turn_on
+    entity_id:
+      - switch.christmas_tree

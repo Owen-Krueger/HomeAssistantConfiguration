@@ -1,0 +1,19 @@
+#################################################
+## Turn off Christmas tree at night
+#################################################
+
+alias: Turn off Christmas tree at night
+initial_state: 'on'
+trigger:
+  - platform: time
+    at: '23:00:00'
+
+condition:
+  - condition: state
+    entity_id: input_boolean.switches_automation_christmas_tree
+    state: 'on'
+
+action:
+  - service: switch.turn_off
+    entity_id:
+      - switch.christmas_tree

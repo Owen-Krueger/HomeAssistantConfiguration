@@ -18,6 +18,7 @@ cards:
         - entity: input_boolean.lights_automation_bedroom_on_before_work
         - entity: input_boolean.lights_automation_living_room_on_in_evening_during_vacation
         - entity: input_boolean.lights_automation_living_room_off_at_night_during_vacation
+        - entity: input_boolean.switches_automation_christmas_tree
         show_header_toggle: false
         title: Automation Overrides
         type: entities
