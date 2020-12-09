@@ -1,0 +1,3 @@
+discovery: false
+switch:
+  - host: !secret christmas_tree_plug_ip

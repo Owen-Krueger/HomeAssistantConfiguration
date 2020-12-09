@@ -18,6 +18,7 @@ script: !include_dir_named script
 sensor: !include sensor.yaml
 spotify: !include spotify.yaml
 switch: !include switch.yaml
+tplink: !include tplink.yaml
 tts: !include tts.yaml
 vacuum: !include vacuum.yaml
 zone: !include zones.yaml

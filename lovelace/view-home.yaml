@@ -20,6 +20,13 @@ cards:
   type: vertical-stack
 - elements:
     - type: state-icon
+      entity: switch.christmas_tree
+      tap_action:
+        action: toggle
+      style:
+        left: 60%
+        top: 24%
+    - type: state-icon
       entity: light.living_room_1
       tap_action:
         action: toggle
