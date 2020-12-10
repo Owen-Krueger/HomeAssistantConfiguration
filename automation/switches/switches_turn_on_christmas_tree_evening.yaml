@@ -5,9 +5,8 @@
 alias: Turn on Christmas tree in the evening
 initial_state: 'on'
 trigger:
-  - platform: sun
-    event: 'sunset'
-    offset: '-01:00:00'
+  - platform: time
+    at: '15:00:00'
 
 condition:
   - condition: state

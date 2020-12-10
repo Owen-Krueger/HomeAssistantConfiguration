@@ -10,3 +10,6 @@ sequence:
   - service: light.turn_off
     entity_id:
       - group.interior_lights
+  - service: switch.turn_off
+    entity_id:
+      - switch.christmas_tree
