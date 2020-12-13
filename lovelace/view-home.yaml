@@ -9,6 +9,7 @@ cards:
         - entity: light.living_room_lamps
         - entity: light.bedroom
         - entity: light.hallway
+        - entity: switch.christmas_tree
         - entity: script.lights_night_lighting
       show_header_toggle: false
       title: Lights
@@ -19,6 +20,13 @@ cards:
       type: media-control
   type: vertical-stack
 - elements:
+    - type: state-icon
+      entity: switch.christmas_tree
+      tap_action:
+        action: toggle
+      style:
+        left: 60%
+        top: 24%
     - type: state-icon
       entity: light.living_room_1
       tap_action:
@@ -69,7 +77,7 @@ cards:
       entity: media_player.sound_system
       style:
         left: 93%
-        top: 29%
+        top: 31%
     - type: state-icon
       entity: media_player.owen_s_bedroom_echo_show
       style:

@@ -1,0 +1,18 @@
+alexa:
+  filter:
+    include_entities:
+      - light.bedroom_1
+      - light.bedroom_2
+      - light.living_room_1
+      - light.living_room_2
+      - light.hallway
+      - switch.christmas_tree
+    include_domains:
+      - input_boolean
+      - script
+    exclude_entities:
+      - light.hallway_lamp
+      - light.bedroom
+    exclude_domains:
+      - automation
+      - binary_sensor

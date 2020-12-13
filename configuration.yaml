@@ -2,13 +2,13 @@ homeassistant: !include homeassistant.yaml
 default_config:
 
 automation: !include_dir_list automation
+cloud: !include cloud.yaml
 group: !include_dir_named group
 hacs: !include hacs.yaml
 hue: !include hue.yaml
 input_boolean: !include_dir_named input_boolean
 light: !include_dir_merge_list light
 lovelace: !include lovelace.yaml
-media_player: !include_dir_merge_list media_player
 neato: !include neato.yaml
 person: !include persons.yaml
 pi_hole: !include pihole.yaml
@@ -18,6 +18,7 @@ script: !include_dir_named script
 sensor: !include sensor.yaml
 spotify: !include spotify.yaml
 switch: !include switch.yaml
+tplink: !include tplink.yaml
 tts: !include tts.yaml
 vacuum: !include vacuum.yaml
 zone: !include zones.yaml

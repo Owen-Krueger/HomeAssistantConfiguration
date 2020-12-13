@@ -1,3 +1,0 @@
-- platform: androidtv
-  name: Fire TV Stick
-  host: !secret amazon_fire_tv_ip

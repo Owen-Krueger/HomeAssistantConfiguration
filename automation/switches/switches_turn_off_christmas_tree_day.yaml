@@ -1,0 +1,26 @@
+#################################################
+## Turn off Christmas tree during the day
+#################################################
+
+alias: Turn off Christmas tree during the day
+initial_state: 'on'
+trigger:
+  - platform: time
+    at: '08:30:00'
+
+condition:
+  - condition: state
+    entity_id: input_boolean.switches_automation_christmas_tree
+    state: 'on'
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+
+action:
+  - service: switch.turn_off
+    entity_id:
+      - switch.christmas_tree

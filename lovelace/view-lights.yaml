@@ -15,6 +15,7 @@ cards:
         - entity: light.bedroom_1
         - entity: light.bedroom_2
         - entity: light.hallway
+        - entity: switch.christmas_tree
       show_empty: true
       state_filter:
         - 'on'
@@ -30,6 +31,7 @@ cards:
         secondary_info: brightness
       - entity: light.hallway
         secondary_info: brightness
+      - entity: switch.christmas_tree
       - type: section
         label: Bedroom Lamps
       - entity: light.bedroom_1
@@ -41,6 +43,8 @@ cards:
       - entity: script.lights_night_lighting
         secondary_info: last-triggered
       - entity: script.lights_dim_bedroom_lamps
+        secondary_info: last-triggered
+      - entity: script.lights_turn_off_all
         secondary_info: last-triggered
   - type: vertical-stack
     cards:
