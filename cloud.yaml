@@ -7,12 +7,26 @@ alexa:
       - light.living_room_2
       - light.hallway
       - switch.christmas_tree
+      - script.lights_dim_bedroom_lamps
+      - script.lights_night_lighting
+      - script.lights_turn_off_all
+      - script.lights_turn_on_living_room
     include_domains:
       - input_boolean
-      - script
     exclude_entities:
       - light.hallway_lamp
       - light.bedroom
     exclude_domains:
       - automation
       - binary_sensor
+      - media_player
+      - switch
+  entity_config:
+    script.lights_dim_bedroom_lamps:
+      display_categories: LIGHT
+    script.lights_night_lighting:
+      display_categories: LIGHT
+    script.lights_turn_off_all:
+      display_categories: LIGHT
+    script.lights_turn_on_living_room:
+      display_categories: LIGHT

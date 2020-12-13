@@ -46,6 +46,8 @@ cards:
         secondary_info: last-triggered
       - entity: script.lights_turn_off_all
         secondary_info: last-triggered
+      - entity: script.lights_turn_on_living_room
+        secondary_info: last-triggered
   - type: vertical-stack
     cards:
     - type: light

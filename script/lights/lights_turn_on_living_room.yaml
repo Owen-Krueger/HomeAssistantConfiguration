@@ -1,0 +1,16 @@
+#################################################
+## Turn on all living room
+#################################################
+
+alias: Turn on all living room
+description: 'Turn on all living room'
+icon: mdi:floor-lamp
+
+sequence:
+  - service: light.turn_on
+    data:
+      entity_id: light.living_room_lamps
+      brightness: 255
+  - service: switch.turn_on
+    data:
+      entity_id: switch.christmas_tree
