@@ -20,5 +20,4 @@ spotify: !include spotify.yaml
 switch: !include switch.yaml
 tplink: !include tplink.yaml
 tts: !include tts.yaml
-vacuum: !include vacuum.yaml
 zone: !include zones.yaml
