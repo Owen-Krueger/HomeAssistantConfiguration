@@ -9,6 +9,7 @@ cards:
         - entity: light.living_room_lamps
         - entity: light.bedroom
         - entity: light.hallway
+        - entity: switch.christmas_tree
         - entity: script.lights_night_lighting
       show_header_toggle: false
       title: Lights
