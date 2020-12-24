@@ -12,6 +12,9 @@ condition:
   - condition: state
     entity_id: input_boolean.switches_automation_christmas_tree
     state: 'on'
+  - condition: state
+    entity_id: input_boolean.mode_vacation
+    state: 'off'
 
 action:
   - service: switch.turn_on
