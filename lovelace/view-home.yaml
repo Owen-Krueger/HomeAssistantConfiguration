@@ -7,7 +7,8 @@ cards:
     - entities:
         - entity: group.interior_lights
         - entity: light.living_room_lamps
-        - entity: light.bedroom
+        - entity: light.bedroom_overhead_lights
+        - entity: light.bedroom_lamps
         - entity: light.hallway
         - entity: switch.christmas_tree
         - entity: script.lights_night_lighting
@@ -56,6 +57,13 @@ cards:
         left: 7%
         top: 35%
     - type: state-icon
+      entity: light.bedroom_overhead_lights
+      tap_action:
+        action: toggle
+      style:
+        left: 27%
+        top: 25%
+    - type: state-icon
       entity: light.hallway
       tap_action:
         action: toggle
@@ -86,18 +94,8 @@ cards:
     - type: state-icon
       entity: media_player.owen_s_echo_dot
       style:
-        left: 45%
-        top: 33%
-    - type: state-icon
-      entity: media_player.google_home_hallway
-      style:
         left: 32%
         top: 65%
-    - type: state-icon
-      entity: media_player.google_home_living_room
-      style:
-        left: 47%
-        top: 50%
     - type: state-icon
       entity: media_player.living_room_tv
       style:

@@ -67,7 +67,11 @@ switch.christmas_tree:
 #################################################
 light.bedroom:
   friendly_name: Bedroom Lights
-  icon: mdi:ceiling-light
+  icon: mdi:bed
+
+light.bedroom_lamps:
+  friendly_name: Bedroom Lamps
+  icon: mdi:lamp
 
 light.bedroom_1:
   friendly_name: Allison Lamp
@@ -76,6 +80,10 @@ light.bedroom_1:
 light.bedroom_2:
   friendly_name: Owen Lamp
   icon: mdi:lamp
+
+light.bedroom_overhead_lights:
+  friendly_name: Bedroom Overhead Lights
+  icon: mdi:ceiling-light
 
 light.living_room_1:
   friendly_name: Table Lamp

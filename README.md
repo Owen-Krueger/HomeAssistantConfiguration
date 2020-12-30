@@ -19,6 +19,7 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 | --- | :---: | :---: | --- |
 | Phillips Hue Hub | 1 | [Link](https://www.amazon.com/Philips-Hue-Stand-Alone-Bridge/dp/B016H0QZ7I/ref=sr_1_1?dchild=1&keywords=hue+hub&qid=1592357638&sr=8-1) | For interacting with Phillips Hue bulbs and switches |
 | Phillips Hue A19 White Bulbs | 5 | [Link](https://www.amazon.com/Philips-Hue-Bluetooth-compatible-Assistant/dp/B07QV9XLTK/ref=sxin_7?ascsubtag=amzn1.osa.a8a468f6-73d4-49f2-97f5-6710e012ad6e.ATVPDKIKX0DER.en_US&creativeASIN=B07R2MQ2PY&cv_ct_cx=hue%2Bbulb&cv_ct_id=amzn1.osa.a8a468f6-73d4-49f2-97f5-6710e012ad6e.ATVPDKIKX0DER.en_US&cv_ct_pg=search&cv_ct_wn=osp-single-source&dchild=1&keywords=hue%2Bbulb&linkCode=oas&pd_rd_i=B07R2MQ2PY&pd_rd_r=1f8e07d5-b067-4ca5-8b38-4592a52e7664&pd_rd_w=sPn1q&pd_rd_wg=IUkzj&pf_rd_p=cfb8425e-590e-436e-8f8b-e7ed672784e6&pf_rd_r=G1PPVJY4P6885M9ERC6B&qid=1592357723&sr=1-1-72d6bf18-a4db-4490-a794-9cd9552ac58d&tag=bgr0a0-20&th=1) | Lightbulbs that can be controlled via Home Assistant or voice. Temperature adjustable and dimmable. |
+| Lutron Caseta Wireless | 1 | [Link](https://www.amazon.com/Lutron-Wireless-Wallplate-Incandescent-PDW-6WCL-WH/dp/B07SJJBTYY) | Smart light switch controllable via Z-Wave.
 
 ### Switches
 | Device | Quantity | Link | Use |

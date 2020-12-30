@@ -1,9 +1,8 @@
 #################################################
-## Bedroom
+## Bedroom Lamps
 #################################################
 - platform: group
-  name: Bedroom
+  name: Bedroom Lamps
   entities:
     - light.bedroom_1
     - light.bedroom_2
-    - light.bedroom_overhead_lights
