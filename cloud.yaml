@@ -3,6 +3,7 @@ alexa:
     include_entities:
       - light.bedroom_1
       - light.bedroom_2
+      - light.bedroom_overhead_lights
       - light.living_room_1
       - light.living_room_2
       - light.hallway
@@ -16,6 +17,7 @@ alexa:
     exclude_entities:
       - light.hallway_lamp
       - light.bedroom
+      - light.bedroom_lamps
     exclude_domains:
       - automation
       - binary_sensor
