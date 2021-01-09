@@ -54,9 +54,9 @@ cards:
   - type: vertical-stack
     cards:
     - type: light
-      entity: light.bedroom_1
+      entity: light.bedroom_overhead_lights
     - type: light
-      entity: light.bedroom_2
+      entity: light.bedroom_lamps
     - type: light
       entity: light.living_room_lamps
     - type: light

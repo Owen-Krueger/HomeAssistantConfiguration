@@ -17,7 +17,6 @@ alexa:
     exclude_entities:
       - light.hallway_lamp
       - light.bedroom
-      - light.bedroom_lamps
     exclude_domains:
       - automation
       - binary_sensor
