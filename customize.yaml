@@ -9,19 +9,23 @@ media_player.living_room_echo:
   friendly_name: Living Room Echo
   icon: mdi:amazon-alexa
 
-media_player.owen_s_bedroom_echo_show:
-  friendly_name: Bedroom Echo Show
+media_player.bedroom_bedside_echo_show:
+  friendly_name: Bedside Echo Show
   icon: mdi:amazon-alexa
 
-media_player.owen_s_echo_dot:
-  friendly_name: Echo Dot
+media_player.bedroom_desk_echo_show:
+  friendly_name: Desk Echo Show
   icon: mdi:amazon-alexa
 
-media_player.owen_s_echo_show:
-  friendly_name: Echo Show
+media_player.hallway_echo_dot:
+  friendly_name: Hallway Echo Dot
   icon: mdi:amazon-alexa
 
-media_player.owen_s_echo_sub:
+media_player.kitchen_echo_show:
+  friendly_name: Kitchen Echo Show
+  icon: mdi:amazon-alexa
+
+media_player.living_room_echo_sub:
   friendly_name: Echo Sub
   icon: mdi:amazon-alexa
 
