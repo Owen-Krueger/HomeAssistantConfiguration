@@ -10,7 +10,7 @@ input_boolean: !include_dir_named input_boolean
 light: !include_dir_merge_list light
 lovelace: !include lovelace.yaml
 lutron_caseta: !include lutron.yaml
-neato: !include neato.yaml
+# neato: !include neato.yaml
 person: !include persons.yaml
 pi_hole: !include pihole.yaml
 samsungtv: !include samsung-tv.yaml
