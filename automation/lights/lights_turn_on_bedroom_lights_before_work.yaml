@@ -3,31 +3,31 @@
 #################################################
 
 alias: Turn on bedroom lights before work
-initial_state: 'on'
+initial_state: "on"
 trigger:
   - platform: time
-    at: '08:45:00'
-    
+    at: "08:30:00"
+
 condition:
-- condition: time
-  weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
-- condition: state
-  entity_id: person.owen
-  state: 'home'
-- condition: state
-  entity_id: input_boolean.mode_vacation
-  state: 'off'
-- condition: state
-  entity_id: input_boolean.mode_guest
-  state: 'off'
-- condition: state
-  entity_id: input_boolean.lights_automation_bedroom_on_before_work
-  state: 'on'
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  - condition: state
+    entity_id: person.owen
+    state: "home"
+  - condition: state
+    entity_id: input_boolean.mode_vacation
+    state: "off"
+  - condition: state
+    entity_id: input_boolean.mode_guest
+    state: "off"
+  - condition: state
+    entity_id: input_boolean.lights_automation_bedroom_on_before_work
+    state: "on"
 
 action:
   - service: light.turn_on
