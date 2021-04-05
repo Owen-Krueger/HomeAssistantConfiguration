@@ -5,12 +5,6 @@ icon: "mdi:robot"
 cards:
   - cards:
       - entities:
-          - entity: input_boolean.mode_vacation
-          - entity: input_boolean.mode_guest
-        show_header_toggle: false
-        title: Modes
-        type: entities
-      - entities:
           - entity: input_boolean.beto_automation_disable
           - entity: input_boolean.beto_automation_run_on_weekdays
           - entity: input_boolean.lights_automation_living_room_off_after_sunrise
@@ -23,10 +17,24 @@ cards:
         show_header_toggle: false
         title: Automation Overrides
         type: entities
+    type: vertical-stack
+  - cards:
+      - entities:
+          - entity: input_boolean.mode_vacation
+          - entity: input_boolean.mode_guest
+        show_header_toggle: false
+        title: Modes
+        type: entities
       - entities:
           - entity: script.lights_night_lighting
           - entity: script.beto_run_on_command
         show_header_toggle: false
         title: Scripts
+        type: entities
+      - entities:
+          - entity: input_datetime.alarm_time
+          - entity: input_boolean.lights_automation_bedroom_lamps_with_alarm
+        show_header_toggle: false
+        title: Morning Alarm
         type: entities
     type: vertical-stack
