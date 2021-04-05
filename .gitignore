@@ -14,3 +14,5 @@ zones.yaml
 lutron
 .owncloudsync.log
 blueprints
+.sync*
+Desktop.ini
