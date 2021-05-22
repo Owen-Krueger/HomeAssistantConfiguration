@@ -1,0 +1,166 @@
+##########################################################
+## Bedroom
+##########################################################
+
+# Turn on bedroom lamps with alarm
+- alias: Turn on bedroom lamps with alarm
+  id: 'lights_bedroom_lamps_on_with_alarm'
+
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: input_datetime.morning_alarm
+
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      # To make sure we aren't using the default time
+      after: "01:00:00"
+    - condition: state
+      entity_id: person.owen
+      state: "home"
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.mode_guest
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.lights_bedroom_lamps_on_with_alarm
+      state: "on"
+
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_lamps
+        brightness: 40
+
+
+# Turn off bedroom lamps after alarm
+- alias: Turn off bedroom lamps after alarm
+  id: 'lights_bedroom_lamps_off_after_alarm'
+
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: input_datetime.bedroom_lamp_off
+
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      # To make sure we aren't using the default time
+      after: "01:00:00"
+    - condition: state
+      entity_id: person.owen
+      state: "home"
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.mode_guest
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.lights_bedroom_lamps_off_after_alarm
+      state: "on"
+
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_lamps
+
+# Turn on bedroom lights before work
+- alias: Turn on bedroom lights before work
+  id: 'lights_overhead_bedroom_on_before_work'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: '08:30:00'
+
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: person.owen
+      state: 'home'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.mode_guest
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.lights_bedroom_lights_on_before_work
+      state: 'on'
+
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_overhead_lights
+        brightness: 255
+
+##########################################################
+## Living Room
+##########################################################
+
+# Turn off living room lights after sunrise
+- alias: Turn off living room lights after sunrise
+  id: 'lights_living_room_lights_off_after_sunrise'
+
+  initial_state: 'on'
+  trigger:
+    - platform: sun
+      event: 'sunrise'
+      offset: '+00:45:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_living_room_lights_off_after_sunrise
+      state: 'on'
+
+  action:
+    - service: light.turn_off
+      entity_id:
+        - light.living_room_lamps
+
+# Turn on living room lights in the evening
+- alias: Turn on living room lights in evening
+  id: 'lights_living_room_lights_on_in_evening'
+
+  initial_state: 'on'
+  trigger:
+    - platform: sun
+      event: 'sunset'
+      offset: '-01:00:00'
+
+  condition:
+  - condition: state
+    entity_id: person.owen
+    state: 'home'
+  - condition: state
+    entity_id: input_boolean.mode_vacation
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.lights_living_room_lights_on_in_evening
+    state: 'on'
+
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_lamps
+        brightness: 255

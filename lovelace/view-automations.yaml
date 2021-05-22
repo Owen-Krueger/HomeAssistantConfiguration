@@ -5,31 +5,35 @@ icon: "mdi:robot"
 cards:
   - cards:
       - entities:
-          - entity: input_boolean.lights_automation_living_room_off_after_sunrise
-          - entity: input_boolean.lights_automation_bedroom_on_before_work
-          - entity: input_boolean.lights_automation_bedroom_lamps_with_alarm
-          - entity: input_boolean.lights_automation_bedroom_lamps_off_after_alarm
-          - entity: input_datetime.alarm_time
-          - entity: input_datetime.lamp_off_time
+          - entity: input_boolean.lights_living_room_lights_off_after_sunrise
+          - entity: input_boolean.lights_bedroom_lights_on_before_work
+          - entity: input_boolean.lights_bedroom_lamps_on_with_alarm
+          - entity: input_boolean.lights_bedroom_lamps_off_after_alarm
+          - entity: input_datetime.morning_alarm
+          - entity: input_datetime.bedroom_lamp_off
+        show_header_toggle: false
         title: Morning
         type: entities
       - entities:
-          - entity: input_boolean.lights_automation_living_room_on_in_evening
-          - entity: input_boolean.lights_automation_living_room_on_in_evening_during_vacation
-          - entity: input_boolean.lights_automation_living_room_off_at_night_during_vacation
+          - entity: input_boolean.lights_living_room_lights_on_in_evening
+          - entity: input_boolean.vacation_living_room_lights_on_in_evening
+          - entity: input_boolean.vacation_living_room_lights_off_at_night
         show_header_toggle: false
         title: Evening
+        type: entities
+      - entities:
+          - entity: input_number.climate_day_temp
+          - entity: input_number.climate_night_temp
+          - entity: input_number.climate_vacation_temp
+          - entity: input_datetime.climate_day_start
+          - entity: input_datetime.climate_night_start
+        show_header_toggle: false
+        title: Temperature
         type: entities
     type: vertical-stack
   - cards:
       - entities:
-          - entity: input_boolean.beto_automation_disable
-          - entity: input_boolean.beto_automation_run_on_weekdays
-        show_header_toggle: false
-        title: Vacuum
-        type: entities
-      - entities:
-          - entity: input_boolean.switches_automation_christmas_tree
+          - entity: input_boolean.christmas_tree_automation
         show_header_toggle: false
         title: Seasonal
         type: entities

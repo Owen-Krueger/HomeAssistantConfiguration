@@ -1,0 +1,71 @@
+##########################################################
+## Climate
+##########################################################
+
+climate_set_day_temp:
+  name: Set Temperature During Day
+  icon: mdi:thermostat
+
+climate_set_night_temp:
+  name: Set Temperature During Night
+  icon: mdi:thermostat
+
+climate_set_vacation_temp:
+  name: Set Temperature During Vacation
+  icon: mdi:thermostat
+
+##########################################################
+## Lights
+##########################################################
+
+lights_bedroom_lamps_on_with_alarm:
+  name: Turn on bedroom lamps with alarm
+  icon: mdi:alarm
+
+lights_bedroom_lamps_off_after_alarm:
+  name: Turn off bedroom lamps after alarm
+  icon: mdi:alarm
+
+lights_bedroom_lights_on_before_work:
+  name: Turn on bedroom lights before work
+  icon: mdi:floor-lamp
+
+lights_living_room_lights_on_in_evening:
+  name: Turn on living room lights in evening
+  icon: mdi:weather-sunset-down
+
+lights_living_room_lights_off_after_sunrise:
+  name: Turn off living room lights after sunrise
+  icon: mdi:weather-sunset-up
+
+##########################################################
+## Mode
+##########################################################
+
+mode_guest:
+  name: Guest Mode
+  icon: mdi:account-tie
+
+mode_vacation:
+  name: Vacation Mode
+  icon: mdi:airplane
+
+##########################################################
+## Vacation
+##########################################################
+
+vacation_living_room_lights_on_in_evening:
+  name: Turn on living room lights in evening during vacation
+  icon: mdi:airplane
+
+vacation_living_room_lights_off_at_night:
+  name: Turn off living room lights at night during vacation
+  icon: mdi:airplane
+
+##########################################################
+## Christmas Tree
+##########################################################
+
+christmas_tree_automation:
+  name: Christmas Tree Automation
+  icon: mdi:pine-tree

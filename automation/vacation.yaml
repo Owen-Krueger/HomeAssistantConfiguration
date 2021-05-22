@@ -1,0 +1,49 @@
+##########################################################
+## Lights
+##########################################################
+
+# Turn on living room lights in evening during vacation
+- alias: Turn on living room lights in evening during vacation
+  id: 'vacation_living_room_lights_on_in_evening'
+
+  initial_state: 'on'
+  trigger:
+    - platform: sun
+      event: 'sunset'
+      offset: '+00:30:00'
+
+  condition:
+  - condition: state
+    entity_id: input_boolean.mode_vacation
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.vacation_living_room_lights_on_in_evening
+    state: 'on'
+
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_lamps
+        brightness: 255
+
+# Turn off living room lights at night during vacation
+- alias: Turn off living room lights at night during vacation
+  id: 'vacation_living_room_lights_off_at_night'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: '21:30:00'
+      
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.vacation_living_room_lights_off_at_night
+    state: 'on'
+
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.living_room_lamps

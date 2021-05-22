@@ -119,3 +119,15 @@ switch.christmas_tree:
 switch.strip_light:
   friendly_name: Light Strip
   icon: mdi:led-strip-variant
+
+#################################################
+## Inputs
+#################################################
+input_number.temp_day:
+  icon: mdi:thermostat
+
+input_number.temp_night:
+  icon: mdi:thermostat
+
+input_number.temp_vacation:
+  icon: mdi:thermostat

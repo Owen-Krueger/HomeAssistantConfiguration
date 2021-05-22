@@ -1,0 +1,25 @@
+##########################################################
+## Climate
+##########################################################
+
+# Set Temperature to Day Temp
+- alias: Set Temperature to Day Temperature
+  id: 'climate_set_to_day_temp'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: input_datetime.climate_day_start
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.climate_set_day_temp
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'off'
+
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.christmas_tree
