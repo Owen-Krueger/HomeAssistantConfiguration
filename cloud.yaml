@@ -8,11 +8,12 @@ alexa:
       - light.living_room_1
       - light.living_room_2
       - light.hallway
-      - switch.christmas_tree
       - script.lights_dim_bedroom_lamps
       - script.lights_night_lighting
       - script.lights_turn_off_all
       - script.lights_turn_on_living_room
+      - switch.christmas_tree
+      - switch.strip_light
     include_domains:
       - input_boolean
     exclude_entities:

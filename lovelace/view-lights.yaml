@@ -17,6 +17,7 @@ cards:
         - entity: light.bedroom_overhead_lights
         - entity: light.hallway
         - entity: switch.christmas_tree
+        - entity: switch.strip_light
       show_empty: true
       state_filter:
         - 'on'
@@ -35,6 +36,7 @@ cards:
       - entity: light.hallway
         secondary_info: brightness
       - entity: switch.christmas_tree
+      - entity: switch.strip_light
       - type: section
         label: Bedroom Lamps
       - entity: light.bedroom_1

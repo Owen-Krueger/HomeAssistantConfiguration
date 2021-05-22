@@ -36,6 +36,10 @@ media_player.sound_system:
 #################################################
 ## Google Devices
 #################################################
+climate.hallway:
+  friendly_name: Nest Thermostat
+  icon: mdi:thermostat
+
 media_player.google_home_hallway:
   friendly_name: Hallway Google Home Mini
   icon: mdi:google-home
@@ -104,3 +108,14 @@ light.hallway:
 light.living_room_lamps:
   friendly_name: Living Room Lamps
   icon: mdi:floor-lamp
+
+#################################################
+## Switches
+#################################################
+switch.christmas_tree:
+  friendly_name: Christmas Tree
+  icon: mdi:pine-tree
+
+switch.strip_light:
+  friendly_name: Light Strip
+  icon: mdi:led-strip-variant
