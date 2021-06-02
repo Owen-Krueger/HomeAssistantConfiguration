@@ -164,3 +164,5 @@
       data:
         entity_id: light.living_room_lamps
         brightness: 255
+    - service: switch.turn_on
+      entity_id: switch.outside_railing_lights

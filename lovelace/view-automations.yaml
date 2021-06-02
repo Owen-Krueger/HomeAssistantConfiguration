@@ -21,15 +21,6 @@ cards:
         show_header_toggle: false
         title: Evening
         type: entities
-      - entities:
-          - entity: input_number.climate_day_temp
-          - entity: input_number.climate_night_temp
-          - entity: input_number.climate_vacation_temp
-          - entity: input_datetime.climate_day_start
-          - entity: input_datetime.climate_night_start
-        show_header_toggle: false
-        title: Temperature
-        type: entities
     type: vertical-stack
   - cards:
       - entities:

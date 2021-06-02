@@ -2,3 +2,5 @@ discovery: false
 switch:
   - host: !secret christmas_tree_plug_ip
   - host: !secret light_strip_plug_ip
+strip:
+  - host: !secret outside_railing_lights_ip

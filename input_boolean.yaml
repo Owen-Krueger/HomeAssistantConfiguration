@@ -2,16 +2,8 @@
 ## Climate
 ##########################################################
 
-climate_set_day_temp:
-  name: Set Temperature During Day
-  icon: mdi:thermostat
-
-climate_set_night_temp:
-  name: Set Temperature During Night
-  icon: mdi:thermostat
-
-climate_set_vacation_temp:
-  name: Set Temperature During Vacation
+climate_automations:
+  name: Climate Automations
   icon: mdi:thermostat
 
 ##########################################################

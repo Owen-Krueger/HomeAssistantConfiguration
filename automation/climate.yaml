@@ -13,13 +13,39 @@
 
   condition:
     - condition: state
-      entity_id: input_boolean.climate_set_day_temp
+      entity_id: input_boolean.climate_automations
       state: 'on'
     - condition: state
       entity_id: input_boolean.mode_vacation
       state: 'off'
 
   action:
-    - service: switch.turn_off
-      entity_id:
-        - switch.christmas_tree
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.hallway
+      data:
+        temperature: "{{ states('input_number.climate_day_temp') | int }}"
+
+# Set Temperature to Night Temp
+- alias: Set Temperature to Night Temperature
+  id: 'climate_set_to_night_temp'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: input_datetime.climate_night_start
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.climate_automations
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'off'
+
+  action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.hallway
+      data:
+        temperature: "{{ states('input_number.climate_night_temp') | int }}"

@@ -34,11 +34,26 @@ media_player.sound_system:
   icon: mdi:amazon-alexa
 
 #################################################
+## Climate
+#################################################
+input_boolean.climate_automations:
+  icon: mdi:thermometer
+
+input_number.climate_day_temp:
+  icon: mdi:thermometer
+
+input_number.climate_night_temp:
+  icon: mdi:thermometer
+
+input_number.climate_vacation_temp:
+  icon: mdi:thermometer
+
+#################################################
 ## Google Devices
 #################################################
 climate.hallway:
   friendly_name: Nest Thermostat
-  icon: mdi:thermostat
+  icon: mdi:thermometer
 
 media_player.google_home_hallway:
   friendly_name: Hallway Google Home Mini
@@ -118,6 +133,10 @@ switch.christmas_tree:
 
 switch.strip_light:
   friendly_name: Light Strip
+  icon: mdi:led-strip-variant
+
+switch.outside_railing_lights:
+  friendly_name: Outside Railing Lights
   icon: mdi:led-strip-variant
 
 #################################################

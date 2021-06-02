@@ -4,21 +4,18 @@
 
 climate_day_temp:
   name: Day Temperature
-  initial: 70
   min: 60
   max: 80
   step: 1
 
 climate_night_temp:
   name: Night Temperature
-  initial: 70
   min: 60
   max: 80
   step: 1
 
 climate_vacation_temp:
   name: Vacation Temperature
-  initial: 70
   min: 60
   max: 80
   step: 1

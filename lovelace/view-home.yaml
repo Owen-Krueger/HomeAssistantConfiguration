@@ -12,6 +12,7 @@ cards:
         - entity: light.hallway
         - entity: switch.christmas_tree
         - entity: switch.strip_light
+        - entity: switch.outside_railing_lights
         - entity: script.lights_night_lighting
       show_header_toggle: false
       title: Lights
@@ -29,7 +30,7 @@ cards:
         entity: climate.hallway
         style:
           left: 48%
-          top: 64%
+          top: 63%
       - type: state-icon
         entity: light.living_room_1
         tap_action:
@@ -115,6 +116,13 @@ cards:
         style:
           left: 60%
           top: 24%
+      - type: state-icon
+        entity: switch.outside_railing_lights
+        tap_action:
+          action: toggle
+        style:
+          left: 80%
+          top: 2%
       - type: state-icon
         entity: switch.strip_light
         tap_action:

@@ -1,0 +1,25 @@
+title: Climate
+id: climate
+path: climate
+icon: "mdi:thermometer"
+cards:
+  - type: vertical-stack
+    cards:
+      - type: thermostat
+        entity: climate.hallway
+  - type: vertical-stack
+    cards:
+      - type: entities
+        entities:
+          - input_boolean.climate_automations
+          - input_datetime.climate_day_start
+          - input_datetime.climate_night_start
+        title: Automation
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - input_number.climate_day_temp
+          - input_number.climate_night_temp
+          - input_number.climate_vacation_temp
+        title: Temperatures
+        show_header_toggle: false
