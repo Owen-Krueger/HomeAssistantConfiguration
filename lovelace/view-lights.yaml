@@ -14,7 +14,7 @@ cards:
         - entity: light.living_room_2
         - entity: light.bedroom_1
         - entity: light.bedroom_2
-        - entity: light.bedroom_overhead_lights
+        - entity: light.master_bedroom_bedroom_lights
         - entity: light.hallway
         - entity: switch.christmas_tree
         - entity: switch.strip_light
@@ -29,7 +29,7 @@ cards:
         secondary_info: brightness
       - entity: light.living_room_lamps
         secondary_info: brightness
-      - entity: light.bedroom_overhead_lights
+      - entity: light.master_bedroom_bedroom_lights
         secondary_info: brightness
       - entity: light.bedroom_lamps
         secondary_info: brightness

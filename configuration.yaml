@@ -4,7 +4,6 @@ default_config:
 automation: !include_dir_merge_list automation
 cloud: !include cloud.yaml
 group: !include_dir_named group
-hacs: !include hacs.yaml
 hue: !include hue.yaml
 input_boolean: !include input_boolean.yaml
 input_datetime: !include input_datetime.yaml

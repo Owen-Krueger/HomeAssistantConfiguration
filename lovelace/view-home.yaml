@@ -7,7 +7,7 @@ cards:
     - entities:
         - entity: group.interior_lights
         - entity: light.living_room_lamps
-        - entity: light.bedroom_overhead_lights
+        - entity: light.master_bedroom_bedroom_lights
         - entity: light.bedroom_lamps
         - entity: light.hallway
         - entity: switch.christmas_tree

@@ -6,4 +6,4 @@
   entities:
     - light.bedroom_1
     - light.bedroom_2
-    - light.bedroom_overhead_lights
+    - light.master_bedroom_bedroom_lights

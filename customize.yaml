@@ -104,7 +104,7 @@ light.bedroom_2:
   friendly_name: Owen Lamp
   icon: mdi:lamp
 
-light.bedroom_overhead_lights:
+light.master_bedroom_bedroom_lights:
   friendly_name: Bedroom Overhead Lights
   icon: mdi:ceiling-light
 

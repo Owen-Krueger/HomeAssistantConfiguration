@@ -1,8 +1,0 @@
-country: US
-experimental: false
-appdaemon: false
-netdaemon: false
-release_limit: 5
-sidepanel_icon: mdi:store
-sidepanel_title: HACS
-token: !secret hacs_token
