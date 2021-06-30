@@ -4,7 +4,7 @@ alexa:
       - light.bedroom_1
       - light.bedroom_2
       - light.bedroom_lamps
-      - light.bedroom_overhead_lights
+      - light.master_bedroom_bedroom_lights
       - light.living_room_1
       - light.living_room_2
       - light.hallway

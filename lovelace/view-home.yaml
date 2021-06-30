@@ -60,7 +60,7 @@ cards:
           left: 7%
           top: 35%
       - type: state-icon
-        entity: light.bedroom_overhead_lights
+        entity: light.master_bedroom_bedroom_lights
         tap_action:
           action: toggle
         style:

@@ -15,7 +15,7 @@ sequence:
       - switch.christmas_tree
   - service: light.turn_off
     entity_id:
-      - light.bedroom_overhead_lights
+      - light.master_bedroom_bedroom_lights
   - service: switch.turn_off
     entity_id: switch.outside_railing_lights
   - service: light.turn_on
