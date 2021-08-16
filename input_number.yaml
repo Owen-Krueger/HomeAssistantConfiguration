@@ -14,8 +14,8 @@ climate_night_temp:
   max: 80
   step: 1
 
-climate_vacation_temp:
-  name: Vacation Temperature
+climate_away_temp:
+  name: Away Temperature
   min: 60
   max: 80
   step: 1

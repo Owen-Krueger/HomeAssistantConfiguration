@@ -3,7 +3,7 @@
 ##########################################################
 
 # Set Temperature to Day Temp
-- alias: Set Temperature to Day Temperature
+- alias: Climate - Set Temperature to Day Temperature
   id: 'climate_set_to_day_temp'
 
   initial_state: 'on'
@@ -27,7 +27,7 @@
         temperature: "{{ states('input_number.climate_day_temp') | int }}"
 
 # Set Temperature to Night Temp
-- alias: Set Temperature to Night Temperature
+- alias: Climate - Set Temperature to Night Temperature
   id: 'climate_set_to_night_temp'
 
   initial_state: 'on'
@@ -49,3 +49,64 @@
         entity_id: climate.hallway
       data:
         temperature: "{{ states('input_number.climate_night_temp') | int }}"
+
+# Away From Home Notification
+- alias: Climate - Away from Home Notification
+  id: climate_away_from_home_notification
+
+  trigger:
+    - platform: numeric_state
+      entity_id: proximity.home
+      above: 50
+
+  condition:
+    - condition: state
+      entity_id: proximity.home
+      attribute: dir_of_travel
+      state: away_from
+
+  action:
+    - service: notify.mobile_app_pixel_5
+      data:
+        message: You appear to be away from home.
+        data:
+          tag: climate
+          group: climate
+          entity_id: climate.hallway
+          actions:
+            - action: "climate_away"
+              title: "Set Away Temperature"
+              uri: "/lovelace-admin/climate"
+
+# Coming Back Home
+- alias: Climate - Coming Back Home
+  id: climate_coming_back_home
+
+  trigger:
+    - platform: numeric_state
+      entity_id: proximity.home
+      below: 50
+
+  condition:
+    - condition: state
+      entity_id: proximity.home
+      attribute: dir_of_travel
+      state: "towards"
+
+  action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.hallway
+      data:
+        temperature: "{{ states('input_number.climate_day_temp') | int }}"
+    - service: notify.mobile_app_pixel_5
+      data:
+        message: Climate automation turned back on.
+        data:
+          tag: climate
+          group: climate
+          entity_id: climate.hallway
+          actions:
+            - action: "climate_away"
+              title: "Please don't."
+              uri: "/lovelace-admin/climate"

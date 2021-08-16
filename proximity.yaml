@@ -1,0 +1,5 @@
+home:
+  devices: 
+    - device_tracker.pixel_5
+  tolerance: 50
+  unit_of_measurement: mi

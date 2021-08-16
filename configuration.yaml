@@ -15,6 +15,7 @@ lutron_caseta: !include lutron.yaml
 nest: !include nest.yaml
 person: !include persons.yaml
 pi_hole: !include pihole.yaml
+proximity: !include proximity.yaml
 samsungtv: !include samsung-tv.yaml
 scene: !include scenes.yaml
 script: !include_dir_named script

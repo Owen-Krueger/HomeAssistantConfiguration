@@ -20,6 +20,6 @@ cards:
         entities:
           - input_number.climate_day_temp
           - input_number.climate_night_temp
-          - input_number.climate_vacation_temp
+          - input_number.climate_away_temp
         title: Temperatures
         show_header_toggle: false

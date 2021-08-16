@@ -3,7 +3,7 @@
 ##########################################################
 
 # Turn on living room lights in evening during vacation
-- alias: Turn on living room lights in evening during vacation
+- alias: Vacation - Turn on living room lights in evening during vacation
   id: 'vacation_living_room_lights_on_in_evening'
 
   initial_state: 'on'
@@ -27,7 +27,7 @@
         brightness: 255
 
 # Turn off living room lights at night during vacation
-- alias: Turn off living room lights at night during vacation
+- alias: Vacation - Turn off living room lights at night during vacation
   id: 'vacation_living_room_lights_off_at_night'
 
   initial_state: 'on'
