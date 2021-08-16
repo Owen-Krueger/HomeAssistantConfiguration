@@ -3,7 +3,7 @@
 ##########################################################
 
 # Turn on bedroom lamps with alarm
-- alias: Turn on bedroom lamps with alarm
+- alias: Lights - Turn on bedroom lamps with alarm
   id: 'lights_bedroom_lamps_on_with_alarm'
 
   initial_state: "on"
@@ -42,7 +42,7 @@
 
 
 # Turn off bedroom lamps after alarm
-- alias: Turn off bedroom lamps after alarm
+- alias: Lights - Turn off bedroom lamps after alarm
   id: 'lights_bedroom_lamps_off_after_alarm'
 
   initial_state: "on"
@@ -79,7 +79,7 @@
         entity_id: light.bedroom_lamps
 
 # Turn on bedroom lights before work
-- alias: Turn on bedroom lights before work
+- alias: Lights - Turn on bedroom lights before work
   id: 'lights_overhead_bedroom_on_before_work'
 
   initial_state: 'on'
@@ -119,7 +119,7 @@
 ##########################################################
 
 # Turn off living room lights after sunrise
-- alias: Turn off living room lights after sunrise
+- alias: Lights - Turn off living room lights after sunrise
   id: 'lights_living_room_lights_off_after_sunrise'
 
   initial_state: 'on'
@@ -139,7 +139,7 @@
         - light.living_room_lamps
 
 # Turn on living room lights in the evening
-- alias: Turn on living room lights in evening
+- alias: Lights - Turn on living room lights in evening
   id: 'lights_living_room_lights_on_in_evening'
 
   initial_state: 'on'

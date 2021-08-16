@@ -3,7 +3,7 @@
 ##########################################################
 
 # Turn on Christmas tree in the morning
-- alias: Turn on Christmas tree in the morning
+- alias: Christmas - Turn on Christmas tree in the morning
   id: 'christmas_tree_on_in_morning'
 
   initial_state: 'on'
@@ -25,7 +25,7 @@
         - switch.christmas_tree
 
 # Turn on Christmas tree in the evening
-- alias: Turn on Christmas tree in the evening
+- alias: Christmas - Turn on Christmas tree in the evening
   id: 'christmas_tree_on_in_evening'
 
   initial_state: 'on'
@@ -47,7 +47,7 @@
         - switch.christmas_tree
 
 # Turn off Christmas tree during the day
-- alias: Turn off Christmas tree during the day
+- alias: Christmas - Turn off Christmas tree during the day
   id: 'christmas_tree_off_during_day'
 
   initial_state: 'on'
@@ -76,7 +76,7 @@
         - switch.christmas_tree
 
 # Turn off Christmas tree at night
-- alias: Turn off Christmas tree at night
+- alias: Christmas - Turn off Christmas tree at night
   id: 'christmas_tree_off_at_night'
 
   initial_state: 'on'
