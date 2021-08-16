@@ -64,6 +64,9 @@
       entity_id: proximity.home
       attribute: dir_of_travel
       state: away_from
+    - condition: state
+      entity_id: input_boolean.climate_automations
+      state: 'on'
 
   action:
     - service: notify.mobile_app_pixel_5
@@ -92,6 +95,9 @@
       entity_id: proximity.home
       attribute: dir_of_travel
       state: "towards"
+    - condition: state
+      entity_id: input_boolean.climate_automations
+      state: 'off'
 
   action:
     - service: climate.set_temperature
