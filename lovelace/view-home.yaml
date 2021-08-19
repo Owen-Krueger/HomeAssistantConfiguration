@@ -10,7 +10,7 @@ cards:
         - entity: light.master_bedroom_bedroom_lights
         - entity: light.bedroom_lamps
         - entity: light.hallway
-        - entity: switch.christmas_tree
+        # - entity: switch.christmas_tree
         - entity: switch.strip_light
         - entity: switch.outside_railing_lights
         - entity: script.lights_night_lighting

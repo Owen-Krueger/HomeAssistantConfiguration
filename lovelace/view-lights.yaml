@@ -16,7 +16,7 @@ cards:
         - entity: light.bedroom_2
         - entity: light.master_bedroom_bedroom_lights
         - entity: light.hallway
-        - entity: switch.christmas_tree
+        # - entity: switch.christmas_tree
         - entity: switch.strip_light
       show_empty: true
       state_filter:

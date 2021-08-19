@@ -5,7 +5,7 @@ icon: mdi:server
 cards:
   - cards:
       - entities:
-          - entity: sensor.processor_use
+          - entity: sensor.processor_use_percent
           - entity: sensor.memory_use_percent
           - entity: sensor.disk_use_percent_home
         show_header_toggle: false
@@ -26,8 +26,13 @@ cards:
         name: Percentage blocked today
       - entity: sensor.primary_pi_hole_dns_unique_clients
         name: Unique clients
+      - type: weblink
+        name: Admin Portal
+        url: !secret primary_pihole_url
+        icon: mdi:pi-hole
       show_header_toggle: false
       title: Primary Pi-Hole
+      icon: mdi:pi-hole
       type: entities
     type: vertical-stack
   - cards:
@@ -44,22 +49,12 @@ cards:
         name: Percentage blocked today
       - entity: sensor.secondary_pi_hole_dns_unique_clients
         name: Unique clients
+      - type: weblink
+        name: Admin Portal
+        url: !secret secondary_pihole_url
+        icon: mdi:pi-hole
       show_header_toggle: false
       title: Secondary Pi-Hole
+      icon: mdi:pi-hole
       type: entities
-    type: vertical-stack
-  - cards:
-      - entities:
-          - entity: switch.homeassistant
-            icon: mdi:home-assistant
-            name: Home Assistant
-          - entity: switch.tvswitch
-            icon: mdi:television-clean
-            name: TV Switch
-          - entity: switch.raspberrypi
-            icon: mdi:raspberry-pi
-            name: Primary Pi-Hole
-        show_header_toggle: false
-        title: POE Devices
-        type: entities
     type: vertical-stack
