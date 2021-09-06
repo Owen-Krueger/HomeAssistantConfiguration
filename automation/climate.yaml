@@ -94,7 +94,7 @@
     - condition: state
       entity_id: proximity.home
       attribute: dir_of_travel
-      state: "towards"
+      state: towards
     - condition: state
       entity_id: input_boolean.climate_automations
       state: 'off'
@@ -105,6 +105,9 @@
         entity_id: climate.hallway
       data:
         temperature: "{{ states('input_number.climate_day_temp') | int }}"
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.climate_automations
     - service: notify.mobile_app_pixel_5
       data:
         message: Climate automation turned back on.
