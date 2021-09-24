@@ -1,0 +1,31 @@
+#################################################
+## Amazon Echos
+#################################################
+
+# Restart Living Room Echo
+- alias: Echos - Restart Living Room Echo
+  id: 'echos_restart_living_room_echo'
+
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: media_player.sound_system
+      to: 'unavailable'
+
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.living_room_echo
+    - wait_template: "{{ is_state('switch.living_room_echo', 'off') }}"
+      timeout: 10
+      continue_on_timeout: true
+    - service: switch.turn_on
+      entity_id:
+        - switch.living_room_echo
+    - service: notify.mobile_app_pixel_5
+      data:
+        message: Living Room Echo Restarted
+        data:
+          tag: echo
+          group: echo
+          entity_id: media_player.living_room_echo

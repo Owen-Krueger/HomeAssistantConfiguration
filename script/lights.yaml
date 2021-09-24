@@ -1,0 +1,73 @@
+#################################################
+## All
+#################################################
+
+# Turn off all lights
+- turn_off_all_interior_lights:
+    alias: Lights - Turn off all interior lights
+    icon: mdi:lightbulb-off
+
+    sequence:
+      - service: light.turn_off
+        entity_id:
+          - group.interior_lights
+      - service: switch.turn_off
+        entity_id:
+          - switch.christmas_tree
+      - service: switch.turn_off
+        entity_id: switch.outside_railing_lights
+
+#################################################
+## Bedroom
+#################################################
+
+# Dim bedroom lamps
+- dim_bedroom_lamps:
+    alias: Lights - Dim Bedroom Lamps
+    icon: mdi:lamp
+
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          brightness: 40
+
+# Dim bedroom lamps and turn off all other lights
+- night_lighting:
+    alias: Lights - Night Lighting
+    icon: mdi:weather-night
+
+    sequence:
+      - service: light.turn_off
+        entity_id:
+          - group.interior_lights
+      - service: switch.turn_off
+        entity_id:
+          - switch.christmas_tree
+      - service: light.turn_off
+        entity_id:
+          - light.master_bedroom_bedroom_lights
+      - service: switch.turn_off
+        entity_id: switch.outside_railing_lights
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom_lamps
+          brightness: 40
+
+#################################################
+## Living Room
+#################################################
+
+# Turn on all living room lighting
+- turn_on_all_living_room:
+    alias: Lights - Turn on all living room
+    icon: mdi:floor-lamp
+
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room_lamps
+          brightness: 255
+      - service: switch.turn_on
+        data:
+          entity_id: switch.christmas_tree

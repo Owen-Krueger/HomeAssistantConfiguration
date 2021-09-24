@@ -3,9 +3,38 @@ id: media
 path: media
 icon: 'mdi:play'
 cards:
-- cards:
-  - entity: media_player.living_room_tv
-    type: media-control
-  - entity: media_player.spotify_owen
-    type: media-control
-  type: vertical-stack
+  - type: vertical-stack
+    cards:
+      - type: custom:mini-media-player
+        entity: media_player.spotify_owen
+        group: true
+        source: icon
+        info: short
+        hide:
+          volume: true
+          power: true
+      - type: custom:mini-media-player
+        entity: media_player.sound_system
+        group: true
+        hide:
+          controls: true
+      - type: custom:mini-media-player
+        entity: media_player.kitchen_echo_show
+        group: true
+        hide:
+          controls: true
+      - type: custom:mini-media-player
+        entity: media_player.hallway_echo_dot
+        group: true
+        hide:
+          controls: true
+      - type: custom:mini-media-player
+        entity: media_player.bedroom_desk_echo_show
+        group: true
+        hide:
+          controls: true
+      - type: custom:mini-media-player
+        entity: media_player.bedroom_bedside_echo_show
+        group: true
+        hide:
+          controls: true

@@ -28,9 +28,6 @@
       entity_id: input_boolean.mode_vacation
       state: "off"
     - condition: state
-      entity_id: input_boolean.mode_guest
-      state: "off"
-    - condition: state
       entity_id: input_boolean.lights_bedroom_lamps_on_with_alarm
       state: "on"
 
@@ -67,9 +64,6 @@
       entity_id: input_boolean.mode_vacation
       state: "off"
     - condition: state
-      entity_id: input_boolean.mode_guest
-      state: "off"
-    - condition: state
       entity_id: input_boolean.lights_bedroom_lamps_off_after_alarm
       state: "on"
 
@@ -100,9 +94,6 @@
       state: 'home'
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.mode_guest
       state: 'off'
     - condition: state
       entity_id: input_boolean.lights_bedroom_lights_on_before_work

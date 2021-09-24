@@ -30,12 +30,11 @@ cards:
         type: entities
       - entities:
           - entity: input_boolean.mode_vacation
-          - entity: input_boolean.mode_guest
         show_header_toggle: false
         title: Modes
         type: entities
       - entities:
-          - entity: script.lights_night_lighting
+          - entity: script.night_lighting
           - entity: script.beto_run_on_command
         show_header_toggle: false
         title: Scripts

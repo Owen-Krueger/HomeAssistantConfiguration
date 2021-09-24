@@ -22,7 +22,7 @@
   action:
     - service: climate.set_temperature
       target:
-        entity_id: climate.hallway
+        entity_id: climate.kitchen_thermostat
       data:
         temperature: "{{ states('input_number.climate_day_temp') | int }}"
 
@@ -46,7 +46,7 @@
   action:
     - service: climate.set_temperature
       target:
-        entity_id: climate.hallway
+        entity_id: climate.kitchen_thermostat
       data:
         temperature: "{{ states('input_number.climate_night_temp') | int }}"
 
@@ -102,7 +102,7 @@
   action:
     - service: climate.set_temperature
       target:
-        entity_id: climate.hallway
+        entity_id: climate.kitchen_thermostat
       data:
         temperature: "{{ states('input_number.climate_day_temp') | int }}"
     - service: input_boolean.turn_on
@@ -114,7 +114,7 @@
         data:
           tag: climate
           group: climate
-          entity_id: climate.hallway
+          entity_id: climate.kitchen_thermostat
           actions:
             - action: "climate_away"
               title: "Please don't."

@@ -30,6 +30,7 @@ cards:
         name: Admin Portal
         url: !secret primary_pihole_url
         icon: mdi:pi-hole
+      - entity: script.pihole_disable_both_for_30_seconds
       show_header_toggle: false
       title: Primary Pi-Hole
       icon: mdi:pi-hole
@@ -53,6 +54,7 @@ cards:
         name: Admin Portal
         url: !secret secondary_pihole_url
         icon: mdi:pi-hole
+      - entity: script.pihole_disable_both_for_30_seconds
       show_header_toggle: false
       title: Secondary Pi-Hole
       icon: mdi:pi-hole

@@ -1,0 +1,13 @@
+#################################################
+## Beto
+#################################################
+
+# Run Beto on command
+- beto_run_on_command:
+    alias: Beto - Run Beto on command
+    icon: mdi:robot-vacuum-variant
+
+    sequence:
+      - service: vacuum.start
+        entity_id:
+          - vacuum.beto

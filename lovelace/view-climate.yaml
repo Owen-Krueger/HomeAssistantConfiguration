@@ -6,7 +6,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: thermostat
-        entity: climate.hallway
+        entity: climate.kitchen_thermostat
   - type: vertical-stack
     cards:
       - type: entities

@@ -14,7 +14,6 @@ cards:
         type: glance
       - entities:
           - entity: input_boolean.mode_vacation
-          - entity: input_boolean.mode_guest
         show_header_toggle: false
         title: Modes
         type: entities

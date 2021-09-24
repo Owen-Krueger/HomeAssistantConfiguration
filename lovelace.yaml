@@ -1,4 +1,5 @@
 mode: yaml
+resources: !include resources.yaml
 dashboards:
   lovelace-automations:
     mode: yaml

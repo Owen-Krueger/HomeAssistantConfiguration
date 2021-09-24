@@ -1,19 +1,23 @@
+# Automatically generated files
 .cloud
 .storage
 .HA_VERSION
 .owncloudsync.log
 .sync*
-blueprints
-custom_components
-deps
 Desktop.ini
 home-assistant.log
+home-assistant.log.1
 home-assistant_v2.db-wal
 home-assistant_v2.db-shm
 home-assistant_v2.db
+
+# User created files and folders
+blueprints
+custom_components
+deps
 lutron
 persons.yaml
 secrets.yaml
 tts
-www/images
+www
 zones.yaml

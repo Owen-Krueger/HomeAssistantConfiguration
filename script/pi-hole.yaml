@@ -1,0 +1,15 @@
+#################################################
+## Pi-Hole
+#################################################
+
+# Disable both for 30 seconds
+- pihole_disable_both_for_30_seconds:
+    alias: Pi-Hole - Disable both for 30 seconds
+    icon: mdi:pi-hole
+
+    sequence:
+      - service: pi_hole.disable
+        data:
+          duration: '00:30'
+        target:
+          entity_id: all

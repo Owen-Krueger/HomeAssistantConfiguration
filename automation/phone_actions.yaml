@@ -15,7 +15,7 @@
   action:
     - service: climate.set_temperature
       target:
-        entity_id: climate.hallway
+        entity_id: climate.kitchen_thermostat
       data:
         temperature: "{{ states('input_number.climate_away_temp') | int }}"
     - service: input_boolean.turn_off

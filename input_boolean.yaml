@@ -34,10 +34,6 @@ lights_living_room_lights_off_after_sunrise:
 ## Mode
 ##########################################################
 
-mode_guest:
-  name: Guest Mode
-  icon: mdi:account-tie
-
 mode_vacation:
   name: Vacation Mode
   icon: mdi:airplane

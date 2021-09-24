@@ -51,7 +51,7 @@ input_number.climate_away_temp:
 #################################################
 ## Google Devices
 #################################################
-climate.hallway:
+climate.kitchen_thermostat:
   friendly_name: Nest Thermostat
   icon: mdi:thermometer
 
@@ -80,10 +80,6 @@ vacuum.beto:
 group.interior_lights:
   friendly_name: Interior Lights
   icon: mdi:home-lightbulb
-
-switch.christmas_tree:
-  friendly_name: Christmas Tree
-  icon: mdi:pine-tree
 
 #################################################
 ## Lights
