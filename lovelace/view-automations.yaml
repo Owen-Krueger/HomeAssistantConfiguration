@@ -4,39 +4,39 @@ path: automation
 icon: "mdi:robot"
 cards:
   - cards:
-      - entities:
-          - entity: input_boolean.lights_living_room_lights_off_after_sunrise
-          - entity: input_boolean.lights_bedroom_lights_on_before_work
-          - entity: input_boolean.lights_bedroom_lamps_on_with_alarm
-          - entity: input_boolean.lights_bedroom_lamps_off_after_alarm
-          - entity: input_datetime.morning_alarm
-          - entity: input_datetime.bedroom_lamp_off
-        show_header_toggle: false
-        title: Morning
-        type: entities
-      - entities:
-          - entity: input_boolean.lights_living_room_lights_on_in_evening
-          - entity: input_boolean.vacation_living_room_lights_on_in_evening
-          - entity: input_boolean.vacation_living_room_lights_off_at_night
-        show_header_toggle: false
-        title: Evening
-        type: entities
+    - entities:
+      - entity: input_boolean.lights_living_room_automations
+      - entity: input_boolean.lights_bedroom_lights_on_before_work
+      - entity: input_boolean.lights_bedroom_lamps_on_with_alarm
+      - entity: input_boolean.lights_bedroom_lamps_off_after_alarm
+      - entity: input_datetime.morning_alarm
+      - entity: input_datetime.bedroom_lamp_off
+      show_header_toggle: false
+      title: Morning
+      type: entities
+    - entities:
+      - entity: input_boolean.lights_living_room_lights_on_in_evening
+      - entity: input_boolean.vacation_living_room_lights_on_in_evening
+      - entity: input_boolean.vacation_living_room_lights_off_at_night
+      show_header_toggle: false
+      title: Evening
+      type: entities
     type: vertical-stack
   - cards:
-      - entities:
-          - entity: input_boolean.christmas_tree_automation
-        show_header_toggle: false
-        title: Seasonal
-        type: entities
-      - entities:
-          - entity: input_boolean.mode_vacation
-        show_header_toggle: false
-        title: Modes
-        type: entities
-      - entities:
-          - entity: script.night_lighting
-          - entity: script.beto_run_on_command
-        show_header_toggle: false
-        title: Scripts
-        type: entities
+    - entities:
+      - entity: input_boolean.christmas_tree_automation
+      show_header_toggle: false
+      title: Seasonal
+      type: entities
+    - entities:
+      - entity: input_boolean.mode_vacation
+      show_header_toggle: false
+      title: Modes
+      type: entities
+    - entities:
+        - entity: script.night_lighting
+        - entity: script.beto_run_on_command
+      show_header_toggle: false
+      title: Scripts
+      type: entities
     type: vertical-stack

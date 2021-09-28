@@ -15,11 +15,13 @@ alexa:
       - switch.christmas_tree
       - switch.strip_light
   entity_config:
-    script.lights_dim_bedroom_lamps:
-      display_categories: LIGHT
+    script.dim_bedroom_lamps:
+      display_categories: ACTIVITY_TRIGGER
     script.lights_night_lighting:
-      display_categories: LIGHT
-    script.lights_turn_off_all:
-      display_categories: LIGHT
-    script.lights_turn_on_living_room:
-      display_categories: LIGHT
+      display_categories: ACTIVITY_TRIGGER
+    script.turn_off_all_interior_lights:
+      display_categories: ACTIVITY_TRIGGER
+    script.night_lighting:
+      display_categories: ACTIVITY_TRIGGER
+    script.turn_on_all_living_room:
+      display_categories: ACTIVITY_TRIGGER

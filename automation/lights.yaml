@@ -109,51 +109,60 @@
 ## Living Room
 ##########################################################
 
-# Turn off living room lights after sunrise
-- alias: Lights - Turn off living room lights after sunrise
-  id: 'lights_living_room_lights_off_after_sunrise'
+# Turn on living room lights when watching TV at night
+- alias: Lights - Turn on living room lights when watching TV at night
+  id: 'lights_living_room_lights_on_when_watching_tv_at_night'
 
   initial_state: 'on'
   trigger:
-    - platform: sun
-      event: 'sunrise'
-      offset: '+00:45:00'
+    - platform: state
+      entity_id: media_player.living_room_tv
+      to: 'playing'
+    # Netflix shows up as unknown on the Chromecast, so we also check if the selected app is Netflix
+    - platform: state
+      entity_id: media_player.living_room_tv
+      attribute: app_name
+      to: 'Netflix'
 
   condition:
     - condition: state
-      entity_id: input_boolean.lights_living_room_lights_off_after_sunrise
-      state: 'on'
-
-  action:
-    - service: light.turn_off
-      entity_id:
-        - light.living_room_lamps
-
-# Turn on living room lights in the evening
-- alias: Lights - Turn on living room lights in evening
-  id: 'lights_living_room_lights_on_in_evening'
-
-  initial_state: 'on'
-  trigger:
-    - platform: sun
-      event: 'sunset'
-      offset: '-01:00:00'
-
-  condition:
-  - condition: state
-    entity_id: person.owen
-    state: 'home'
-  - condition: state
-    entity_id: input_boolean.mode_vacation
-    state: 'off'
-  - condition: state
-    entity_id: input_boolean.lights_living_room_lights_on_in_evening
-    state: 'on'
+      entity_id: person.owen
+      state: 'home'
+    - condition: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: 4
 
   action:
     - service: light.turn_on
       data:
         entity_id: light.living_room_lamps
         brightness: 255
-    # - service: switch.turn_on
-    #   entity_id: switch.outside_railing_lights
+
+# Turn off living room lights when not watching TV at night
+- alias: Lights - Turn off living room lights when not watching TV at night
+  id: 'lights_living_room_lights_off_when_not_watching_tv_at_night'
+
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: media_player.living_room_tv
+      to: 'off'
+      for: '00:05:00'
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      above: 4
+
+  condition:
+    - condition: state
+      entity_id: person.owen
+      state: 'home'
+    - condition: state
+      entity_id: light.living_room_lamps
+      state: 'on'
+
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.living_room_lamps

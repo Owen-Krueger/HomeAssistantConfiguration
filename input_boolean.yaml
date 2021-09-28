@@ -22,13 +22,10 @@ lights_bedroom_lights_on_before_work:
   name: Turn on bedroom lights before work
   icon: mdi:floor-lamp
 
-lights_living_room_lights_on_in_evening:
-  name: Turn on living room lights in evening
-  icon: mdi:weather-sunset-down
+lights_living_room_automations:
+  name: Living Room Light Automations
+  icon: mdi:floor-lamp
 
-lights_living_room_lights_off_after_sunrise:
-  name: Turn off living room lights after sunrise
-  icon: mdi:weather-sunset-up
 
 ##########################################################
 ## Mode
