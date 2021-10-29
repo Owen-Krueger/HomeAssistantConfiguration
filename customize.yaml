@@ -131,9 +131,17 @@ switch.strip_light:
   friendly_name: Light Strip
   icon: mdi:led-strip-variant
 
-switch.outside_railing_lights:
-  friendly_name: Outside Railing Lights
-  icon: mdi:led-strip-variant
+switch.outside_left_plug:
+  friendly_name: Outside Pumpkin
+  icon: mdi:halloween
+
+switch.outside_right_plug:
+  friendly_name: Outside String Lights
+  icon: mdi:string-lights
+
+switch.outside_2_left_plug:
+  friendly_name: Outside Pumpkin 2
+  icon: mdi:halloween
 
 #################################################
 ## Inputs
@@ -146,3 +154,10 @@ input_number.temp_night:
 
 input_number.temp_vacation:
   icon: mdi:thermostat
+
+#################################################
+## Televisions
+#################################################
+media_player.samsung_tv:
+  friendly_name: Samsung TV
+  icon: mdi:television

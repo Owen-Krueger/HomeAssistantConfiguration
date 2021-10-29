@@ -116,13 +116,8 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: media_player.living_room_tv
-      to: 'playing'
-    # Netflix shows up as unknown on the Chromecast, so we also check if the selected app is Netflix
-    - platform: state
-      entity_id: media_player.living_room_tv
-      attribute: app_name
-      to: 'Netflix'
+      entity_id: media_player.samsung_tv
+      to: 'on'
 
   condition:
     - condition: state
@@ -146,18 +141,38 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: media_player.living_room_tv
+      entity_id: media_player.samsung_tv
       to: 'off'
       for: '00:05:00'
+
+  condition:
+    - condition: state
+      entity_id: light.living_room_lamps
+      state: 'on'
+    - condition: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: 4
+
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.living_room_lamps
+
+# Turn off living room lights in morning
+- alias: Lights - Turn off living room lights in morning
+  id: 'lights_living_room_lights_off_in_morning'
+
+  initial_state: 'on'
+  trigger:
     - platform: numeric_state
       entity_id: sun.sun
       attribute: elevation
       above: 4
+    - platform: time
+      at: '08:00:00'
 
   condition:
-    - condition: state
-      entity_id: person.owen
-      state: 'home'
     - condition: state
       entity_id: light.living_room_lamps
       state: 'on'
@@ -166,3 +181,37 @@
     - service: light.turn_off
       data:
         entity_id: light.living_room_lamps
+
+# Turn on exterior lights in evening
+- alias: Lights - Turn on exterior lights in evening
+  id: 'lights_exterior_lights_on_in_evening'
+
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: 4
+
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.outside_left_plug
+        entity_id: switch.outside_right_plug
+        entity_id: switch.outside_2_left_plug
+
+# Turn off exterior lights at night
+- alias: Lights - Turn off exterior lights at night
+  id: 'lights_exterior_lights_off_at_night'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: '23:00:00'
+
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.outside_left_plug
+        entity_id: switch.outside_right_plug
+        entity_id: switch.outside_2_left_plug
