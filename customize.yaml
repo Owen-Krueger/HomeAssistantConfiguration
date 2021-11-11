@@ -109,12 +109,12 @@ light.living_room_1:
   icon: mdi:lamp
 
 light.living_room_2:
-  friendly_name: Tall Lamp
-  icon: mdi:floor-lamp
+  friendly_name: Table Lamp 2
+  icon: mdi:lamp
 
 light.hallway:
-  friendly_name: Hallway Lamp
-  icon: mdi:lamp
+  friendly_name: Office Lamp
+  icon: mdi:floor-lamp
 
 light.living_room_lamps:
   friendly_name: Living Room Lamps

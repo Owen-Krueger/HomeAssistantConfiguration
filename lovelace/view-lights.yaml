@@ -35,7 +35,7 @@ cards:
         secondary_info: brightness
       - entity: light.hallway
         secondary_info: brightness
-      # - entity: switch.christmas_tree
+      - entity: switch.christmas_tree
       - entity: switch.strip_light
       - type: section
         label: Bedroom Lamps
@@ -49,9 +49,9 @@ cards:
         secondary_info: last-triggered
       - entity: script.dim_bedroom_lamps
         secondary_info: last-triggered
-      - entity: script.turn_off_all
+      - entity: script.turn_off_all_interior_lights
         secondary_info: last-triggered
-      - entity: script.turn_on_living_room
+      - entity: script.turn_on_all_living_room
         secondary_info: last-triggered
   - type: vertical-stack
     cards:

@@ -3,133 +3,115 @@ id: home
 path: home
 icon: 'mdi:home'
 cards:
-- cards:
-    - entities:
-        - entity: group.interior_lights
-        - entity: light.living_room_lamps
-        - entity: light.master_bedroom_bedroom_lights
-        - entity: light.bedroom_lamps
-        - entity: light.hallway
-        # - entity: switch.christmas_tree
-        - entity: switch.strip_light
-        - entity: switch.outside_railing_lights
-        - entity: script.night_lighting
-      show_header_toggle: false
-      title: Lights
-      type: entities
-    - entity: media_player.living_room_tv
-      type: media-control
-    - type: custom:mini-media-player
-      entity: media_player.spotify_owen
-  type: vertical-stack
-- cards:
-  - entity: climate.kitchen_thermostat
-    type: thermostat
-  - elements:
-      - type: state-icon
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Lights
+        show_header_toggle: false
+        entities:
+          - entity: group.interior_lights
+          - entity: light.living_room_lamps
+          - entity: light.master_bedroom_bedroom_lights
+          - entity: light.bedroom_lamps
+          - entity: light.hallway
+          - entity: switch.christmas_tree
+          - entity: switch.strip_light
+          - entity: script.night_lighting
+      - entity: media_player.living_room_tv
+        type: media-control
+      - type: custom:mini-media-player
+        entity: media_player.spotify_owen
+      - type: thermostat 
         entity: climate.kitchen_thermostat
-        style:
-          left: 48%
-          top: 63%
-      - type: state-icon
-        entity: light.living_room_1
-        tap_action:
-          action: toggle
-        style:
-          left: 93%
-          top: 24%
-      - type: state-icon
-        entity: light.living_room_2
-        tap_action:
-          action: toggle
-        style:
-          left: 93%
-          top: 50%
-      - type: state-icon
-        entity: light.bedroom_1
-        tap_action:
-          action: toggle
-        style:
-          left: 7%
-          top: 16%
-      - type: state-icon
-        entity: light.bedroom_2
-        tap_action:
-          action: toggle
-        style:
-          left: 7%
-          top: 35%
-      - type: state-icon
-        entity: light.master_bedroom_bedroom_lights
-        tap_action:
-          action: toggle
-        style:
-          left: 27%
-          top: 25%
-      - type: state-icon
-        entity: light.hallway
-        tap_action:
-          action: toggle
-        style:
-          left: 32%
-          top: 73%
-      - type: state-icon
-        entity: vacuum.beto
-        title: 'Beto'
-        style:
-          left: 35%
-          top: 7%
-      - type: state-icon
-        entity: media_player.kitchen_echo_show
-        style:
-          left: 93%
-          top: 59%
-      - type: state-icon
-        entity: media_player.sound_system
-        style:
-          left: 93%
-          top: 31%
-      - type: state-icon
-        entity: media_player.bedroom_bedside_echo_show
-        style:
-          left: 7%
-          top: 40%
-      - type: state-icon
-        entity: media_player.hallway_echo_dot
-        style:
-          left: 32%
-          top: 65%
-      - type: state-icon
-        entity: media_player.bedroom_desk_echo_show
-        style:
-          left: 46%
-          top: 35%
-      - type: state-icon
-        entity: media_player.living_room_tv
-        style:
-          left: 55%
-          top: 35%
-      - type: state-icon
-        entity: switch.christmas_tree
-        tap_action:
-          action: toggle
-        style:
-          left: 60%
-          top: 24%
-      - type: state-icon
-        entity: switch.outside_railing_lights
-        tap_action:
-          action: toggle
-        style:
-          left: 80%
-          top: 2%
-      - type: state-icon
-        entity: switch.strip_light
-        tap_action:
-          action: toggle
-        style:
-          left: 93%
-          top: 70%
-    image: /local/images/FloorPlan.png
-    type: picture-elements
-  type: vertical-stack
+  - type: vertical-stack
+    cards:
+      - type: picture-elements
+        image: /local/images/FloorPlanMain.png
+        elements:
+          - type: state-icon
+            entity: climate.kitchen_thermostat
+            style:
+              left: 32%
+              top: 56%
+          - type: state-icon
+            entity: light.living_room_1
+            tap_action:
+              action: toggle
+            style:
+              left: 85%
+              top: 77%
+          - type: state-icon
+            entity: light.living_room_2
+            tap_action:
+              action: toggle
+            style:
+              left: 85%
+              top: 91%
+          - type: state-icon
+            entity: media_player.samsung_tv
+            style:
+              left: 42%
+              top: 84%
+          - type: state-icon
+            entity: media_player.sound_system
+            style:
+              left: 90%
+              top: 92%
+          - type: state-icon
+            entity: switch.christmas_tree
+            tap_action:
+              action: toggle
+            style:
+              left: 87%
+              top: 70%
+          - type: state-icon
+            entity: media_player.kitchen_echo_show
+            style:
+              left: 87%
+              top: 60%
+          - type: state-icon
+            entity: switch.strip_light
+            tap_action:
+              action: toggle
+            style:
+              left: 86%
+              top: 45%
+  - type: vertical-stack
+    cards:
+      - type: picture-elements
+        image: /local/images/FloorPlanUpstairs.png
+        elements:
+          - type: state-icon
+            entity: light.bedroom_1
+            tap_action:
+              action: toggle
+            style:
+              left: 85%
+              top: 57%
+          - type: state-icon
+            entity: light.bedroom_2
+            tap_action:
+              action: toggle
+            style:
+              left: 85%
+              top: 81%
+          - type: state-icon
+            entity: light.master_bedroom_bedroom_lights
+            tap_action:
+              action: toggle
+            style:
+              left: 65%
+              top: 69%
+          - type: state-icon
+            entity: light.hallway
+            tap_action:
+              action: toggle
+            style:
+              left: 87%
+              top: 46%
+          - type: state-icon
+            entity: vacuum.beto
+            title: 'Beto'
+            style:
+              left: 65%
+              top: 11%

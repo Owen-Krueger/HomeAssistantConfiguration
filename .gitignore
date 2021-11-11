@@ -5,11 +5,7 @@
 .owncloudsync.log
 .sync*
 Desktop.ini
-home-assistant.log
-home-assistant.log.1
-home-assistant_v2.db-wal
-home-assistant_v2.db-shm
-home-assistant_v2.db
+home-assistant*
 
 # User created files and folders
 blueprints
