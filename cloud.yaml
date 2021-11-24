@@ -10,6 +10,7 @@ alexa:
       - light.hallway
       - script.dim_bedroom_lamps
       - script.night_lighting
+      - script.turn_off_bedroom_lamps
       - script.turn_off_all_interior_lights
       - script.turn_on_all_living_room
       - switch.christmas_tree
@@ -24,4 +25,6 @@ alexa:
     script.night_lighting:
       display_categories: ACTIVITY_TRIGGER
     script.turn_on_all_living_room:
+      display_categories: ACTIVITY_TRIGGER
+    script.turn_off_bedroom_lamps:
       display_categories: ACTIVITY_TRIGGER

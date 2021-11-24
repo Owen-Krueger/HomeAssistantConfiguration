@@ -6,30 +6,24 @@
 - alias: Lights - Turn on bedroom lamps with alarm
   id: 'lights_bedroom_lamps_on_with_alarm'
 
-  initial_state: "on"
+  initial_state: 'on'
   trigger:
     - platform: time
       at: input_datetime.morning_alarm
 
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-      # To make sure we aren't using the default time
-      after: "01:00:00"
+    - condition: state
+      entity_id: binary_sensor.workday
+      state: 'on'
     - condition: state
       entity_id: person.owen
-      state: "home"
+      state: 'home'
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: "off"
+      state: 'off'
     - condition: state
       entity_id: input_boolean.lights_bedroom_lamps_on_with_alarm
-      state: "on"
+      state: 'on'
 
   action:
     - service: light.turn_on
@@ -42,30 +36,24 @@
 - alias: Lights - Turn off bedroom lamps after alarm
   id: 'lights_bedroom_lamps_off_after_alarm'
 
-  initial_state: "on"
+  initial_state: 'on'
   trigger:
     - platform: time
       at: input_datetime.bedroom_lamp_off
 
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-      # To make sure we aren't using the default time
-      after: "01:00:00"
+    - condition: state
+      entity_id: binary_sensor.workday
+      state: 'on'
     - condition: state
       entity_id: person.owen
-      state: "home"
+      state: 'home'
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: "off"
+      state: 'off'
     - condition: state
       entity_id: input_boolean.lights_bedroom_lamps_off_after_alarm
-      state: "on"
+      state: 'on'
 
   action:
     - service: light.turn_off
@@ -82,13 +70,9 @@
       at: '08:30:00'
 
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    - condition: state
+      entity_id: binary_sensor.workday
+      state: 'on'
     - condition: state
       entity_id: person.owen
       state: 'home'
@@ -105,13 +89,13 @@
         entity_id: light.master_bedroom_bedroom_lights
         brightness: 255
 
-##########################################################
-## Living Room
-##########################################################
+#########################################################
+# Living Room
+#########################################################
 
-# Turn on living room lights when watching TV at night
-- alias: Lights - Turn on living room lights when watching TV at night
-  id: 'lights_living_room_lights_on_when_watching_tv_at_night'
+# Turn on living room lights when watching TV
+- alias: Lights - Turn on living room lights when watching TV
+  id: 'lights_living_room_lights_on_when_watching_tv'
 
   initial_state: 'on'
   trigger:
@@ -119,24 +103,15 @@
       entity_id: media_player.samsung_tv
       to: 'on'
 
-  condition:
-    - condition: state
-      entity_id: person.owen
-      state: 'home'
-    - condition: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: 4
-
   action:
     - service: light.turn_on
       data:
         entity_id: light.living_room_lamps
         brightness: 255
 
-# Turn off living room lights when not watching TV at night
-- alias: Lights - Turn off living room lights when not watching TV at night
-  id: 'lights_living_room_lights_off_when_not_watching_tv_at_night'
+# Turn off living room lights when not watching TV
+- alias: Lights - Turn off living room lights when not watching TV
+  id: 'lights_living_room_lights_off_when_not_watching_tv'
 
   initial_state: 'on'
   trigger:
@@ -149,69 +124,19 @@
     - condition: state
       entity_id: light.living_room_lamps
       state: 'on'
-    - condition: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: 4
-
+    - condition: or
+      conditions:
+        - condition: numeric_state
+          entity_id: sun.sun
+          attribute: elevation
+          below: 4
+        - condition: state
+          entity_id: person.owen
+          state: 'away'
+        - condition: state
+          entity_id: binary_sensor.workday
+          state: 'on'
   action:
     - service: light.turn_off
       data:
         entity_id: light.living_room_lamps
-
-# Turn off living room lights in morning
-- alias: Lights - Turn off living room lights in morning
-  id: 'lights_living_room_lights_off_in_morning'
-
-  initial_state: 'on'
-  trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      above: 4
-    - platform: time
-      at: '08:00:00'
-
-  condition:
-    - condition: state
-      entity_id: light.living_room_lamps
-      state: 'on'
-
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: light.living_room_lamps
-
-# Turn on exterior lights in evening
-- alias: Lights - Turn on exterior lights in evening
-  id: 'lights_exterior_lights_on_in_evening'
-
-  initial_state: 'on'
-  trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: 4
-
-  action:
-    - service: switch.turn_on
-      data:
-        entity_id: switch.outside_left_plug
-        entity_id: switch.outside_right_plug
-        entity_id: switch.outside_2_left_plug
-
-# Turn off exterior lights at night
-- alias: Lights - Turn off exterior lights at night
-  id: 'lights_exterior_lights_off_at_night'
-
-  initial_state: 'on'
-  trigger:
-    - platform: time
-      at: '23:00:00'
-
-  action:
-    - service: switch.turn_off
-      data:
-        entity_id: switch.outside_left_plug
-        entity_id: switch.outside_right_plug
-        entity_id: switch.outside_2_left_plug

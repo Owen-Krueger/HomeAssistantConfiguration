@@ -1,0 +1,87 @@
+##########################################################
+## Holiday
+##########################################################
+
+# Turn on Christmas tree
+- alias: Holiday - Turn on Christmas tree
+  id: 'holiday_christmas_tree_on'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: input_datetime.morning_alarm
+    - platform: time
+      at: '15:00:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.christmas_tree_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'off'
+
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.christmas_tree
+
+# Turn off Christmas tree
+- alias: Holiday - Turn off Christmas tree
+  id: 'holiday_christmas_tree_off'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: '08:30:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.christmas_tree_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'off'
+    - condition: state
+      entity_id: binary_sensor.workday
+      state: 'on'
+
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.christmas_tree
+
+# Turn on holiday lights in evening
+- alias: Holiday - Turn on holiday lights in evening
+  id: 'holiday_lights_on_in_evening'
+
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: 4
+
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.outside_left_plug
+        entity_id: switch.outside_right_plug
+        entity_id: switch.outside_2_left_plug
+
+# Turn off holiday lights at night
+- alias: Holiday - Turn off holiday lights at night
+  id: 'holiday_lights_off_at_night'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: '23:00:00'
+
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.outside_left_plug
+        entity_id: switch.outside_right_plug
+        entity_id: switch.outside_2_left_plug
+        entity_id: switch.christmas_tree
