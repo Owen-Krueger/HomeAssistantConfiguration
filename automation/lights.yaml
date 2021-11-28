@@ -130,12 +130,22 @@
           entity_id: sun.sun
           attribute: elevation
           below: 4
-        - condition: state
-          entity_id: person.owen
-          state: 'away'
-        - condition: state
-          entity_id: binary_sensor.workday
-          state: 'on'
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: person.owen
+              state: 'away'
+            - condition: state
+              entity_id: person.allison
+              state: 'away'
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: binary_sensor.workday
+              state: 'on'
+            - condition: state
+              entity_id: person.allison
+              state: 'away'
   action:
     - service: light.turn_off
       data:

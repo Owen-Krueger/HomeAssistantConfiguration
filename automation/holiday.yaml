@@ -10,8 +10,9 @@
   trigger:
     - platform: time
       at: input_datetime.morning_alarm
-    - platform: time
-      at: '15:00:00'
+    - platform: state
+      entity_id: person.allison
+      to: 'home'
 
   condition:
     - condition: state
@@ -34,6 +35,10 @@
   trigger:
     - platform: time
       at: '08:30:00'
+    - platform: state
+      entity_id: person.allison
+      to: 'away'
+      for: '00:05:00'
 
   condition:
     - condition: state
@@ -45,6 +50,9 @@
     - condition: state
       entity_id: binary_sensor.workday
       state: 'on'
+    - condition: state
+      entity_id: person.allison
+      state: 'away'
 
   action:
     - service: switch.turn_off
@@ -64,10 +72,9 @@
 
   action:
     - service: switch.turn_on
-      data:
-        entity_id: switch.outside_left_plug
-        entity_id: switch.outside_right_plug
-        entity_id: switch.outside_2_left_plug
+      entity_id:
+        - switch.outside_front_left_plug
+        - switch.outside_back_left_plug
 
 # Turn off holiday lights at night
 - alias: Holiday - Turn off holiday lights at night
@@ -80,8 +87,7 @@
 
   action:
     - service: switch.turn_off
-      data:
-        entity_id: switch.outside_left_plug
-        entity_id: switch.outside_right_plug
-        entity_id: switch.outside_2_left_plug
-        entity_id: switch.christmas_tree
+      entity_id:
+        - switch.outside_front_left_plug
+        - switch.outside_back_left_plug
+        - switch.christmas_tree

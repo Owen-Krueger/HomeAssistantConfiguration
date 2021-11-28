@@ -76,6 +76,34 @@ cards:
             style:
               left: 86%
               top: 45%
+          - type: state-icon
+            entity: switch.outside_front_left_plug
+            tap_action:
+              action: toggle
+            style:
+              left: 12%
+              top: 80%
+          - type: state-icon
+            entity: switch.outside_front_right_plug
+            tap_action:
+              action: toggle
+            style:
+              left: 19%
+              top: 80%
+          - type: state-icon
+            entity: switch.outside_back_left_plug
+            tap_action:
+              action: toggle
+            style:
+              left: 12%
+              top: 3%
+          - type: state-icon
+            entity: switch.outside_back_right_plug
+            tap_action:
+              action: toggle
+            style:
+              left: 19%
+              top: 3%
   - type: vertical-stack
     cards:
       - type: picture-elements

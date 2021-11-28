@@ -131,17 +131,21 @@ switch.strip_light:
   friendly_name: Light Strip
   icon: mdi:led-strip-variant
 
-switch.outside_left_plug:
-  friendly_name: Outside Pumpkin
-  icon: mdi:halloween
-
-switch.outside_right_plug:
-  friendly_name: Outside String Lights
+switch.outside_front_left_plug:
+  friendly_name: Front Christmas Lights
   icon: mdi:string-lights
 
-switch.outside_2_left_plug:
-  friendly_name: Outside Pumpkin 2
-  icon: mdi:halloween
+switch.outside_front_right_plug:
+  friendly_name: Outside Front Right Plug
+  icon: mdi:power-plug
+
+switch.outside_back_left_plug:
+  friendly_name: Back Christmas Lights
+  icon: mdi:string-lights
+
+switch.outside_back_right_plug:
+  friendly_name: Outside Back Right Plug
+  icon: mdi:power-plug
 
 #################################################
 ## Inputs
