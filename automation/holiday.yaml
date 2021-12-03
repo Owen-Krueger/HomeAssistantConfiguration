@@ -2,14 +2,12 @@
 ## Holiday
 ##########################################################
 
-# Turn on Christmas tree
-- alias: Holiday - Turn on Christmas tree
-  id: 'holiday_christmas_tree_on'
+# Turn on Christmas tree when Allison gets home
+- alias: Holiday - Turn on Christmas tree when Allison gets home
+  id: 'holiday_christmas_tree_on_when_allison_gets_home'
 
   initial_state: 'on'
   trigger:
-    - platform: time
-      at: input_datetime.morning_alarm
     - platform: state
       entity_id: person.allison
       to: 'home'
@@ -26,18 +24,17 @@
     - service: switch.turn_on
       entity_id:
         - switch.christmas_tree
+        - switch.strip_light
 
-# Turn off Christmas tree
-- alias: Holiday - Turn off Christmas tree
-  id: 'holiday_christmas_tree_off'
+# Turn off Christmas tree when Allison leaves
+- alias: Holiday - Turn off Christmas tree when Allison leaves
+  id: 'holiday_christmas_tree_off_when_allison_leaves'
 
   initial_state: 'on'
   trigger:
-    - platform: time
-      at: '08:30:00'
     - platform: state
       entity_id: person.allison
-      to: 'away'
+      to: 'not_home'
       for: '00:05:00'
 
   condition:
@@ -48,23 +45,26 @@
       entity_id: input_boolean.mode_vacation
       state: 'off'
     - condition: state
-      entity_id: binary_sensor.workday
+      entity_id: binary_sensor.workday_sensor
       state: 'on'
     - condition: state
       entity_id: person.allison
-      state: 'away'
+      state: 'not_home'
 
   action:
     - service: switch.turn_off
       entity_id:
         - switch.christmas_tree
+        - switch.strip_light
 
-# Turn on holiday lights in evening
-- alias: Holiday - Turn on holiday lights in evening
-  id: 'holiday_lights_on_in_evening'
+# Turn on holiday lights
+- alias: Holiday - Turn on holiday lights
+  id: 'holiday_lights_on'
 
   initial_state: 'on'
   trigger:
+    - platform: time
+      at: '05:00:00'
     - platform: numeric_state
       entity_id: sun.sun
       attribute: elevation
@@ -75,13 +75,17 @@
       entity_id:
         - switch.outside_front_left_plug
         - switch.outside_back_left_plug
+        - switch.christmas_tree
+        - switch.strip_light
 
-# Turn off holiday lights at night
-- alias: Holiday - Turn off holiday lights at night
-  id: 'holiday_lights_off_at_night'
+# Turn off holiday lights
+- alias: Holiday - Turn off holiday lights
+  id: 'holiday_lights_off'
 
   initial_state: 'on'
   trigger:
+    - platform: time
+      at: '08:30:00'
     - platform: time
       at: '23:00:00'
 
@@ -91,3 +95,4 @@
         - switch.outside_front_left_plug
         - switch.outside_back_left_plug
         - switch.christmas_tree
+        - switch.strip_light

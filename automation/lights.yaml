@@ -13,7 +13,7 @@
 
   condition:
     - condition: state
-      entity_id: binary_sensor.workday
+      entity_id: binary_sensor.workday_sensor
       state: 'on'
     - condition: state
       entity_id: person.owen
@@ -27,10 +27,10 @@
 
   action:
     - service: light.turn_on
-      data:
+      target:
         entity_id: light.bedroom_lamps
+      data:
         brightness: 40
-
 
 # Turn off bedroom lamps after alarm
 - alias: Lights - Turn off bedroom lamps after alarm
@@ -43,7 +43,7 @@
 
   condition:
     - condition: state
-      entity_id: binary_sensor.workday
+      entity_id: binary_sensor.workday_sensor
       state: 'on'
     - condition: state
       entity_id: person.owen
@@ -57,8 +57,9 @@
 
   action:
     - service: light.turn_off
-      data:
-        entity_id: light.bedroom_lamps
+      target:
+        entity_id:
+          - light.bedroom_lamps
 
 # Turn on bedroom lights before work
 - alias: Lights - Turn on bedroom lights before work
@@ -71,7 +72,7 @@
 
   condition:
     - condition: state
-      entity_id: binary_sensor.workday
+      entity_id: binary_sensor.workday_sensor
       state: 'on'
     - condition: state
       entity_id: person.owen
@@ -85,8 +86,9 @@
 
   action:
     - service: light.turn_on
-      data:
+      target:
         entity_id: light.master_bedroom_bedroom_lights
+      data:
         brightness: 255
 
 #########################################################
@@ -105,8 +107,9 @@
 
   action:
     - service: light.turn_on
-      data:
+      target:
         entity_id: light.living_room_lamps
+      data:
         brightness: 255
 
 # Turn off living room lights when not watching TV
@@ -134,19 +137,19 @@
           conditions:
             - condition: state
               entity_id: person.owen
-              state: 'away'
+              state: 'not_home'
             - condition: state
               entity_id: person.allison
-              state: 'away'
+              state: 'not_home'
         - condition: and
           conditions:
             - condition: state
-              entity_id: binary_sensor.workday
+              entity_id: binary_sensor.workday_sensor
               state: 'on'
             - condition: state
               entity_id: person.allison
-              state: 'away'
+              state: 'not_home'
   action:
     - service: light.turn_off
-      data:
+      target:
         entity_id: light.living_room_lamps

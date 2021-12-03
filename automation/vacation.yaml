@@ -23,8 +23,9 @@
 
   action:
     - service: light.turn_on
-      data:
+      target:
         entity_id: light.living_room_lamps
+      data:
         brightness: 255
 
 # Turn off living room lights at night during vacation
@@ -46,5 +47,5 @@
 
   action:
     - service: light.turn_off
-      data:
+      target:
         entity_id: light.living_room_lamps

@@ -9,7 +9,7 @@
 
     sequence:
       - service: pi_hole.disable
-        data:
-          duration: '00:30'
         target:
           entity_id: all
+        data:
+          duration: '00:30'

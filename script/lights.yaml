@@ -9,13 +9,16 @@
 
     sequence:
       - service: light.turn_off
-        entity_id:
-          - group.interior_lights
+        target:
+          entity_id: group.interior_lights
       - service: switch.turn_off
-        entity_id:
-          - switch.christmas_tree
+        target:
+          entity_id: switch.christmas_tree
       - service: switch.turn_off
-        entity_id: switch.outside_railing_lights
+        target:
+          entity_id:
+            - switch.christmas_tree
+            - switch.strip_light
 
 #################################################
 ## Bedroom
@@ -39,16 +42,17 @@
 
     sequence:
       - service: switch.turn_off
-        entity_id:
-          - switch.christmas_tree
+        target:
+          entity_id:
+            - switch.christmas_tree
+            - switch.strip_light
       - service: light.turn_off
-        entity_id:
-          - light.master_bedroom_bedroom_lights
-      - service: switch.turn_off
-        entity_id: switch.outside_railing_lights
+        target:
+          entity_id: light.master_bedroom_bedroom_lights
       - service: light.turn_on
-        data:
+        target:
           entity_id: light.bedroom_lamps
+        data:
           brightness: 40
 
 # - night_lighting:
@@ -66,7 +70,8 @@
 
     sequence:
       - service: light.turn_off
-        entity_id: light.bedroom_lamps
+        target:
+          entity_id: light.bedroom_lamps
 
 #################################################
 ## Living Room
@@ -79,9 +84,12 @@
 
     sequence:
       - service: light.turn_on
-        data:
+        target:
           entity_id: light.living_room_lamps
+        data:
           brightness: 255
       - service: switch.turn_on
-        data:
-          entity_id: switch.christmas_tree
+        target:
+          entity_id: 
+            - switch.christmas_tree
+            - switch.strip_light

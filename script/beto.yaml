@@ -9,5 +9,5 @@
 
     sequence:
       - service: vacuum.start
-        entity_id:
-          - vacuum.beto
+        target:
+          entity_id: vacuum.beto

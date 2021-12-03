@@ -74,8 +74,12 @@ cards:
             tap_action:
               action: toggle
             style:
-              left: 86%
-              top: 45%
+              # Kitchen
+              # left: 86%
+              # top: 45%
+              # Living room
+              left: 65%
+              top: 92%
           - type: state-icon
             entity: switch.outside_front_left_plug
             tap_action:
@@ -115,14 +119,14 @@ cards:
               action: toggle
             style:
               left: 85%
-              top: 57%
+              top: 81%
           - type: state-icon
             entity: light.bedroom_2
             tap_action:
               action: toggle
             style:
               left: 85%
-              top: 81%
+              top: 57%
           - type: state-icon
             entity: light.master_bedroom_bedroom_lights
             tap_action:
