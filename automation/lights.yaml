@@ -107,7 +107,7 @@
     - condition: or
       conditions:
         - condition: time
-          after: '20:00:00'
+          after: '20:30:00'
         - condition: and
           conditions:
             - condition: state
@@ -121,6 +121,27 @@
                 - condition: state
                   entity_id: person.owen
                   state: 'not_home'
+  action:
+    - service: switch.turn_off
+      target:
+        entity_id: 
+          - switch.allison_living_room_lamp
+          - switch.owen_living_room_lamp
+
+# Turn off living room lights at night when not watching TV
+- alias: Lights - Turn off living room lights at night when not watching TV
+  id: 'lights_living_room_lights_off_at_night_when_not_watching_tv'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: '20:30:00'
+
+  condition:
+    - condition: state
+      entity_id: media_player.samsung_tv
+      state: 'off'
+
   action:
     - service: switch.turn_off
       target:
