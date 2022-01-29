@@ -139,6 +139,9 @@
 
   condition:
     - condition: state
+      entity_id: input_boolean.lights_living_room_automations
+      state: 'on'
+    - condition: state
       entity_id: media_player.samsung_tv
       state: 'off'
 
@@ -184,3 +187,57 @@
         entity_id: 
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
+
+# Philips Hue Turn on Living Room Automation
+- alias: Lights - Turn on living room automation when philips hue switch brighter
+  id: 'lights_living_room_lights_automation_on_when_philips_hue_switch_brighter'
+
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: 'hue_event'
+      event_data:
+        unique_id: 'dfd2d67f-bd6b-4e1f-856d-cc067ef210b7'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_living_room_automations
+      state: 'off'
+
+  action:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.lights_living_room_automations
+    - service: notify.alexa_media
+      data:
+        data:
+          type: announce
+        target: media_player.living_room_echo
+        message: "Living Room Automation Turned On"
+
+# Philips Hue Turn off Living Room Automation
+- alias: Lights - Turn off living room automation when philips hue switch dimmer
+  id: 'lights_living_room_lights_automation_off_when_philips_hue_switch_dimmer'
+
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: 'hue_event'
+      event_data:
+        unique_id: '80052d3f-c70f-45a4-99db-1b0931558621'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_living_room_automations
+      state: 'on'
+
+  action:
+    - service: input_boolean.turn_off
+      target:
+        entity_id: input_boolean.lights_living_room_automations
+    - service: notify.alexa_media
+      data:
+        data:
+          type: announce
+        target: media_player.living_room_echo
+        message: "Living Room Automation Turned Off"
