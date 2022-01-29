@@ -4,7 +4,7 @@ default_config:
 automation: !include_dir_merge_list automation
 binary_sensor: !include binary_sensor.yaml
 cloud: !include cloud.yaml
-group: !include_dir_named group
+group: !include group.yaml
 hue: !include hue.yaml
 input_boolean: !include input_boolean.yaml
 input_datetime: !include input_datetime.yaml
@@ -21,7 +21,6 @@ scene: !include scenes.yaml
 script: !include_dir_merge_list script
 sensor: !include sensor.yaml
 spotify: !include spotify.yaml
-switch: !include switch.yaml
 tplink: !include tplink.yaml
 tts: !include tts.yaml
 zone: !include zones.yaml

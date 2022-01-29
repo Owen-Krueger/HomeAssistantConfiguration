@@ -10,7 +10,7 @@ cards:
         show_header_toggle: false
         entities:
           - entity: group.interior_lights
-          - entity: light.living_room_lamps
+          - entity: group.living_room_lamps
           - entity: light.master_bedroom_bedroom_lights
           - entity: light.bedroom_lamps
           - entity: light.hallway
@@ -34,14 +34,14 @@ cards:
               left: 32%
               top: 56%
           - type: state-icon
-            entity: light.living_room_1
+            entity: switch.allison_living_room_lamp
             tap_action:
               action: toggle
             style:
               left: 85%
               top: 77%
           - type: state-icon
-            entity: light.living_room_2
+            entity: switch.owen_living_room_lamp
             tap_action:
               action: toggle
             style:

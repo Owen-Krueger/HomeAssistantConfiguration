@@ -1,8 +1,0 @@
-#################################################
-## Lights
-#################################################
-name: Interior Lights
-entities:
-- light.living_room_lamps
-- light.bedroom
-- light.hallway

@@ -2,12 +2,14 @@
 ## Holiday
 ##########################################################
 
-# Turn on Christmas tree when Allison gets home
-- alias: Holiday - Turn on Christmas tree when Allison gets home
-  id: 'holiday_christmas_tree_on_when_allison_gets_home'
+# Turn on Christmas tree
+- alias: Holiday - Turn on Christmas tree
+  id: 'holiday_christmas_tree_on'
 
   initial_state: 'on'
   trigger:
+    - platform: time
+      at: '05:00:00'
     - platform: state
       entity_id: person.allison
       to: 'home'
@@ -26,9 +28,9 @@
         - switch.christmas_tree
         - switch.strip_light
 
-# Turn off Christmas tree when Allison leaves
-- alias: Holiday - Turn off Christmas tree when Allison leaves
-  id: 'holiday_christmas_tree_off_when_allison_leaves'
+# Turn off Christmas tree
+- alias: Holiday - Turn off Christmas tree
+  id: 'holiday_christmas_tree_off'
 
   initial_state: 'on'
   trigger:
@@ -36,6 +38,10 @@
       entity_id: person.allison
       to: 'not_home'
       for: '00:05:00'
+    - platform: time
+      at: '08:30:00'
+    - platform: time
+      at: '23:00:00'
 
   condition:
     - condition: state
@@ -44,12 +50,6 @@
     - condition: state
       entity_id: input_boolean.mode_vacation
       state: 'off'
-    - condition: state
-      entity_id: binary_sensor.workday_sensor
-      state: 'on'
-    - condition: state
-      entity_id: person.allison
-      state: 'not_home'
 
   action:
     - service: switch.turn_off
@@ -75,8 +75,6 @@
       entity_id:
         - switch.outside_front_left_plug
         - switch.outside_back_left_plug
-        - switch.christmas_tree
-        - switch.strip_light
 
 # Turn off holiday lights
 - alias: Holiday - Turn off holiday lights
@@ -94,5 +92,3 @@
       entity_id:
         - switch.outside_front_left_plug
         - switch.outside_back_left_plug
-        - switch.christmas_tree
-        - switch.strip_light

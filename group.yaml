@@ -1,0 +1,13 @@
+living_room_lamps:
+  name: Living Room Lights
+  entities:
+    - switch.allison_living_room_lamp
+    - switch.owen_living_room_lamp
+
+interior_lights:
+  name: Interior Lights
+  entities:
+    - switch.allison_living_room_lamp
+    - switch.owen_living_room_lamp
+    - light.bedroom
+    - light.hallway

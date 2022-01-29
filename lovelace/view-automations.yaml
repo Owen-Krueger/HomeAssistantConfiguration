@@ -6,7 +6,6 @@ cards:
   - cards:
     - entities:
       - entity: input_boolean.lights_living_room_automations
-      - entity: input_boolean.lights_bedroom_lights_on_before_work
       - entity: input_boolean.lights_bedroom_lamps_on_with_alarm
       - entity: input_boolean.lights_bedroom_lamps_off_after_alarm
       - entity: input_datetime.morning_alarm
@@ -15,7 +14,6 @@ cards:
       title: Morning
       type: entities
     - entities:
-      - entity: input_boolean.lights_living_room_lights_on_in_evening
       - entity: input_boolean.vacation_living_room_lights_on_in_evening
       - entity: input_boolean.vacation_living_room_lights_off_at_night
       show_header_toggle: false

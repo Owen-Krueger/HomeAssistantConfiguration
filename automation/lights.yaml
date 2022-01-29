@@ -61,36 +61,6 @@
         entity_id:
           - light.bedroom_lamps
 
-# Turn on bedroom lights before work
-- alias: Lights - Turn on bedroom lights before work
-  id: 'lights_overhead_bedroom_on_before_work'
-
-  initial_state: 'on'
-  trigger:
-    - platform: time
-      at: '08:30:00'
-
-  condition:
-    - condition: state
-      entity_id: binary_sensor.workday_sensor
-      state: 'on'
-    - condition: state
-      entity_id: person.owen
-      state: 'home'
-    - condition: state
-      entity_id: input_boolean.mode_vacation
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.lights_bedroom_lights_on_before_work
-      state: 'on'
-
-  action:
-    - service: light.turn_on
-      target:
-        entity_id: light.master_bedroom_bedroom_lights
-      data:
-        brightness: 255
-
 #########################################################
 # Living Room
 #########################################################
@@ -105,12 +75,17 @@
       entity_id: media_player.samsung_tv
       to: 'on'
 
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_living_room_automations
+      state: 'on'
+
   action:
-    - service: light.turn_on
+    - service: switch.turn_on
       target:
-        entity_id: light.living_room_lamps
-      data:
-        brightness: 255
+        entity_id: 
+          - switch.allison_living_room_lamp
+          - switch.owen_living_room_lamp
 
 # Turn off living room lights when not watching TV
 - alias: Lights - Turn off living room lights when not watching TV
@@ -121,35 +96,70 @@
     - platform: state
       entity_id: media_player.samsung_tv
       to: 'off'
-      for: '00:05:00'
 
   condition:
     - condition: state
-      entity_id: light.living_room_lamps
+      entity_id: input_boolean.lights_living_room_automations
+      state: 'on'
+    - condition: state
+      entity_id: group.living_room_lamps
       state: 'on'
     - condition: or
       conditions:
-        - condition: numeric_state
-          entity_id: sun.sun
-          attribute: elevation
-          below: 4
+        - condition: time
+          after: '20:00:00'
         - condition: and
           conditions:
             - condition: state
-              entity_id: person.owen
-              state: 'not_home'
-            - condition: state
               entity_id: person.allison
               state: 'not_home'
-        - condition: and
-          conditions:
-            - condition: state
-              entity_id: binary_sensor.workday_sensor
-              state: 'on'
-            - condition: state
-              entity_id: person.allison
-              state: 'not_home'
+            - condition: or
+              conditions:
+                - condition: state
+                  entity_id: binary_sensor.workday_sensor
+                  state: 'on'
+                - condition: state
+                  entity_id: person.owen
+                  state: 'not_home'
   action:
-    - service: light.turn_off
+    - service: switch.turn_off
       target:
-        entity_id: light.living_room_lamps
+        entity_id: 
+          - switch.allison_living_room_lamp
+          - switch.owen_living_room_lamp
+
+# Philips Hue Living Room Lights On
+- alias: Lights - Turn on living room lights when philips hue switch on
+  id: 'lights_living_room_lights_on_when_philips_hue_switch_on'
+
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: 'hue_event'
+      event_data:
+        unique_id: 'dd9e9203-a2c7-401e-bf0f-b4b49231a46a'
+
+  action:
+    - service: switch.turn_on
+      target:
+        entity_id: 
+          - switch.allison_living_room_lamp
+          - switch.owen_living_room_lamp
+
+# Philips Hue Living Room Lights Off
+- alias: Lights - Turn off living room lights when philips hue switch off
+  id: 'lights_living_room_lights_off_when_philips_hue_switch_off'
+
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: 'hue_event'
+      event_data:
+        unique_id: '37a1d9fd-ed23-46f8-8d2f-8a73ec75d6be'
+
+  action:
+    - service: switch.turn_off
+      target:
+        entity_id: 
+          - switch.allison_living_room_lamp
+          - switch.owen_living_room_lamp

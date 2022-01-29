@@ -18,10 +18,6 @@ lights_bedroom_lamps_off_after_alarm:
   name: Turn off bedroom lamps after alarm
   icon: mdi:alarm
 
-lights_bedroom_lights_on_before_work:
-  name: Turn on bedroom lights before work
-  icon: mdi:floor-lamp
-
 lights_living_room_automations:
   name: Living Room Light Automations
   icon: mdi:floor-lamp

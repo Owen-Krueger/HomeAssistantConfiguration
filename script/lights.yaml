@@ -55,15 +55,6 @@
         data:
           brightness: 40
 
-# - night_lighting:
-#     alias: Lights - Night Lighting
-#     icon: mdi:weather-night
-
-#     sequence:
-#       - service: nodered.trigger
-#         data: {}
-#         entity_id: switch.red_night_lighting
-
 - turn_off_bedroom_lamps: 
     alias: Lights - Turn off bedroom lamps
     icon: mdi:weather-night
@@ -83,11 +74,11 @@
     icon: mdi:floor-lamp
 
     sequence:
-      - service: light.turn_on
+      - service: switch.turn_on
         target:
-          entity_id: light.living_room_lamps
-        data:
-          brightness: 255
+          entity_id: 
+            - switch.allison_living_room_lamp
+            - switch.owen_living_room_lamp
       - service: switch.turn_on
         target:
           entity_id: 

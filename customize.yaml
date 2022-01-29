@@ -81,6 +81,10 @@ group.interior_lights:
   friendly_name: Interior Lights
   icon: mdi:home-lightbulb
 
+group.living_room_lamps:
+  friendly_name: Living Room Lamps
+  icon: mdi:lamp
+
 #################################################
 ## Lights
 #################################################
@@ -104,32 +108,20 @@ light.master_bedroom_bedroom_lights:
   friendly_name: Bedroom Overhead Lights
   icon: mdi:ceiling-light
 
-light.living_room_1:
-  friendly_name: Table Lamp
-  icon: mdi:lamp
-
-light.living_room_2:
-  friendly_name: Table Lamp 2
-  icon: mdi:lamp
-
 light.hallway:
   friendly_name: Office Lamp
-  icon: mdi:floor-lamp
-
-light.living_room_lamps:
-  friendly_name: Living Room Lamps
   icon: mdi:floor-lamp
 
 #################################################
 ## Switches
 #################################################
+switch.allison_living_room_lamp:
+  friendly_name: Allison Living Room Lamp
+  icon: mdi:lamp
+
 switch.christmas_tree:
   friendly_name: Christmas Tree
   icon: mdi:pine-tree
-
-switch.strip_light:
-  friendly_name: Light Strip
-  icon: mdi:led-strip-variant
 
 switch.outside_front_left_plug:
   friendly_name: Front Christmas Lights
@@ -146,6 +138,14 @@ switch.outside_back_left_plug:
 switch.outside_back_right_plug:
   friendly_name: Outside Back Right Plug
   icon: mdi:power-plug
+
+switch.owen_living_room_lamp:
+  friendly_name: Owen Living Room Lamp
+  icon: mdi:lamp
+
+switch.strip_light:
+  friendly_name: Light Strip
+  icon: mdi:led-strip-variant
 
 #################################################
 ## Inputs
