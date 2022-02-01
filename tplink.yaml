@@ -1,8 +1,0 @@
-discovery: false
-switch:
-  - host: !secret christmas_tree_plug_ip
-  - host: !secret light_strip_plug_ip
-  - host: !secret living_room_echo_plug_ip
-strip:
-  - host: !secret outside_plugs_1_ip
-  - host: !secret outside_plugs_2_ip

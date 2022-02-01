@@ -58,7 +58,7 @@ cards:
       entity: light.master_bedroom_bedroom_lights
     - type: light
       entity: light.bedroom_lamps
-    - type: switch
+    - type: button
       entity: group.living_room_lamps
     - type: light
       entity: light.hallway
