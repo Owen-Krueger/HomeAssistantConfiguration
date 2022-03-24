@@ -38,20 +38,20 @@ cards:
             tap_action:
               action: toggle
             style:
-              left: 85%
+              left: 50%
               top: 77%
           - type: state-icon
             entity: switch.owen_living_room_lamp
             tap_action:
               action: toggle
             style:
-              left: 85%
-              top: 91%
+              left: 76%
+              top: 77%
           - type: state-icon
             entity: media_player.samsung_tv
             style:
-              left: 42%
-              top: 84%
+              left: 86%
+              top: 87%
           - type: state-icon
             entity: media_player.sound_system
             style:

@@ -6,6 +6,11 @@ cards:
   - cards:
     - entities:
       - entity: input_boolean.lights_living_room_automations
+      show_header_toggle: false
+      title: General
+      type: entities
+    - entities:
+      - entity: input_boolean.lights_living_room_automations
       - entity: input_boolean.lights_bedroom_lamps_on_with_alarm
       - entity: input_boolean.lights_bedroom_lamps_off_after_alarm
       - entity: input_datetime.morning_alarm
