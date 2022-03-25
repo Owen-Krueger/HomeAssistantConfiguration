@@ -63,7 +63,7 @@
   initial_state: 'on'
   trigger:
     - platform: time
-      at: '10:02:00'
+      at: '22:02:00'
       
   condition:
     - condition: state
