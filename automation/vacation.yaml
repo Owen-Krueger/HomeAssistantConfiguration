@@ -1,10 +1,10 @@
 ##########################################################
-## Lights
+## Vacation Lighting
 ##########################################################
 
-# Turn on living room lights in evening during vacation
-- alias: Vacation - Turn on living room lights in evening during vacation
-  id: 'vacation_living_room_lights_on_in_evening'
+# Turn on living room lamps in evening
+- alias: Vacation - Turn on living room lamps in evening
+  id: 'vacation_living_room_lamps_on_in_evening'
 
   initial_state: 'on'
   trigger:
@@ -14,12 +14,12 @@
       below: 5
 
   condition:
-  - condition: state
-    entity_id: input_boolean.mode_vacation
-    state: 'on'
-  - condition: state
-    entity_id: input_boolean.vacation_living_room_lights_on_in_evening
-    state: 'on'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.vacation_lighting_automation
+      state: 'on'
 
   action:
     - service: switch.turn_on
@@ -28,22 +28,22 @@
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
 
-# Turn off living room lights at night during vacation
-- alias: Vacation - Turn off living room lights at night during vacation
-  id: 'vacation_living_room_lights_off_at_night'
+# Turn off living room lamps and turn on bedroom lamps at night
+- alias: Vacation - Turn off living room lamps and turn on bedroom lamps at night
+  id: 'vacation_living_room_lamps_off_bedroom_lamps_on_at_night'
 
   initial_state: 'on'
   trigger:
     - platform: time
-      at: '21:30:00'
+      at: '21:29:00'
       
   condition:
-  - condition: state
-    entity_id: input_boolean.vacation_mode
-    state: 'on'
-  - condition: state
-    entity_id: input_boolean.vacation_living_room_lights_off_at_night
-    state: 'on'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.vacation_lighting_automation
+      state: 'on'
 
   action:
     - service: switch.turn_off
@@ -51,3 +51,30 @@
         entity_id: 
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
+    - service: light.turn_on
+      target:
+        entity_id:
+          - light.bedroom_lamps
+
+# Turn off bedroom lamps at night
+- alias: Vacation - Turn off bedroom lamps at night
+  id: 'vacation_bedroom_lamps_off_at_night'
+
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: '10:02:00'
+      
+  condition:
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.vacation_lighting_automation
+      state: 'on'
+
+  action:
+    - service: light.turn_off
+      target:
+        entity_id:
+          - light.bedroom_lamps

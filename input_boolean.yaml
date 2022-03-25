@@ -35,12 +35,8 @@ mode_vacation:
 ## Vacation
 ##########################################################
 
-vacation_living_room_lights_on_in_evening:
-  name: Turn on living room lights in evening during vacation
-  icon: mdi:airplane
-
-vacation_living_room_lights_off_at_night:
-  name: Turn off living room lights at night during vacation
+vacation_lighting_automation:
+  name: Automate lights while on vacation
   icon: mdi:airplane
 
 ##########################################################

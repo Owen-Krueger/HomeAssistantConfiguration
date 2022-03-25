@@ -6,6 +6,7 @@ cards:
   - cards:
     - entities:
       - entity: input_boolean.lights_living_room_automations
+      - entity: input_boolean.vacation_lighting_automation
       show_header_toggle: false
       title: General
       type: entities
@@ -17,12 +18,6 @@ cards:
       - entity: input_datetime.bedroom_lamp_off
       show_header_toggle: false
       title: Morning
-      type: entities
-    - entities:
-      - entity: input_boolean.vacation_living_room_lights_on_in_evening
-      - entity: input_boolean.vacation_living_room_lights_off_at_night
-      show_header_toggle: false
-      title: Evening
       type: entities
     type: vertical-stack
   - cards:
