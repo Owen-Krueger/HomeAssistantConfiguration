@@ -79,6 +79,9 @@
     - condition: state
       entity_id: input_boolean.lights_living_room_automations
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'off'
 
   action:
     - service: switch.turn_on
@@ -104,6 +107,9 @@
     - condition: state
       entity_id: group.living_room_lamps
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: 'off'
     - condition: or
       conditions:
         - condition: time
