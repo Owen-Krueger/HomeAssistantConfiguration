@@ -82,6 +82,9 @@
     - condition: state
       entity_id: input_boolean.mode_vacation
       state: 'off'
+    - condition: time # So it doesn't happen while we sleep
+      before: '20:30:00'
+      after: '05:30:00'
 
   action:
     - service: switch.turn_on
