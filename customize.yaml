@@ -1,40 +1,5 @@
 #################################################
-## Amazon Echos
-#################################################
-media_player.everywhere:
-  friendly_name: Everywhere
-  icon: mdi:amazon-alexa
-
-media_player.living_room_echo:
-  friendly_name: Living Room Echo
-  icon: mdi:amazon-alexa
-
-media_player.bedroom_bedside_echo_show:
-  friendly_name: Bedside Echo Show
-  icon: mdi:amazon-alexa
-
-media_player.bedroom_desk_echo_show:
-  friendly_name: Desk Echo Show
-  icon: mdi:amazon-alexa
-
-media_player.hallway_echo_dot:
-  friendly_name: Hallway Echo Dot
-  icon: mdi:amazon-alexa
-
-media_player.kitchen_echo_show:
-  friendly_name: Kitchen Echo Show
-  icon: mdi:amazon-alexa
-
-media_player.living_room_echo_sub:
-  friendly_name: Echo Sub
-  icon: mdi:amazon-alexa
-
-media_player.sound_system:
-  friendly_name: Living Room Sound System
-  icon: mdi:amazon-alexa
-
-#################################################
-## Climate
+## Inputs
 #################################################
 input_boolean.climate_automations:
   icon: mdi:thermometer
@@ -48,35 +13,9 @@ input_number.climate_night_temp:
 input_number.climate_away_temp:
   icon: mdi:thermometer
 
-#################################################
-## Google Devices
-#################################################
-climate.kitchen_thermostat:
-  friendly_name: Nest Thermostat
-  icon: mdi:thermometer
-
-media_player.google_home_hallway:
-  friendly_name: Hallway Google Home Mini
-  icon: mdi:google-home
-
-media_player.google_home_living_room:
-  friendly_name: Living Room Google Home Mini
-  icon: mdi:google-home
-
-media_player.living_room_tv:
-  friendly_name: Living Room Chromecast
-  icon: mdi:television
-
-#################################################
-## Beto
-#################################################
-vacuum.beto:
-  friendly_name: Beto
-  icon: mdi:robot-vacuum-variant
-
-#################################################
-## Groups
-#################################################
+# #################################################
+# ## Groups
+# #################################################
 group.interior_lights:
   friendly_name: Interior Lights
   icon: mdi:home-lightbulb
@@ -85,9 +24,9 @@ group.living_room_lamps:
   friendly_name: Living Room Lamps
   icon: mdi:lamp
 
-#################################################
-## Lights
-#################################################
+# #################################################
+# ## Lights
+# #################################################
 light.bedroom:
   friendly_name: Bedroom Lights
   icon: mdi:bed
@@ -95,73 +34,3 @@ light.bedroom:
 light.bedroom_lamps:
   friendly_name: Bedroom Lamps
   icon: mdi:lamp
-
-light.bedroom_1:
-  friendly_name: Allison Lamp
-  icon: mdi:lamp
-
-light.bedroom_2:
-  friendly_name: Owen Lamp
-  icon: mdi:lamp
-
-light.master_bedroom_bedroom_lights:
-  friendly_name: Bedroom Overhead Lights
-  icon: mdi:ceiling-light
-
-light.hallway:
-  friendly_name: Office Lamp
-  icon: mdi:floor-lamp
-
-#################################################
-## Switches
-#################################################
-switch.allison_living_room_lamp:
-  friendly_name: Allison Living Room Lamp
-  icon: mdi:lamp
-
-switch.christmas_tree:
-  friendly_name: Christmas Tree
-  icon: mdi:pine-tree
-
-switch.outside_front_left_plug:
-  friendly_name: Front Christmas Lights
-  icon: mdi:string-lights
-
-switch.outside_front_right_plug:
-  friendly_name: Outside Front Right Plug
-  icon: mdi:power-plug
-
-switch.outside_back_left_plug:
-  friendly_name: Back Christmas Lights
-  icon: mdi:string-lights
-
-switch.outside_back_right_plug:
-  friendly_name: Outside Back Right Plug
-  icon: mdi:power-plug
-
-switch.owen_living_room_lamp:
-  friendly_name: Owen Living Room Lamp
-  icon: mdi:lamp
-
-switch.strip_light:
-  friendly_name: Light Strip
-  icon: mdi:led-strip-variant
-
-#################################################
-## Inputs
-#################################################
-input_number.temp_day:
-  icon: mdi:thermostat
-
-input_number.temp_night:
-  icon: mdi:thermostat
-
-input_number.temp_vacation:
-  icon: mdi:thermostat
-
-#################################################
-## Televisions
-#################################################
-media_player.samsung_tv:
-  friendly_name: Samsung TV
-  icon: mdi:television

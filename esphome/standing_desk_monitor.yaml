@@ -1,0 +1,35 @@
+api:
+  encryption:
+    key: !secret esp_api_key
+  password: !secret esp_api_password
+
+esphome:
+  name: standing-desk-example
+  platform: ESP8266
+  board: d1_mini
+
+packages:
+  standing_desk: github://tjhorner/esphome-standing-desk/configs/template.yaml
+
+substitutions:
+  standing_desk_uart_rx_pin: D2
+  standing_desk_up_pin: D7
+  standing_desk_down_pin: D8
+  standing_desk_min_height: "25.5"
+  standing_desk_max_height: "51.1"
+
+  desk_height_name: "Desk Height"
+  target_desk_height_name: "Target Desk Height"
+  standing_desk_height_units: "in"
+
+logger:
+  level: debug
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  manual_ip:
+    gateway: !secret router_gateway_ip
+    static_ip: !secret standing_desk_monitor
+    subnet: 255.255.255.0

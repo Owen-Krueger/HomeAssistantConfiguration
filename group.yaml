@@ -10,4 +10,4 @@ interior_lights:
     - switch.allison_living_room_lamp
     - switch.owen_living_room_lamp
     - light.bedroom
-    - light.hallway
+    - light.office_lamp

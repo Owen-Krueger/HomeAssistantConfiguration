@@ -7,7 +7,7 @@ alexa:
       - light.master_bedroom_bedroom_lights
       - light.living_room_1
       - light.living_room_2
-      - light.hallway
+      - light.office_lamp
       - script.dim_bedroom_lamps
       - script.night_lighting
       - script.turn_off_bedroom_lamps

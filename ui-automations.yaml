@@ -1,3 +1,0 @@
-title: Automations
-views:
-  - !include lovelace/view-automations.yaml

@@ -1,9 +1,0 @@
-title: Our Home
-views:
-  - !include lovelace/view-home.yaml
-  - !include lovelace/view-lights.yaml
-  - !include lovelace/view-climate.yaml
-  - !include lovelace/view-people.yaml
-  - !include lovelace/view-media.yaml
-  - !include lovelace/view-vacuum.yaml
-  - !include lovelace/view-weather.yaml

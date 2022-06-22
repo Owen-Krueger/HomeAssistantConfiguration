@@ -57,7 +57,7 @@
   trigger:
     - platform: numeric_state
       entity_id: proximity.home
-      above: 50
+      above: 30
 
   condition:
     - condition: state
@@ -88,7 +88,7 @@
   trigger:
     - platform: numeric_state
       entity_id: proximity.home
-      below: 50
+      below: 30
 
   condition:
     - condition: state

@@ -12,7 +12,6 @@ blueprints
 custom_components
 deps
 lutron
-persons.yaml
 secrets.yaml
 tts
 www

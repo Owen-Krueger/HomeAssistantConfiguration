@@ -1,7 +1,0 @@
-#################################################
-## Hallway
-#################################################
-- platform: group
-  name: Hallway
-  entities:
-    - light.hallway_lamp
