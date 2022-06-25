@@ -22,6 +22,9 @@ lights_living_room_automations:
   name: Living Room Light Automations
   icon: mdi:floor-lamp
 
+lights_bedroom_automations:
+  name: Bedroom Light Automations
+  icon: mdi:ceiling-light
 
 ##########################################################
 ## Mode
@@ -30,6 +33,14 @@ lights_living_room_automations:
 mode_vacation:
   name: Vacation Mode
   icon: mdi:airplane
+
+##########################################################
+## Sleep
+##########################################################
+
+night_automations:
+  name: Night Automations
+  icon: mdi:weather-night
 
 ##########################################################
 ## Vacation

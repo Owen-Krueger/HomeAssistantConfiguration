@@ -19,4 +19,3 @@ script: !include_dir_merge_list script
 sensor: !include sensor.yaml
 spotify: !include spotify.yaml
 tts: !include tts.yaml
-zone: !include zones.yaml

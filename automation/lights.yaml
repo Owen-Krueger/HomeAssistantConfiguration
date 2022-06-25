@@ -4,9 +4,9 @@
 
 # Turn on bedroom lamps with alarm
 - alias: Lights - Turn on bedroom lamps with alarm
-  id: 'lights_bedroom_lamps_on_with_alarm'
+  id: "lights_bedroom_lamps_on_with_alarm"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
       at: input_datetime.morning_alarm
@@ -14,16 +14,16 @@
   condition:
     - condition: state
       entity_id: binary_sensor.workday_sensor
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: person.owen
-      state: 'home'
+      state: "home"
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
+      state: "off"
     - condition: state
       entity_id: input_boolean.lights_bedroom_lamps_on_with_alarm
-      state: 'on'
+      state: "on"
 
   action:
     - service: light.turn_on
@@ -34,9 +34,9 @@
 
 # Turn off bedroom lamps after alarm
 - alias: Lights - Turn off bedroom lamps after alarm
-  id: 'lights_bedroom_lamps_off_after_alarm'
+  id: "lights_bedroom_lamps_off_after_alarm"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
       at: input_datetime.bedroom_lamp_off
@@ -44,16 +44,16 @@
   condition:
     - condition: state
       entity_id: binary_sensor.workday_sensor
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: person.owen
-      state: 'home'
+      state: "home"
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
+      state: "off"
     - condition: state
       entity_id: input_boolean.lights_bedroom_lamps_off_after_alarm
-      state: 'on'
+      state: "on"
 
   action:
     - service: light.turn_off
@@ -61,157 +61,252 @@
         entity_id:
           - light.bedroom_lamps
 
+# Turn on bedroom lights with motion
+- alias: Lights - Turn on bedroom lights with motion
+  id: "lights_bedroom_lights_on_with_motion"
+
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_lights_motion_detection
+      from: "off"
+      to: "on"
+
+  condition:
+    - condition: state
+      entity_id: switch.bedroom_lights
+      state: "off"
+    - condition: time # So it doesn't happen while we sleep
+      before: "20:30:00"
+      after: "08:00:00"
+    - condition: state
+      entity_id: person.owen
+      state: "home"
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.lights_bedroom_automations
+      state: "on"
+
+  action:
+    - service: switch.turn_on
+      target:
+        entity_id: switch.bedroom_lights
+
+# Turn on bedroom lights when vacant
+- alias: Lights - Turn off bedroom lights when vacant
+  id: "lights_bedroom_lights_off_when_vacant"
+
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_lights_motion_detection
+      from: "on"
+      to: "off"
+      for: "00:00:30" # 30 seconds
+
+  condition:
+    - condition: state
+      entity_id: switch.bedroom_lights
+      state: "on"
+
+  action:
+    - service: switch.turn_off
+      target:
+        entity_id: switch.bedroom_lights
+
+# Turn on bedroom lamps with motion at night
+- alias: Lights - Turn on bedroom lamps with motion at night
+  id: "lights_bedroom_lamps_on_with_motion_at_night"
+
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_lights_motion_detection
+      from: "off"
+      to: "on"
+
+  condition:
+    - condition: state
+      entity_id: light.bedroom_lamps
+      state: "off"
+    - condition: time
+      after: "20:30:00"
+    - condition: state
+      entity_id: person.owen
+      state: "home"
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.lights_bedroom_automations
+      state: "on"
+    - condition: state
+      entity_id: binary_sensor.pixel_5_is_charging
+      state: "off"
+
+  action:
+    - service: light.turn_on
+      target:
+        entity_id: light.bedroom_lamps
+      data:
+        brightness: 40
+    - service: switch.turn_off
+      target:
+        entity_id: switch.bedroom_lights
+
 #########################################################
 # Living Room
 #########################################################
 
 # Turn on living room lights when watching TV
 - alias: Lights - Turn on living room lights when watching TV
-  id: 'lights_living_room_lights_on_when_watching_tv'
+  id: "lights_living_room_lights_on_when_watching_tv"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: state
       entity_id: media_player.samsung_tv
-      to: 'on'
+      to: "on"
 
   condition:
     - condition: state
       entity_id: input_boolean.lights_living_room_automations
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
+      state: "off"
     - condition: time # So it doesn't happen while we sleep
-      before: '20:30:00'
-      after: '05:30:00'
+      before: "20:30:00"
+      after: "05:30:00"
 
   action:
     - service: switch.turn_on
       target:
-        entity_id: 
+        entity_id:
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
 
 # Turn off living room lights when not watching TV
 - alias: Lights - Turn off living room lights when not watching TV
-  id: 'lights_living_room_lights_off_when_not_watching_tv'
+  id: "lights_living_room_lights_off_when_not_watching_tv"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: state
       entity_id: media_player.samsung_tv
-      to: 'off'
+      to: "off"
 
   condition:
     - condition: state
       entity_id: input_boolean.lights_living_room_automations
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: group.living_room_lamps
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
+      state: "off"
     - condition: or
       conditions:
         - condition: time
-          after: '20:30:00'
+          after: "20:30:00"
         - condition: and
           conditions:
             - condition: state
               entity_id: person.allison
-              state: 'not_home'
+              state: "not_home"
             - condition: or
               conditions:
                 - condition: state
                   entity_id: binary_sensor.workday_sensor
-                  state: 'on'
+                  state: "on"
                 - condition: state
                   entity_id: person.owen
-                  state: 'not_home'
+                  state: "not_home"
   action:
     - service: switch.turn_off
       target:
-        entity_id: 
+        entity_id:
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
 
 # Turn off living room lights at night when not watching TV
 - alias: Lights - Turn off living room lights at night when not watching TV
-  id: 'lights_living_room_lights_off_at_night_when_not_watching_tv'
+  id: "lights_living_room_lights_off_at_night_when_not_watching_tv"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
-      at: '20:30:00'
+      at: "20:30:00"
 
   condition:
     - condition: state
       entity_id: input_boolean.lights_living_room_automations
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: media_player.samsung_tv
-      state: 'off'
+      state: "off"
 
   action:
     - service: switch.turn_off
       target:
-        entity_id: 
+        entity_id:
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
 
 # Philips Hue Living Room Lights On
 - alias: Lights - Turn on living room lights when philips hue switch on
-  id: 'lights_living_room_lights_on_when_philips_hue_switch_on'
+  id: "lights_living_room_lights_on_when_philips_hue_switch_on"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: event
-      event_type: 'hue_event'
+      event_type: "hue_event"
       event_data:
-        unique_id: 'dd9e9203-a2c7-401e-bf0f-b4b49231a46a'
+        unique_id: "dd9e9203-a2c7-401e-bf0f-b4b49231a46a"
 
   action:
     - service: switch.turn_on
       target:
-        entity_id: 
+        entity_id:
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
 
 # Philips Hue Living Room Lights Off
 - alias: Lights - Turn off living room lights when philips hue switch off
-  id: 'lights_living_room_lights_off_when_philips_hue_switch_off'
+  id: "lights_living_room_lights_off_when_philips_hue_switch_off"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: event
-      event_type: 'hue_event'
+      event_type: "hue_event"
       event_data:
-        unique_id: '37a1d9fd-ed23-46f8-8d2f-8a73ec75d6be'
+        unique_id: "37a1d9fd-ed23-46f8-8d2f-8a73ec75d6be"
 
   action:
     - service: switch.turn_off
       target:
-        entity_id: 
+        entity_id:
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
 
 # Philips Hue Turn on Living Room Automation
 - alias: Lights - Turn on living room automation when philips hue switch brighter
-  id: 'lights_living_room_lights_automation_on_when_philips_hue_switch_brighter'
+  id: "lights_living_room_lights_automation_on_when_philips_hue_switch_brighter"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: event
-      event_type: 'hue_event'
+      event_type: "hue_event"
       event_data:
-        unique_id: 'dfd2d67f-bd6b-4e1f-856d-cc067ef210b7'
+        unique_id: "dfd2d67f-bd6b-4e1f-856d-cc067ef210b7"
 
   condition:
     - condition: state
       entity_id: input_boolean.lights_living_room_automations
-      state: 'off'
+      state: "off"
 
   action:
     - service: input_boolean.turn_on
@@ -226,19 +321,19 @@
 
 # Philips Hue Turn off Living Room Automation
 - alias: Lights - Turn off living room automation when philips hue switch dimmer
-  id: 'lights_living_room_lights_automation_off_when_philips_hue_switch_dimmer'
+  id: "lights_living_room_lights_automation_off_when_philips_hue_switch_dimmer"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: event
-      event_type: 'hue_event'
+      event_type: "hue_event"
       event_data:
-        unique_id: '80052d3f-c70f-45a4-99db-1b0931558621'
+        unique_id: "80052d3f-c70f-45a4-99db-1b0931558621"
 
   condition:
     - condition: state
       entity_id: input_boolean.lights_living_room_automations
-      state: 'on'
+      state: "on"
 
   action:
     - service: input_boolean.turn_off
