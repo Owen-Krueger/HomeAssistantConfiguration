@@ -4,23 +4,23 @@
 
 # Turn on Christmas tree
 - alias: Holiday - Turn on Christmas tree
-  id: 'holiday_christmas_tree_on'
+  id: "holiday_christmas_tree_on"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
-      at: '05:00:00'
+      at: "05:00:00"
     - platform: state
       entity_id: person.allison
-      to: 'home'
+      to: "home"
 
   condition:
     - condition: state
       entity_id: input_boolean.christmas_tree_automation
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
+      state: "off"
 
   action:
     - service: switch.turn_on
@@ -30,26 +30,26 @@
 
 # Turn off Christmas tree
 - alias: Holiday - Turn off Christmas tree
-  id: 'holiday_christmas_tree_off'
+  id: "holiday_christmas_tree_off"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: state
       entity_id: person.allison
-      to: 'not_home'
-      for: '00:05:00'
+      to: "not_home"
+      for: "00:05:00"
     - platform: time
-      at: '08:30:00'
+      at: "08:30:00"
     - platform: time
-      at: '23:00:00'
+      at: "23:00:00"
 
   condition:
     - condition: state
       entity_id: input_boolean.christmas_tree_automation
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
+      state: "off"
 
   action:
     - service: switch.turn_off
@@ -59,12 +59,12 @@
 
 # Turn on holiday lights
 - alias: Holiday - Turn on holiday lights
-  id: 'holiday_lights_on'
+  id: "holiday_lights_on"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
-      at: '05:00:00'
+      at: "05:00:00"
     - platform: numeric_state
       entity_id: sun.sun
       attribute: elevation
@@ -78,14 +78,14 @@
 
 # Turn off holiday lights
 - alias: Holiday - Turn off holiday lights
-  id: 'holiday_lights_off'
+  id: "holiday_lights_off"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
-      at: '08:30:00'
+      at: "08:30:00"
     - platform: time
-      at: '23:00:00'
+      at: "23:00:00"
 
   action:
     - service: switch.turn_off

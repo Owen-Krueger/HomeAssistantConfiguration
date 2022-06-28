@@ -4,9 +4,9 @@
 
 # Turn on living room lamps in evening
 - alias: Vacation - Turn on living room lamps in evening
-  id: 'vacation_living_room_lamps_on_in_evening'
+  id: "vacation_living_room_lamps_on_in_evening"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: numeric_state
       entity_id: sun.sun
@@ -16,39 +16,39 @@
   condition:
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.vacation_lighting_automation
-      state: 'on'
+      state: "on"
 
   action:
     - service: switch.turn_on
       target:
-        entity_id: 
+        entity_id:
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
 
 # Turn off living room lamps and turn on bedroom lamps at night
 - alias: Vacation - Turn off living room lamps and turn on bedroom lamps at night
-  id: 'vacation_living_room_lamps_off_bedroom_lamps_on_at_night'
+  id: "vacation_living_room_lamps_off_bedroom_lamps_on_at_night"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
-      at: '21:29:00'
-      
+      at: "21:29:00"
+
   condition:
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.vacation_lighting_automation
-      state: 'on'
+      state: "on"
 
   action:
     - service: switch.turn_off
       target:
-        entity_id: 
+        entity_id:
           - switch.allison_living_room_lamp
           - switch.owen_living_room_lamp
     - service: light.turn_on
@@ -58,20 +58,20 @@
 
 # Turn off bedroom lamps at night
 - alias: Vacation - Turn off bedroom lamps at night
-  id: 'vacation_bedroom_lamps_off_at_night'
+  id: "vacation_bedroom_lamps_off_at_night"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
-      at: '22:02:00'
-      
+      at: "22:02:00"
+
   condition:
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.vacation_lighting_automation
-      state: 'on'
+      state: "on"
 
   action:
     - service: light.turn_off

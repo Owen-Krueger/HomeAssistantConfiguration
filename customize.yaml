@@ -13,9 +13,12 @@ input_number.climate_night_temp:
 input_number.climate_away_temp:
   icon: mdi:thermometer
 
-# #################################################
-# ## Groups
-# #################################################
+input_number.lights_motion_timeout_seconds:
+  icon: mdi:motion-sensor-off
+
+##################################################
+### Groups
+##################################################
 group.interior_lights:
   friendly_name: Interior Lights
   icon: mdi:home-lightbulb
@@ -24,9 +27,9 @@ group.living_room_lamps:
   friendly_name: Living Room Lamps
   icon: mdi:lamp
 
-# #################################################
-# ## Lights
-# #################################################
+##################################################
+### Lights
+##################################################
 light.bedroom:
   friendly_name: Bedroom Lights
   icon: mdi:bed

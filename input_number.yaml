@@ -19,3 +19,13 @@ climate_away_temp:
   min: 60
   max: 80
   step: 1
+
+##########################################################
+## Lights
+##########################################################
+
+lights_motion_timeout_seconds:
+  name: Motion Lights Timeout Seconds
+  min: 0
+  max: 600
+  step: 30

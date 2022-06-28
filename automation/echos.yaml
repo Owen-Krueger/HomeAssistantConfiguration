@@ -4,13 +4,13 @@
 
 # Restart Living Room Echo
 - alias: Echos - Restart Living Room Echo
-  id: 'echos_restart_living_room_echo'
+  id: "echos_restart_living_room_echo"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: state
       entity_id: media_player.sound_system
-      to: 'unavailable'
+      to: "unavailable"
 
   action:
     - service: switch.turn_off

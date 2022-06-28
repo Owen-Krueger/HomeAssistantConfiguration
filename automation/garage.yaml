@@ -1,0 +1,22 @@
+# Garage Open While Away
+- alias: Garage - Open While Away
+  id: garage_open_while_away
+
+  trigger:
+    - platform: numeric_state
+      entity_id: proximity.home
+      above: 5
+
+  condition:
+    - condition: state
+      entity_id: proximity.home
+      attribute: dir_of_travel
+      state: away_from
+    - condition: state
+      entity_id: binary_sensor.garage_door_sensor_door_is_open
+      state: "on"
+
+  action:
+    - service: notify.mobile_app_pixel_5
+      data:
+        message: Garage door is open.

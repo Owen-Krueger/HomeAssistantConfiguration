@@ -1,0 +1,49 @@
+##########################################################
+## Sleep
+##########################################################
+
+- alias: Sleep - Sleep lighting and audio
+  id: "sleep_lighting_and_audio"
+
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.pixel_5_is_charging
+      from: "off"
+      to: "on"
+
+  condition:
+    - condition: time
+      after: "20:30:00"
+    - condition: state
+      entity_id: light.bedroom_lamps
+      state: "on"
+    - condition: state
+      entity_id: person.owen
+      state: "home"
+    - condition: state
+      entity_id: input_boolean.mode_vacation
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.night_automations
+      state: "on"
+
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.bedroom_lamps
+    - service: media_player.play_media
+      target:
+        entity_id: media_player.office_desk_echo_show
+      data:
+        media_content_id: /local/audio/Oscillating_Fan.mp3
+        media_content_type: music
+    # - service: media_player.repeat_set
+    #   target:
+    #     entity_id: media_player.bedroom_desk_echo_show
+    #   repeat: one
+    # - service: media_player.volume_set
+    #   target:
+    #     entity_id: media_player.bedroom_desk_echo_show
+    #   data:
+    #     volume_level: 0.2

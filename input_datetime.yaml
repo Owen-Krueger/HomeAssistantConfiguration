@@ -25,3 +25,16 @@ climate_night_start:
   name: Night Temperature Start Time
   has_date: false
   has_time: true
+
+##########################################################
+## Lighting
+##########################################################
+light_bedroom_motion_daytime:
+  name: Bedroom Motion Day Lighting Start Time
+  has_date: false
+  has_time: true
+
+light_bedroom_motion_nighttime:
+  name: Bedroom Motion Night Lighting Start Time
+  has_date: false
+  has_time: true

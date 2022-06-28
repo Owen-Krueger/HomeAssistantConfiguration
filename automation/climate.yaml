@@ -4,9 +4,9 @@
 
 # Set Temperature to Day Temp
 - alias: Climate - Set Temperature to Day Temperature
-  id: 'climate_set_to_day_temp'
+  id: "climate_set_to_day_temp"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
       at: input_datetime.climate_day_start
@@ -14,10 +14,10 @@
   condition:
     - condition: state
       entity_id: input_boolean.climate_automations
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
+      state: "off"
 
   action:
     - service: climate.set_temperature
@@ -28,9 +28,9 @@
 
 # Set Temperature to Night Temp
 - alias: Climate - Set Temperature to Night Temperature
-  id: 'climate_set_to_night_temp'
+  id: "climate_set_to_night_temp"
 
-  initial_state: 'on'
+  initial_state: true
   trigger:
     - platform: time
       at: input_datetime.climate_night_start
@@ -38,10 +38,10 @@
   condition:
     - condition: state
       entity_id: input_boolean.climate_automations
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: input_boolean.mode_vacation
-      state: 'off'
+      state: "off"
 
   action:
     - service: climate.set_temperature
@@ -66,7 +66,7 @@
       state: away_from
     - condition: state
       entity_id: input_boolean.climate_automations
-      state: 'on'
+      state: "on"
 
   action:
     - service: notify.mobile_app_pixel_5
@@ -79,7 +79,7 @@
           actions:
             - action: "climate_away"
               title: "Set Away Temperature"
-              uri: "/lovelace-admin/climate"
+              uri: "/lovelace/climate"
 
 # Coming Back Home
 - alias: Climate - Coming Back Home
@@ -97,7 +97,7 @@
       state: towards
     - condition: state
       entity_id: input_boolean.climate_automations
-      state: 'off'
+      state: "off"
 
   action:
     - service: climate.set_temperature
