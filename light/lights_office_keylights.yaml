@@ -1,0 +1,8 @@
+#################################################
+## Office Keylights
+#################################################
+- platform: group
+  name: Office Keylights
+  entities:
+    - light.elgato_key_light_left
+    - light.elgato_key_light_right

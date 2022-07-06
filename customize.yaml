@@ -37,3 +37,7 @@ light.bedroom:
 light.bedroom_lamps:
   friendly_name: Bedroom Lamps
   icon: mdi:lamp
+
+light.office_keylights:
+  friendly_name: Office Keylights
+  icon: mdi:spotlight
