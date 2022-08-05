@@ -15,7 +15,7 @@ nest: !include nest.yaml
 proximity: !include proximity.yaml
 samsungtv: !include samsung-tv.yaml
 scene: !include scenes.yaml
-script: !include_dir_merge_list script
+script: !include_dir_merge_named script
 sensor: !include sensor.yaml
 spotify: !include spotify.yaml
 tts: !include tts.yaml

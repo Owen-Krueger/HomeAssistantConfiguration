@@ -68,7 +68,7 @@ turn_off_bedroom_lamps:
 # Nap mode
 nap_mode:
   alias: Lights - Nap Mode
-  icon: mdi:bed-clock
+  icon: mdi:bed
 
   sequence:
     - service: light.turn_off
