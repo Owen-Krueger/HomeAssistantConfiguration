@@ -3,11 +3,11 @@
 #################################################
 
 # Run Beto on command
-- beto_run_on_command:
-    alias: Beto - Run Beto on command
-    icon: mdi:robot-vacuum-variant
+beto_run_on_command:
+  alias: Beto - Run Beto on command
+  icon: mdi:robot-vacuum-variant
 
-    sequence:
-      - service: vacuum.start
-        target:
-          entity_id: vacuum.beto
+  sequence:
+    - service: vacuum.start
+      target:
+        entity_id: vacuum.beto

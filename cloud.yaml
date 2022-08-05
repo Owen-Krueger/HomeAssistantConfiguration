@@ -4,15 +4,16 @@ alexa:
       - light.bedroom_1
       - light.bedroom_2
       - light.bedroom_lamps
-      - light.master_bedroom_bedroom_lights
       - light.living_room_1
       - light.living_room_2
       - light.office_lamp
       - script.dim_bedroom_lamps
+      - script.nap_mode
       - script.night_lighting
       - script.turn_off_bedroom_lamps
       - script.turn_off_all_interior_lights
       - script.turn_on_all_living_room
+      - switch.bedroom_lights
       - switch.christmas_tree
       - switch.strip_light
   entity_config:
