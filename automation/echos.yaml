@@ -22,7 +22,7 @@
     - service: switch.turn_on
       target:
         entity_id: switch.living_room_echo
-    - service: notify.mobile_app_pixel_5
+    - service: notify.owen
       data:
         message: Living Room Echo Restarted
         data:

@@ -1,5 +1,5 @@
 home:
   devices: 
-    - device_tracker.pixel_5
+    - device_tracker.owen_phone
   tolerance: 50
   unit_of_measurement: mi

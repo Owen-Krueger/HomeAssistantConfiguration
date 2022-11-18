@@ -10,12 +10,9 @@ input_boolean: !include input_boolean.yaml
 input_datetime: !include input_datetime.yaml
 input_number: !include input_number.yaml
 light: !include_dir_merge_list light
-# neato: !include neato.yaml
-nest: !include nest.yaml
+notify: !include notify.yaml
 proximity: !include proximity.yaml
 samsungtv: !include samsung-tv.yaml
-scene: !include scenes.yaml
 script: !include_dir_merge_named script
 sensor: !include sensor.yaml
-spotify: !include spotify.yaml
 tts: !include tts.yaml

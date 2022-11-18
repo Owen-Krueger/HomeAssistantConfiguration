@@ -74,7 +74,7 @@
     - service: switch.turn_on
       entity_id:
         - switch.outside_front_left_plug
-        - switch.outside_back_left_plug
+        - switch.outside_front_right_plug
 
 # Turn off holiday lights
 - alias: Holiday - Turn off holiday lights
@@ -91,4 +91,4 @@
     - service: switch.turn_off
       entity_id:
         - switch.outside_front_left_plug
-        - switch.outside_back_left_plug
+        - switch.outside_front_right_plug

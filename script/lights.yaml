@@ -33,7 +33,7 @@ dim_bedroom_lamps:
     - service: light.turn_on
       data:
         entity_id: light.bedroom
-        brightness: 40
+        brightness_pct: 30
 
 # Dim bedroom lamps and turn off all other lights
 night_lighting:
@@ -46,14 +46,14 @@ night_lighting:
         entity_id:
           - switch.christmas_tree
           - switch.strip_light
-    - service: switch.turn_off
-      target:
-        entity_id: switch.bedroom_lights
     - service: light.turn_on
       target:
         entity_id: light.bedroom_lamps
       data:
-        brightness: 40
+        brightness_pct: 30
+    - service: switch.turn_off
+      target:
+        entity_id: switch.bedroom_lights
 
 # Turn off bedroom lamps
 turn_off_bedroom_lamps:

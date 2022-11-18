@@ -94,31 +94,6 @@
       target:
         entity_id: switch.bedroom_lights
 
-# Turn off bedroom lights when vacant
-- alias: Lights - Turn off bedroom lights when vacant
-  id: "lights_bedroom_lights_off_when_vacant"
-
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.bedroom_lights_motion_detection
-      from: "on"
-      to: "off"
-      for: "00:00:{{ states('input_number.lights_motion_timeout_seconds') | int }}"
-
-  condition:
-    - condition: state
-      entity_id: switch.bedroom_lights
-      state: "on"
-
-  action:
-    - service: switch.turn_off
-      target:
-        entity_id: switch.bedroom_lights
-    - service: light.turn_off
-      target:
-        entity_id: light.bedroom_lamps
-
 # Turn on bedroom lamps with motion at night
 - alias: Lights - Turn on bedroom lamps with motion at night
   id: "lights_bedroom_lamps_on_with_motion_at_night"
@@ -146,7 +121,7 @@
       entity_id: input_boolean.lights_bedroom_automations
       state: "on"
     - condition: state
-      entity_id: binary_sensor.pixel_5_is_charging
+      entity_id: binary_sensor.owen_phone_is_charging
       state: "off"
 
   action:
@@ -348,50 +323,3 @@
           type: announce
         target: media_player.living_room_echo
         message: "Living Room Automation Turned Off"
-
-#########################################################
-# Garage
-#########################################################
-
-# Turn on garage lights with motion
-- alias: Lights - Turn on garage lights with motion
-  id: "lights_garage_lights_on_with_motion"
-
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.garage_lights_motion_detection
-      from: "off"
-      to: "on"
-
-  condition:
-    - condition: state
-      entity_id: switch.garage_lights
-      state: "off"
-
-  action:
-    - service: switch.turn_on
-      target:
-        entity_id: switch.garage_lights
-
-# Turn off garagae lights when vacant
-- alias: Lights - Turn off garage lights when vacant
-  id: "lights_garage_lights_off_when_vacant"
-
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.garage_lights_motion_detection
-      from: "on"
-      to: "off"
-      for: "00:00:{{ states('input_number.lights_motion_timeout_seconds') | int }}"
-
-  condition:
-    - condition: state
-      entity_id: switch.garage_lights
-      state: "on"
-
-  action:
-    - service: switch.turn_off
-      target:
-        entity_id: switch.garage_lights

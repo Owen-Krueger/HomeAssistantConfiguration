@@ -8,7 +8,7 @@
   initial_state: true
   trigger:
     - platform: state
-      entity_id: binary_sensor.pixel_5_is_charging
+      entity_id: binary_sensor.owen_phone_is_charging
       from: "off"
       to: "on"
 

@@ -11,3 +11,9 @@ interior_lights:
     - switch.owen_living_room_lamp
     - light.bedroom
     - light.office_lamp
+
+holiday_lights:
+  name: Holiday Lights
+  entities:
+    - switch.outside_front_left_plug
+    - switch.outside_front_right_plug

@@ -1,0 +1,9 @@
+- platform: group
+  name: family
+  services:
+    - service: mobile_app_pixel_7
+    - service: mobile_app_iphone_68
+- platform: group
+  name: owen
+  services:
+    - service: mobile_app_pixel_7

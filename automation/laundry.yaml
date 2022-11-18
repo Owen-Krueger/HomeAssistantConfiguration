@@ -1,0 +1,28 @@
+##########################################################
+## Laundry
+##########################################################
+
+# Notify on Washer or Dryer Completion
+- alias: Laundry - Notify on Washer or Dryer Completion
+  id: laundry_notify_on_washer_or_dryer_completion
+
+  trigger:
+    - platform: state
+      entity_id: sensor.washer_washer_job_state
+      to: "finish"
+    - platform: state
+      entity_id: sensor.dryer_dryer_job_state
+      to: "finish"
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.laundry_notify_on_job_completion
+      state: "on"
+
+  action:
+    - service: notify.family
+      data:
+        message: "The {% if is_state('sensor.washer_washer_job_state', 'finish') %}washer{% else %}dryer{% endif %} has completed!"
+        data:
+          tag: laundry
+          group: laundry

@@ -17,6 +17,6 @@
       state: "on"
 
   action:
-    - service: notify.mobile_app_pixel_5
+    - service: notify.owen
       data:
         message: Garage door is open.
