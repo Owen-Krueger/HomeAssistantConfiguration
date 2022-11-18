@@ -21,3 +21,18 @@
     - service: input_boolean.turn_off
       target:
         entity_id: input_boolean.climate_automations
+
+# Close Garage Door
+- alias: Android Action - Close Garage Door
+  id: android_action_close_garage
+
+  trigger:
+    - platform: event
+      event_type: mobile_app_notification_action
+      event_data:
+        action: "garage_close"
+
+  action:
+    - service: cover.close_cover
+      target:
+        entity_id: cover.primary_garage_door

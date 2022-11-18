@@ -20,3 +20,8 @@
     - service: notify.family
       data:
         message: Garage door is open.
+        entity_id: cover.primary_garage_door
+        actions:
+          - action: "garage_close"
+            title: "Close Garage"
+            uri: "/lovelace/home"
