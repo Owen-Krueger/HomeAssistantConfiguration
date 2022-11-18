@@ -56,12 +56,12 @@
 
   trigger:
     - platform: numeric_state
-      entity_id: proximity.home
+      entity_id: proximity.family
       above: 30
 
   condition:
     - condition: state
-      entity_id: proximity.home
+      entity_id: proximity.family
       attribute: dir_of_travel
       state: away_from
     - condition: state
@@ -87,12 +87,12 @@
 
   trigger:
     - platform: numeric_state
-      entity_id: proximity.home
+      entity_id: proximity.owen
       below: 30
 
   condition:
     - condition: state
-      entity_id: proximity.home
+      entity_id: proximity.owen
       attribute: dir_of_travel
       state: towards
     - condition: state

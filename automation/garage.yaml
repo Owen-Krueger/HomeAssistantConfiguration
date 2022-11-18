@@ -4,19 +4,19 @@
 
   trigger:
     - platform: numeric_state
-      entity_id: proximity.home
+      entity_id: proximity.family
       above: 5
 
   condition:
     - condition: state
-      entity_id: proximity.home
+      entity_id: proximity.family
       attribute: dir_of_travel
       state: away_from
     - condition: state
-      entity_id: binary_sensor.garage_door_sensor_door_is_open
-      state: "on"
+      entity_id: cover.primary_garage_door
+      state: "open"
 
   action:
-    - service: notify.owen
+    - service: notify.family
       data:
         message: Garage door is open.
