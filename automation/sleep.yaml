@@ -2,15 +2,19 @@
 ## Sleep
 ##########################################################
 
-- alias: Sleep - Sleep lighting and audio
-  id: "sleep_lighting_and_audio"
+- alias: Sleep - Turn off lights when charging phone
+  id: "sleep_turn_off_lights_when_charging_phone"
 
   initial_state: true
   trigger:
     - platform: state
-      entity_id: binary_sensor.owen_phone_is_charging
-      from: "off"
-      to: "on"
+      entity_id: sensor.owen_phone_battery_state
+      from: "discharging"
+      to: "not_charging"
+    - platform: state
+      entity_id: sensor.owen_phone_battery_state
+      from: "discharging"
+      to: "charging"
 
   condition:
     - condition: time
@@ -32,12 +36,12 @@
     - service: light.turn_off
       target:
         entity_id: light.bedroom_lamps
-    - service: media_player.play_media
-      target:
-        entity_id: media_player.office_desk_echo_show
-      data:
-        media_content_id: /local/audio/Oscillating_Fan.mp3
-        media_content_type: music
+    # - service: media_player.play_media
+    #   target:
+    #     entity_id: media_player.office_desk_echo_show
+    #   data:
+    #     media_content_id: /local/audio/Oscillating_Fan.mp3
+    #     media_content_type: music
     # - service: media_player.repeat_set
     #   target:
     #     entity_id: media_player.bedroom_desk_echo_show

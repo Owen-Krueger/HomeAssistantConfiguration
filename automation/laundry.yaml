@@ -13,6 +13,9 @@
     - platform: state
       entity_id: sensor.dryer_dryer_job_state
       to: "finish"
+    - platform: state
+      entity_id: sensor.dryer_dryer_job_state
+      to: "cooling"
 
   condition:
     - condition: state

@@ -9,7 +9,7 @@
   initial_state: true
   trigger:
     - platform: time
-      at: "05:00:00"
+      at: "07:00:00"
     - platform: state
       entity_id: person.allison
       to: "home"
@@ -38,8 +38,6 @@
       entity_id: person.allison
       to: "not_home"
       for: "00:05:00"
-    - platform: time
-      at: "08:30:00"
     - platform: time
       at: "23:00:00"
 

@@ -1,0 +1,10 @@
+# Workaround for needing to refresh cached images.
+- platform: local_file
+  name: floor_plan_upper
+  file_path: /config/www/images/FloorPlanUpper.png
+- platform: local_file
+  name: floor_plan_garage
+  file_path: /config/www/images/FloorPlanGarage.png
+- platform: local_file
+  name: floor_plan_lower
+  file_path: /config/www/images/FloorPlanLower.png
