@@ -3,3 +3,5 @@ latitude: !secret latitude
 longitude: !secret longitude
 elevation: !secret elevation
 customize: !include customize.yaml
+currency: USD
+country: US

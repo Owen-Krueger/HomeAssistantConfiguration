@@ -26,6 +26,10 @@ lights_bedroom_automations:
   name: Bedroom Light Automations
   icon: mdi:ceiling-light
 
+lights_turn_off_lights_when_nobody_home:
+  name: Turn Off Lights When Nobody is Home
+  icon: mdi:ceiling-light
+
 ##########################################################
 ## Mode
 ##########################################################

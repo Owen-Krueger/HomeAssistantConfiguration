@@ -7,8 +7,13 @@ living_room_lamps:
 interior_lights:
   name: Interior Lights
   entities:
+    - switch.laundry_room_lights
+    - switch.kitchen_lights
+    - switch.counter_lights
+    - switch.stairway_lights
     - switch.allison_living_room_lamp
     - switch.owen_living_room_lamp
+    - light.downstairs_lights
     - light.bedroom
     - light.office_lamp
 

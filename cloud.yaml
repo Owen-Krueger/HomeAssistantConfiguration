@@ -7,12 +7,17 @@ alexa:
       - light.living_room_1
       - light.living_room_2
       - light.office_lamp
+      - light.downstairs_lights
       - script.dim_bedroom_lamps
       - script.nap_mode
       - script.night_lighting
       - script.turn_off_bedroom_lamps
       - script.turn_off_all_interior_lights
       - script.turn_on_all_living_room
+      - switch.laundry_room_lights
+      - switch.kitchen_lights
+      - switch.counter_lights
+      - switch.stairway_lights
       - switch.bedroom_lights
       - switch.christmas_tree
       - switch.strip_light

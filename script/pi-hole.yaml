@@ -12,4 +12,4 @@ pihole_disable_both_for_30_seconds:
       target:
         entity_id: all
       data:
-        duration: "00:30"
+        duration: "00:00:30"
