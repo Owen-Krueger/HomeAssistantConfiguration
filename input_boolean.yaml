@@ -55,12 +55,16 @@ vacation_lighting_automation:
   icon: mdi:airplane
 
 ##########################################################
-## Christmas Tree
+## Holiday
 ##########################################################
 
 christmas_tree_automation:
   name: Christmas Tree Automation
   icon: mdi:pine-tree
+
+holiday_automations:
+  name: Holiday Automations
+  icon: mdi:string-lights
 
 ##########################################################
 ## Laundry
