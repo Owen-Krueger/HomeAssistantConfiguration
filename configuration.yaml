@@ -16,4 +16,5 @@ proximity: !include proximity.yaml
 samsungtv: !include samsung-tv.yaml
 script: !include_dir_merge_named script
 sensor: !include sensor.yaml
+scene: !include scene.yaml
 tts: !include tts.yaml

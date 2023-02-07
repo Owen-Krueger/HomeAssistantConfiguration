@@ -1,0 +1,26 @@
+- name: Night Lighting
+  icon: "mdi:weather-night"
+  entities:
+    light.bedroom_1:
+      state: "on"
+      brightness: 30
+    light.bedroom_2:
+      state: "on"
+      brightness: 30
+    light.downstairs_lights: "off"
+    switch.laundry_room_lights: "off"
+    switch.kitchen_lights: "off"
+    switch.counter_lights: "off"
+    switch.stairway_lights: "off"
+    switch.christmas_tree: "off"
+- name: All Off
+  icon: "mdi:home-off"
+  entities:
+    light.bedroom_1: "on"
+    light.bedroom_2: "on"
+    light.downstairs_lights: "off"
+    switch.laundry_room_lights: "off"
+    switch.kitchen_lights: "off"
+    switch.counter_lights: "off"
+    switch.stairway_lights: "off"
+    switch.christmas_tree: "off"

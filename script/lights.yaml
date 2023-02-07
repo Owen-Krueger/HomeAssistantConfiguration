@@ -46,17 +46,9 @@ night_lighting:
         entity_id: light.bedroom_lamps
       data:
         brightness_pct: 30
-    - service: light.turn_off
+    - service: scene.turn_on
       target:
-        entity_id: group.interior_lights
-    - service: switch.turn_off
-      target:
-        entity_id: group.interior_lights
-    - service: switch.turn_off
-      target:
-        entity_id:
-          - switch.christmas_tree
-          - switch.strip_light
+        entity_id: scene.night_lighting
 
 # Turn off bedroom lamps
 turn_off_bedroom_lamps:

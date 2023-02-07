@@ -28,12 +28,8 @@
       state: "away"
 
   action:
-    - service: light.turn_off
-      target:
-        entity_id: group.interior_lights
-    - service: switch.turn_off
-      target:
-        entity_id: group.interior_lights
+    - service: scene.turn_on
+      entity_id: scene.all_off
 
 ##########################################################
 ## Bedroom
