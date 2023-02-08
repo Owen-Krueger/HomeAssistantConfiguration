@@ -4,5 +4,5 @@
 - platform: group
   name: Bedroom Lamps
   entities:
-    - light.bedroom_1
-    - light.bedroom_2
+    - light.allison_bedroom_lamp
+    - light.owen_bedroom_lamp

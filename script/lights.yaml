@@ -8,12 +8,8 @@ turn_off_all_interior_lights:
   icon: mdi:lightbulb-off
 
   sequence:
-    - service: light.turn_off
-      target:
-        entity_id: group.interior_lights
-    - service: switch.turn_off
-      target:
-        entity_id: group.interior_lights
+    - service: scene.turn_on
+      entity_id: scene.all_off
     - service: switch.turn_off
       target:
         entity_id:
@@ -30,10 +26,8 @@ dim_bedroom_lamps:
   icon: mdi:lamp
 
   sequence:
-    - service: light.turn_on
-      data:
-        entity_id: light.bedroom
-        brightness_pct: 30
+    - service: scene.turn_on
+      entity_id: scene.dim_bedroom
 
 # Dim bedroom lamps and turn off all other lights
 night_lighting:
@@ -41,11 +35,6 @@ night_lighting:
   icon: mdi:weather-night
 
   sequence:
-    - service: light.turn_on
-      target:
-        entity_id: light.bedroom_lamps
-      data:
-        brightness_pct: 30
     - service: scene.turn_on
       target:
         entity_id: scene.night_lighting

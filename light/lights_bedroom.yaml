@@ -4,6 +4,6 @@
 - platform: group
   name: Bedroom
   entities:
-    - light.bedroom_1
-    - light.bedroom_2
+    - light.allison_bedroom_lamp
+    - light.owen_bedroom_lamp
     - light.master_bedroom_bedroom_lights

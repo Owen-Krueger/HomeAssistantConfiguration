@@ -1,8 +1,8 @@
 alexa:
   filter:
     include_entities:
-      - light.bedroom_1
-      - light.bedroom_2
+      - light.allison_bedroom_lamp
+      - light.owen_bedroom_lamp
       - light.bedroom_lamps
       - light.living_room_1
       - light.living_room_2

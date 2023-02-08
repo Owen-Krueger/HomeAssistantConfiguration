@@ -6,6 +6,7 @@
 .sync*
 Desktop.ini
 home-assistant*
+node_modules
 
 # User created files and folders
 blueprints
@@ -15,3 +16,8 @@ lutron
 secrets.yaml
 tts
 www
+
+# Zigbee
+zigbee.db
+zigbee.db-shm
+zigbee.db-wal
