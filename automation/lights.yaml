@@ -175,7 +175,7 @@
   initial_state: true
   trigger:
     - platform: state
-      entity_id: media_player.samsung_tv
+      entity_id: media_player.chromecast_upstairs_tv
       to: "on"
 
   condition:
@@ -203,7 +203,7 @@
   initial_state: true
   trigger:
     - platform: state
-      entity_id: media_player.samsung_tv
+      entity_id: media_player.chromecast_upstairs_tv
       to: "off"
 
   condition:
@@ -254,7 +254,7 @@
       entity_id: input_boolean.lights_living_room_automations
       state: "on"
     - condition: state
-      entity_id: media_player.samsung_tv
+      entity_id: media_player.chromecast_upstairs_tv
       state: "off"
 
   action:
