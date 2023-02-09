@@ -13,13 +13,17 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 | Raspberry Pi 4 (4GB) | [Link](https://www.digikey.com/product-detail/en/raspberry-pi/RASPBERRY-PI-4B-4GB/1690-RASPBERRYPI4B-4GB-ND/10258781) | Flashed with Home Assistant. Powered via POE. Interacts with all smart home devices. |
 | Samsung MicroSDKC Card (64 GB) | [Link](https://www.amazon.com/gp/product/B06XX29S9Q) | Flashed with the Home Assistant image |
 | USB C PoE Splitter | [Link](https://www.amazon.com/gp/product/B07TJ3ZNJ4) | Power Raspberry Pi from PoE switch instead of standard charger |
+| SkyConnect Controller | [Link](https://www.home-assistant.io/skyconnect/) | Controller for ZigBee and Matter devices |
+| Aeotec Z-Stick 7 Plus Gateway | [Link](https://www.amazon.com/Controller-SmartStart-Raspberry-Compatible-Assistant/dp/B094NW5B68) | Controller for Z-Wave devices |
 
 ### Lighting
 | Device | Link | Use |
 | --- | :---: | --- |
-| Phillips Hue Hub | [Link](https://www.amazon.com/Philips-Hue-Stand-Alone-Bridge/dp/B016H0QZ7I) | For interacting with Phillips Hue bulbs and switches |
+| Enbrighten Z-Wave Switch | [Link](https://www.amazon.com/GE-Enbrighten-SimpleWire-SmartThings-46201/dp/B07RRBT6W5) | Z-Wave in-wall light switch |
+| Enbrighten Z-Wave Dimmable Switch | [Link](https://www.amazon.com/GE-Enbrighten-SimpleWire-SmartThings-46203/dp/B07RRD92T8) | Z-Wave in-wall dimmable light switch |
+| Enbrighten Z-Wave Motion Sensing Switch | [Link](https://www.amazon.com/GE-Occupancy-Required-SmartThings-26931/dp/B07226MG2T) | Z-Wave in-wall light switch with motion sensing |
+| Enbrighten Add-On Switch | [Link](https://www.amazon.com/dp/B07RQ8K25S) | Used in 3-way light switch situations |
 | Phillips Hue A19 White Bulbs | [Link](https://www.amazon.com/Philips-Hue-Bluetooth-compatible-Assistant/dp/B07QV9XLTK) | Lightbulbs that can be controlled via Home Assistant or voice. Temperature adjustable and dimmable. |
-| Lutron Caseta Wireless | [Link](https://www.amazon.com/Lutron-Wireless-Wallplate-Incandescent-PDW-6WCL-WH/dp/B07SJJBTYY) | Smart light switch controllable via Z-Wave.
 
 ### Climate
 | Device | Link | Use |
