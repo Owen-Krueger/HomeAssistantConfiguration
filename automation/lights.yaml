@@ -271,9 +271,11 @@
   initial_state: true
   trigger:
     - platform: event
-      event_type: "hue_event"
+      event_type: "zha_event"
       event_data:
-        unique_id: "dd9e9203-a2c7-401e-bf0f-b4b49231a46a"
+        device_id: !secret hue_remote_id
+        args:
+          button: "on"
 
   action:
     - service: switch.turn_on
@@ -289,9 +291,11 @@
   initial_state: true
   trigger:
     - platform: event
-      event_type: "hue_event"
+      event_type: "zha_event"
       event_data:
-        unique_id: "37a1d9fd-ed23-46f8-8d2f-8a73ec75d6be"
+        device_id: !secret hue_remote_id
+        args:
+          button: "off"
 
   action:
     - service: switch.turn_off
@@ -307,9 +311,11 @@
   initial_state: true
   trigger:
     - platform: event
-      event_type: "hue_event"
+      event_type: "zha_event"
       event_data:
-        unique_id: "dfd2d67f-bd6b-4e1f-856d-cc067ef210b7"
+        device_id: !secret hue_remote_id
+        args:
+          button: "up"
 
   condition:
     - condition: state
@@ -334,9 +340,11 @@
   initial_state: true
   trigger:
     - platform: event
-      event_type: "hue_event"
+      event_type: "zha_event"
       event_data:
-        unique_id: "80052d3f-c70f-45a4-99db-1b0931558621"
+        device_id: !secret hue_remote_id
+        args:
+          button: "down"
 
   condition:
     - condition: state
