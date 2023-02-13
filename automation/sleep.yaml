@@ -11,10 +11,7 @@
       entity_id: sensor.owen_phone_battery_state
       from: "discharging"
       to: "not_charging"
-    - platform: state
-      entity_id: sensor.owen_phone_battery_state
-      from: "discharging"
-      to: "charging"
+      for: "00:00:30"
 
   condition:
     - condition: time

@@ -9,11 +9,11 @@
   trigger:
     - platform: state
       entity_id: person.owen
-      to: "away"
+      to: "not_home"
       for: "00:05:00"
     - platform: state
       entity_id: person.allison
-      to: "away"
+      to: "not_home"
       for: "00:05:00"
 
   condition:
@@ -22,10 +22,10 @@
       state: "on"
     - condition: state
       entity_id: person.owen
-      state: "away"
+      state: "not_home"
     - condition: state
       entity_id: person.allison
-      state: "away"
+      state: "not_home"
 
   action:
     - service: scene.turn_on

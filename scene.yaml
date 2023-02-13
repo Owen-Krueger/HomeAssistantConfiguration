@@ -1,8 +1,8 @@
 - name: All Off
   icon: "mdi:home-off"
   entities:
-    light.allison_bedroom_lamp: "on"
-    light.owen_bedroom_lamp: "on"
+    light.allison_bedroom_lamp: "off"
+    light.owen_bedroom_lamp: "off"
     light.downstairs_lights: "off"
     light.office_lamp: "off"
     switch.laundry_room_lights: "off"
