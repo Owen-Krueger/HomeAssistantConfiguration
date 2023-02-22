@@ -1,0 +1,47 @@
+##########################################################
+## Battery Devices
+##########################################################
+
+- alias: Battery Devices - Notify if battery is below 20%
+  id: "battery_devices_notify_if_battery_is_below_20_percent"
+
+  initial_state: true
+  trigger:
+    - platform: numeric_state
+      entity_id:
+        - sensor.philips_remote_battery
+      below: 20
+
+  action:
+    - service: notify.owen
+      data:
+        message: >
+          {% set output = namespace(sensors=[]) %}
+          {% for device in expand('group.device_batteries') %}
+            {% if 0 <= device.state | int(-1) < 20 | int  %}
+              {% set output.sensors = output.sensors + [device.name ~ ' (' ~ device.state ~ '%)'] %}
+            {% endif %}
+          {% endfor %}
+          Check the battery for {{ output.sensors|join(', ')}}
+
+- alias: Battery Devices - Notify if battery device offline
+  id: "battery_devices_notify_if_battery_offline"
+
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.philips_remote_battery
+      to: "unknown"
+
+  action:
+    - service: notify.owen
+      data:
+        message: >
+          {% set output = namespace(sensors=[]) %}
+          {% for device in expand('group.device_batteries') %}
+            {% if device.state == 'unknown'  %}
+              {% set output.sensors = output.sensors + [device.name] %}
+            {% endif %}
+          {% endfor %}
+          Battery devices not found: {{ output.sensors|join(', ')}}

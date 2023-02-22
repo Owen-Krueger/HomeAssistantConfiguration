@@ -22,3 +22,8 @@ holiday_lights:
   entities:
     - switch.outside_front_left_plug
     - switch.outside_front_right_plug
+
+device_batteries:
+  name: Device Batteries
+  entities:
+    - sensor.philips_remote_battery

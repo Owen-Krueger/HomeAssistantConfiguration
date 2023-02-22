@@ -8,9 +8,8 @@
   initial_state: true
   trigger:
     - platform: state
-      entity_id: sensor.owen_phone_battery_state
-      from: "discharging"
-      to: "not_charging"
+      entity_id: sensor.owen_phone_charger_type
+      to: "wireless"
       for: "00:00:30"
 
   condition:
