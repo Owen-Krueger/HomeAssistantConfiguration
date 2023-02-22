@@ -17,11 +17,26 @@
       state: "open"
 
   action:
-    - service: notify.family
+    - alias: "Set up variables for actions"
+      variables:
+        action_close: "{{ 'ACTION_CLOSE' ~ context.id }}"
+    - alias: "Notify garage open"
+      service: notify.owen
       data:
         message: Garage door is open.
-        entity_id: cover.primary_garage_door
-        actions:
-          - action: "garage_close"
-            title: "Close Garage"
-            uri: "/lovelace/home"
+        data:
+          actions:
+            - action: "{{ action_close }}"
+              title: "Close Garage"
+    - alias: "Wait for a response"
+      wait_for_trigger:
+        - platform: event
+          event_type: mobile_app_notification_action
+          event_data:
+            action: "{{ action_close }}"
+    - alias: "Perform action"
+      choose:
+        - conditions: "{{ wait.trigger.event.data.action == action_close }}"
+          sequence:
+            - service: cover.close_cover
+              target: cover.primary_garage_door

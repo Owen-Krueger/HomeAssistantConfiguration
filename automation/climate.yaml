@@ -69,17 +69,35 @@
       state: "on"
 
   action:
-    - service: notify.owen
+    - alias: "Set up variables for actions"
+      variables:
+        action_climate_away: "{{ 'CLIMATE_AWAY' ~ context.id }}"
+    - alias: "Ask to set away temperature"
+      service: notify.owen
       data:
         message: You appear to be away from home.
         data:
-          tag: climate
-          group: climate
-          entity_id: climate.hallway
           actions:
-            - action: "climate_away"
+            - action: "{{ action_climate_away }}"
               title: "Set Away Temperature"
-              uri: "/lovelace/climate"
+    - alias: "Wait for a response"
+      wait_for_trigger:
+        - platform: event
+          event_type: mobile_app_notification_action
+          event_data:
+            action: "{{ action_climate_away }}"
+    - alias: "Perform action"
+      choose:
+        - conditions: "{{ wait.trigger.event.data.action == action_climate_away }}"
+          sequence:
+            - service: climate.set_temperature
+              target:
+                entity_id: climate.kitchen_thermostat
+              data:
+                temperature: "{{ states('input_number.climate_away_temp') | int }}"
+            - service: input_boolean.turn_off
+              target:
+                entity_id: input_boolean.climate_automations
 
 # Coming Back Home
 - alias: Climate - Coming Back Home
@@ -101,21 +119,35 @@
 
   action:
     - service: climate.set_temperature
-      target:
-        entity_id: climate.kitchen_thermostat
+      target: climate.kitchen_thermostat
       data:
         temperature: "{{ states('input_number.climate_day_temp') | int }}"
     - service: input_boolean.turn_on
-      target:
-        entity_id: input_boolean.climate_automations
-    - service: notify.owen
+      target: input_boolean.climate_automations
+    - alias: "Set up variables for actions"
+      variables:
+        action_climate_away: "{{ 'CLIMATE_AWAY' ~ context.id }}"
+    - alias: "Notify climate automation back on"
+      service: notify.owen
       data:
         message: Climate automation turned back on.
         data:
-          tag: climate
-          group: climate
-          entity_id: climate.kitchen_thermostat
           actions:
-            - action: "climate_away"
-              title: "Please don't."
-              uri: "/lovelace-admin/climate"
+            - action: "{{ action_climate_away }}"
+              title: "Please don't"
+    - alias: "Wait for a response"
+      wait_for_trigger:
+        - platform: event
+          event_type: mobile_app_notification_action
+          event_data:
+            action: "{{ action_climate_away }}"
+    - alias: "Perform action"
+      choose:
+        - conditions: "{{ wait.trigger.event.data.action == action_climate_away }}"
+          sequence:
+            - service: climate.set_temperature
+              target: climate.kitchen_thermostat
+              data:
+                temperature: "{{ states('input_number.climate_away_temp') | int }}"
+            - service: input_boolean.turn_off
+              target: input_boolean.climate_automations
