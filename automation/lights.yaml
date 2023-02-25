@@ -361,3 +361,43 @@
           type: announce
         target: media_player.living_room_echo
         message: "Living Room Automation Turned Off"
+
+#########################################################
+# Outside
+#########################################################
+
+# Turn on front porch lights
+- alias: Lights - Turn on front porch lights
+  id: "lights_turn_on_front_porch_lights"
+
+  initial_state: true
+  trigger:
+    - platform: time
+      at: "05:00:00"
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: 4
+
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.front_porch_lights
+
+# Turn off front porch lights
+- alias: Lights - Turn off front porch lights
+  id: "lights_turn_off_front_porch_lights"
+
+  initial_state: true
+  trigger:
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      above: 4
+    - platform: time
+      at: "23:00:00"
+
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.front_porch_lights
