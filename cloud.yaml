@@ -21,6 +21,8 @@ alexa:
       - switch.bedroom_lights
       - switch.christmas_tree
       - switch.strip_light
+      - switch.bedroom_lights
+      - switch.front_porch_lights
   entity_config:
     script.dim_bedroom_lamps:
       display_categories: ACTIVITY_TRIGGER

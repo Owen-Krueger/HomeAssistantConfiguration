@@ -372,12 +372,10 @@
 
   initial_state: true
   trigger:
-    - platform: time
-      at: "05:00:00"
     - platform: numeric_state
       entity_id: sun.sun
       attribute: elevation
-      below: 4
+      below: 3
 
   action:
     - service: switch.turn_on
@@ -390,12 +388,8 @@
 
   initial_state: true
   trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      above: 4
     - platform: time
-      at: "23:00:00"
+      at: "22:00:00"
 
   action:
     - service: switch.turn_off

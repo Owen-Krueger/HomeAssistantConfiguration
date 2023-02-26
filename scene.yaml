@@ -10,6 +10,7 @@
     switch.counter_lights: "off"
     switch.stairway_lights: "off"
     switch.christmas_tree: "off"
+    switch.bedroom_lights: "off"
 - name: Night Lighting
   icon: "mdi:weather-night"
   entities:
@@ -26,6 +27,7 @@
     switch.counter_lights: "off"
     switch.stairway_lights: "off"
     switch.christmas_tree: "off"
+    switch.bedroom_lights: "off"
 - name: Dim Bedroom
   icon: "mdi:lamp"
   entities:
@@ -35,3 +37,4 @@
     light.owen_bedroom_lamp:
       state: "on"
       brightness_pct: 30
+    switch.bedroom_lights: "off"
