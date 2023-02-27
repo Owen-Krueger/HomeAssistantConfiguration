@@ -3,6 +3,8 @@
   entities:
     light.allison_bedroom_lamp: "off"
     light.owen_bedroom_lamp: "off"
+    switch.allison_living_room_lamp: "off"
+    switch.owen_living_room_lamp: "off"
     light.downstairs_lights: "off"
     light.office_lamp: "off"
     switch.laundry_room_lights: "off"
@@ -20,6 +22,8 @@
     light.owen_bedroom_lamp:
       state: "on"
       brightness_pct: 30
+    switch.allison_living_room_lamp: "off"
+    switch.owen_living_room_lamp: "off"
     light.downstairs_lights: "off"
     light.office_lamp: "off"
     switch.laundry_room_lights: "off"

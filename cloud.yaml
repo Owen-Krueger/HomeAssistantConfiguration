@@ -4,8 +4,8 @@ alexa:
       - light.allison_bedroom_lamp
       - light.owen_bedroom_lamp
       - light.bedroom_lamps
-      - light.living_room_1
-      - light.living_room_2
+      - switch.allison_living_room_lamp
+      - switch.owen_living_room_lamp
       - light.office_lamp
       - light.downstairs_lights
       - script.dim_bedroom_lamps
@@ -23,6 +23,7 @@ alexa:
       - switch.strip_light
       - switch.bedroom_lights
       - switch.front_porch_lights
+      - switch.utility_room_lights
   entity_config:
     script.dim_bedroom_lamps:
       display_categories: ACTIVITY_TRIGGER
