@@ -1,9 +1,0 @@
-#################################################
-## Bedroom
-#################################################
-- platform: group
-  name: Bedroom
-  entities:
-    - light.allison_bedroom_lamp
-    - light.owen_bedroom_lamp
-    - light.master_bedroom_bedroom_lights

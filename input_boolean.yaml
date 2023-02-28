@@ -58,12 +58,8 @@ vacation_lighting_automation:
 ## Holiday
 ##########################################################
 
-christmas_tree_automation:
-  name: Christmas Tree Automation
-  icon: mdi:pine-tree
-
-holiday_automations:
-  name: Holiday Automations
+holiday_mode:
+  name: Holiday Mode
   icon: mdi:string-lights
 
 ##########################################################

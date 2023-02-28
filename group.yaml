@@ -14,7 +14,8 @@ interior_lights:
     - switch.allison_living_room_lamp
     - switch.owen_living_room_lamp
     - light.downstairs_lights
-    - light.bedroom
+    - light.bedroom_lamps
+    - switch.bedroom_lights
     - light.office_lamp
 
 holiday_lights:

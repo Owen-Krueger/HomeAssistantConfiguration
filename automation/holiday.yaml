@@ -16,8 +16,11 @@
 
   condition:
     - condition: state
-      entity_id: input_boolean.christmas_tree_automation
+      entity_id: input_boolean.holiday_mode
       state: "on"
+    - condition: state
+      entity_id: switch.christmas_tree
+      state: "off"
     - condition: state
       entity_id: input_boolean.mode_vacation
       state: "off"
@@ -43,7 +46,10 @@
 
   condition:
     - condition: state
-      entity_id: input_boolean.christmas_tree_automation
+      entity_id: input_boolean.holiday_mode
+      state: "on"
+    - condition: state
+      entity_id: switch.christmas_tree
       state: "on"
     - condition: state
       entity_id: input_boolean.mode_vacation
@@ -70,7 +76,7 @@
 
   condition:
     - condition: state
-      entity_id: input_boolean.holiday_automations
+      entity_id: input_boolean.holiday_mode
       state: "on"
 
   action:
@@ -92,7 +98,7 @@
 
   condition:
     - condition: state
-      entity_id: input_boolean.holiday_automations
+      entity_id: input_boolean.holiday_mode
       state: "on"
 
   action:
