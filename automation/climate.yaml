@@ -151,3 +151,42 @@
                 temperature: "{{ states('input_number.climate_away_temp') | int }}"
             - service: input_boolean.turn_off
               target: input_boolean.climate_automations
+
+# Temperature Too Hot or Cold
+- alias: Climate - Temperature Too Hot or Cold
+  id: climate_temperature_too_hot_or_cold
+
+  trigger:
+    - platform: template
+      value_template: "{{ true if (state_attr('climate.kitchen_thermostat', 'current_temperature') - state_attr('climate.kitchen_thermostat', 'temperature'))|abs >= 3 else false }}"
+
+  action:
+    - alias: "Set up variables for action"
+      variables:
+        action_climate_toggle_mode: "{{ 'CLIMATE_TOGGLE' ~ context.id }}"
+    - alias: "Notify temperature is too far"
+      service: notify.owen
+      data:
+        title: House is too {{ 'hot' if is_state('climate.kitchen_thermostat', 'heat') else 'cold' }}!
+        message: >
+          Current Temp: {{ state_attr('climate.kitchen_thermostat', 'current_temperature') }} | 
+          Set Temp: {{ state_attr('climate.kitchen_thermostat', 'temperature') }}
+        data:
+          actions:
+            - action: " {{ action_climate_toggle_mode }} "
+              title: "Switch HVAC Mode"
+    - alias: "Wait for a response"
+      wait_for_trigger:
+        - platform: event
+          event_type: mobile_app_notification_action
+          event_data:
+            action: " {{ action_climate_toggle_mode }}"
+    - alias: "Perform action"
+      choose:
+        - conditions: " {{ wait.trigger.event.data.action == action_climate_toggle_mode }}"
+          sequence:
+            - service: climate.set_hvac_mode
+              target:
+                entity_id: climate.kitchen_thermostat
+              data:
+                hvac_mode: "{{ 'cool' if is_state('climate.kitchen_thermostat', 'heat') else 'heat' }}"
