@@ -164,7 +164,7 @@
     - alias: "Set up variables for action"
       variables:
         action_climate_toggle_mode: "{{ 'CLIMATE_TOGGLE' ~ context.id }}"
-    - alias: "Notify temperature is too far"
+    - alias: "Notify temperature is too hot or cold"
       service: notify.owen
       data:
         title: House is too {{ 'hot' if is_state('climate.kitchen_thermostat', 'heat') else 'cold' }}!
@@ -174,7 +174,7 @@
         data:
           actions:
             - action: " {{ action_climate_toggle_mode }} "
-              title: "Switch HVAC Mode"
+              title: "Switch HVAC Mode to {{ 'Cool' if is_state('climate.kitchen_thermostat', 'heat') else 'Heat' }}"
     - alias: "Wait for a response"
       wait_for_trigger:
         - platform: event
