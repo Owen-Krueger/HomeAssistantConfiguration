@@ -11,7 +11,7 @@ class Laundry(hass.Hass):
         if (should_notify == "on"):
             self.set_up_load_listeners() # Sets up listener for washer and dryer load completion.
 
-        self.listen_state(self.should_notify_change, self.args["should_notify"])
+        self.listen_state(self.on_should_notify_changed, self.args["should_notify"])
 
     """
     Sets up listeners for washer and dryer finishing.
@@ -24,7 +24,7 @@ class Laundry(hass.Hass):
     On should notify boolean change, cancel listeners if they're active and
     re-set them up if users should be notified on load completion.
     """
-    def should_notify_change(self, entity, attribute, old, new, kwargs):
+    def on_should_notify_changed(self, entity, attribute, old, new, kwargs):
         self.log('Notifications changed: {}'.format(new))
 
         if (old == "on"): # Cancel old listeners if they were active. 
@@ -39,7 +39,10 @@ class Laundry(hass.Hass):
     If nobody is home, it sets a flag to notify the first person that gets home.
     """
     def notify_both_users(self, entity, attribute, old, new, kwargs):
-        message = "The {} has completed!".format("washer" if entity == self.args["washer"] else "dryer")
+        device = "washer" if entity == self.args["washer"] else "dryer"
+        message = "The {} has completed!".format(device)
+        self.log("Notifying users that {} has completed.".format(device))
+
         owen_home = self.get_state(self.args["owen"]) == "home"
         allison_home = self.get_state(self.args["allison"]) == "home"
 

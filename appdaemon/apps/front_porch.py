@@ -11,13 +11,13 @@ class FrontPorch(hass.Hass):
 
         self.run_at_sunset(self.turn_on_front_porch, offset = datetime.timedelta(minutes =- 45).total_seconds())
         self.handle = self.run_daily(self.turn_off_front_porch, time)
-        self.listen_state(self.time_change, self.args["time"], duration = 60) # Only update the next execution time when time has been set for 60 seconds.
+        self.listen_state(self.on_override_time_changed, self.args["time"], duration = 60) # Only update the next execution time when time has been set for 60 seconds.
 
     """
     On time change, cancel the timer and re-set it up so it executes
     at the new time.
     """
-    def time_change(self, entity, attribute, old, new, kwargs):
+    def on_override_time_changed(self, entity, attribute, old, new, kwargs):
         self.log('Setting new execution time: {}'.format(new))
         self.cancel_timer(self.handle)
         self.handle = self.run_daily(self.turn_off_front_porch, new)
