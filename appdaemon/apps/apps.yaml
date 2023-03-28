@@ -2,5 +2,13 @@ front_porch:
   module: front_porch
   class: FrontPorch
   time: input_datetime.light_front_porch_off_time
-  switch: switch.front_porch_lights
   boolean: input_boolean.light_override_front_porch_off
+  switch: switch.front_porch_lights
+laundry:
+  module: laundry
+  class: Laundry
+  allison: person.allison
+  dryer: sensor.dryer_dryer_job_state
+  owen: person.owen
+  should_notify: input_boolean.laundry_notify_on_job_completion
+  washer: sensor.washer_washer_job_state

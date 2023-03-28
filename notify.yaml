@@ -7,3 +7,7 @@
   name: owen
   services:
     - service: mobile_app_pixel_7
+- platform: group
+  name: allison
+  services:
+    - service: mobile_app_iphone_68

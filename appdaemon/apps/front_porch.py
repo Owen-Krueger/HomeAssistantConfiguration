@@ -11,7 +11,7 @@ class FrontPorch(hass.Hass):
 
         self.run_at_sunset(self.turn_on_front_porch, offset = datetime.timedelta(minutes =- 45).total_seconds())
         self.handle = self.run_daily(self.turn_off_front_porch, time)
-        self.listen_state(self.time_change, self.args["time"], duration = 60)
+        self.listen_state(self.time_change, self.args["time"], duration = 60) # Only update the next execution time when time has been set for 60 seconds.
 
     """
     On time change, cancel the timer and re-set it up so it executes
