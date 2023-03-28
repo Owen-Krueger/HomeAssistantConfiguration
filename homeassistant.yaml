@@ -2,6 +2,7 @@ name: Home
 latitude: !secret latitude
 longitude: !secret longitude
 elevation: !secret elevation
+time_zone: !secret time_zone
 customize: !include customize.yaml
 currency: USD
 country: US

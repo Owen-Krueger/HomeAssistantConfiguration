@@ -38,3 +38,8 @@ light_bedroom_motion_nighttime:
   name: Bedroom Motion Night Lighting Start Time
   has_date: false
   has_time: true
+
+light_front_porch_off_time:
+  name: Front Porch Off Time
+  has_date: false
+  has_time: true

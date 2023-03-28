@@ -1,0 +1,6 @@
+front_porch:
+  module: front_porch
+  class: FrontPorch
+  time: input_datetime.light_front_porch_off_time
+  switch: switch.front_porch_lights
+  boolean: input_boolean.light_override_front_porch_off

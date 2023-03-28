@@ -1,5 +1,6 @@
 # Automatically generated files
 .cloud
+.idea
 .storage
 .HA_VERSION
 .owncloudsync.log
