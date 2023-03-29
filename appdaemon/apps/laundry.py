@@ -15,7 +15,7 @@ class Laundry(hass.Hass):
         if (self.get_state(self.should_notify) == "on"):
             self.set_up_triggers() # Sets up listener for washer and dryer load completion.
 
-        self.listen_state(self.on_should_notify_changed, self.should_notify, duration = 60) # Only update the automation triggers when boolean has been set for 60 seconds.
+        self.listen_state(self.on_should_notify_change, self.should_notify, duration = 60) # Only update the automation triggers when boolean has been set for 60 seconds.
 
     """
     Sets up triggers for washer and dryer finishing.
@@ -28,7 +28,7 @@ class Laundry(hass.Hass):
     On should notify boolean change, cancel listeners if they're active and
     re-set them up if users should be notified on load completion.
     """
-    def on_should_notify_changed(self, entity, attribute, old, new, kwargs):
+    def on_should_notify_change(self, entity, attribute, old, new, kwargs):
         self.log('Notifications changed: {}'.format(new))
 
         if (old == "on"): # Cancel old listeners if they were active. 

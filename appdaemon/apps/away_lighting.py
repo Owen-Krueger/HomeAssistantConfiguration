@@ -15,7 +15,7 @@ class AwayLighting(hass.Hass):
         if (self.should_turn_off_lights == "on"): # Only run automations if boolean is on
             self.set_up_triggers()
 
-        self.listen_state(self.on_automation_boolean_changed, self.should_turn_off_lights, duration = 60) # Only update the automation triggers when boolean has been set for 60 seconds.
+        self.listen_state(self.on_should_turn_off_lights_change, self.should_turn_off_lights, duration = 60) # Only update the automation triggers when boolean has been set for 60 seconds.
 
     """
     Sets up triggers for presence and time triggers.
@@ -29,7 +29,7 @@ class AwayLighting(hass.Hass):
     On automation boolean change, cancel triggers if they're active and
     re-set them up if users should be notified on load completion.
     """
-    def on_automation_boolean_changed(self, entity, attribute, old, new, kwargs):
+    def on_should_turn_off_lights_change(self, entity, attribute, old, new, kwargs):
         self.log('Automation turned {}'.format(new))
 
         if (old == "on"): # Cancel old triggers if they were active.
