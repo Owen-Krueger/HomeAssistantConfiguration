@@ -1,18 +1,22 @@
 import hassapi as hass
 
+"""
+Away lighting automations.
+"""
 class AwayLighting(hass.Hass):
     
     """
     Sets up the automation.
     """
     def initialize(self):
+        self.utils = self.get_app("utils")
         self.should_turn_off_lights = self.args["should_turn_off_lights"]
         self.allison = self.args["allison"]
         self.owen = self.args["owen"]
         self.all_off = self.args["all_off"]
         self.day_office = self.args["day_office"]
 
-        if (self.should_turn_off_lights == "on"): # Only run automations if boolean is on
+        if self.utils.is_entity_on(should_turn_off_lights): # Only run automations if boolean is on
             self.set_up_triggers()
 
         self.listen_state(self.on_should_turn_off_lights_change, self.should_turn_off_lights, duration = 60) # Only update the automation triggers when boolean has been set for 60 seconds.
@@ -45,9 +49,9 @@ class AwayLighting(hass.Hass):
     If only Allison is gone and Owen is at work, turn on office lighting.
     """
     def away_lighting(self, entity, attribute, old, new, kwargs):
-        owen_home = self.get_state(self.owen) == "home"
-        allison_home = self.get_state(self.allison) == "home"
-        work_time = (self.get_state("is_workday") == "on" and
+        owen_home = self.utils.is_entity_home(self.owen)
+        allison_home = self.utils.is_entity_home(self.allison)
+        work_time = (self.utils.is_entity_on("is_workday") and
             self.now_is_between("08:00:00", "12:00:00") or
             self.now_is_between("13:00:00", "15:00:00"))
 

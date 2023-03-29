@@ -1,18 +1,22 @@
 import hassapi as hass
 
+"""
+Laundry automations.
+"""
 class Laundry(hass.Hass):
 
     """
     Sets up the automation.
     """
     def initialize(self):
+        self.utils = self.get_app("utils")
         self.should_notify = self.args["should_notify"]
         self.washer = self.args["washer"]
         self.dryer = self.args["dryer"]
-        self.allison_home = self.get_state(self.args["allison"]) == "home"
-        self.owen_home = self.get_state(self.args["owen"]) == "home"
+        self.allison_home = self.utils.is_entity_home(self.args["allison"])
+        self.owen_home = self.utils.is_entity_home(self.args["owen"])
 
-        if (self.get_state(self.should_notify) == "on"):
+        if self.utils.is_entity_on(self.should_notify):
             self.set_up_triggers() # Sets up listener for washer and dryer load completion.
 
         self.listen_state(self.on_should_notify_change, self.should_notify, duration = 60) # Only update the automation triggers when boolean has been set for 60 seconds.
@@ -31,11 +35,11 @@ class Laundry(hass.Hass):
     def on_should_notify_change(self, entity, attribute, old, new, kwargs):
         self.log('Notifications changed: {}'.format(new))
 
-        if (old == "on"): # Cancel old listeners if they were active. 
+        if old == "on": # Cancel old listeners if they were active. 
             self.cancel_listen_state(self.washer_handler)
             self.cancel_listen_state(self.dryer_handler)
 
-        if (new == "on"):
+        if new == "on":
             self.set_up_triggers()
 
     """

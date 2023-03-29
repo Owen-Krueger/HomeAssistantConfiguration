@@ -1,12 +1,16 @@
 import hassapi as hass
 import datetime
 
+"""
+Front porch automations.
+"""
 class FrontPorch(hass.Hass):
     
     """
     Sets up the automation.
     """
     def initialize(self):
+        self.utils = self.get_app("utils")
         self.default_time = datetime.time(22, 0, 0)
         self.porch_off_time = self.args["porch_off_time"]
         self.should_override_time = self.args["should_override_time"]
@@ -27,7 +31,8 @@ class FrontPorch(hass.Hass):
         self.handle = self.run_daily(self.turn_off_front_porch, new)
 
         # If the override time, but the boolean wasn't turned on, turn on the boolean. Only set if time wasn't set to default.
-        if (self.get_state(self.should_override_time) == "off" and self.parse_time(self.get_state(self.porch_off_time)) != self.default_time):
+        # if (self.get_state(self.should_override_time) == "off" and self.parse_time(self.get_state(self.porch_off_time)) != self.default_time):
+        if (not self.utils.is_entity_on(self.should_override_time) and self.parse_time(self.get_state(self.porch_off_time)) != self.default_time):
             self.log("Override boolean off but should be on. Turning on.")
             self.set_state(self.should_override_time, state = "on")
 
@@ -43,7 +48,7 @@ class FrontPorch(hass.Hass):
     Turns on the front porch lights if they are off.
     """
     def turn_on_front_porch(self, kwargs):
-        if self.get_state(self.front_porch_switch) == "off":
+        if not self.utils.is_entity_on(self.front_porch_switch):
             self.log('Turning porch lights on.')
             self.turn_on(self.front_porch_switch)
 
@@ -53,7 +58,7 @@ class FrontPorch(hass.Hass):
     overridden for this run.
     """
     def turn_off_front_porch(self, kwargs):
-        if self.get_state(self.front_porch_switch) == "on":
+        if self.utils.is_entity_on(self.front_porch_switch):
             self.log('Turning porch lights off.')
             self.turn_off(self.front_porch_switch)
 
