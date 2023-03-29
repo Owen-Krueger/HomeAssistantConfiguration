@@ -1,9 +1,9 @@
 front_porch:
   module: front_porch
   class: FrontPorch
-  time: input_datetime.light_front_porch_off_time
-  boolean: input_boolean.light_override_front_porch_off
-  switch: switch.front_porch_lights
+  porch_off_time: input_datetime.light_front_porch_off_time
+  front_porch_switch: switch.front_porch_lights
+  should_override_time: input_boolean.light_override_front_porch_off
 laundry:
   module: laundry
   class: Laundry
@@ -17,7 +17,7 @@ away_lighting:
   class: AwayLighting
   all_off: scene.all_off
   allison: person.allison
-  boolean: input_boolean.lights_turn_off_lights_when_nobody_home
+  should_turn_off_lights: input_boolean.lights_turn_off_lights_when_nobody_home
   day_office: scene.day_office
   is_workday: binary_sensor.workday_sensor
   owen: person.owen
