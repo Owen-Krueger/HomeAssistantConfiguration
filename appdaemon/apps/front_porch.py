@@ -16,10 +16,10 @@ class FrontPorch(hass.Hass):
         self.should_override_time = self.args["should_override_time"]
         self.front_porch_switch = self.args["front_porch_switch"]
 
-        self.run_at_sunset(self.turn_on_front_porch, offset = datetime.timedelta(minutes =- 45).total_seconds())
-        self.handle = self.run_daily(self.turn_off_front_porch, self.parse_time(self.get_state(self.porch_off_time)))
-        self.listen_state(self.on_porch_off_time_change, self.porch_off_time, duration = 60) # Only update the next execution time when time has been set for 60 seconds.
-        self.listen_state(self.on_override_boolean_turned_off, self.should_override_time, new = "off", duration = 60) # Only check if execution time needs defaulting when boolean has been off for 60 seconds.
+        self.run_at_sunset(self.turn_on_front_porch, offset = datetime.timedelta(minutes =- 45).total_seconds()) # Turn lights on 45 minutes before sunset.
+        self.handle = self.run_daily(self.turn_off_front_porch, self.utils.get_time(self.porch_off_time))
+        self.listen_state(self.on_porch_off_time_change, self.porch_off_time, duration = 30) # Only update the next execution time when time has been set for 30 seconds.
+        self.listen_state(self.on_override_boolean_turned_off, self.should_override_time, new = "off", duration = 30) # Only check if execution time needs defaulting when boolean has been off for 30 seconds.
 
     """
     On time change, cancel the timer and re-set it up so it executes
@@ -31,7 +31,7 @@ class FrontPorch(hass.Hass):
         self.handle = self.run_daily(self.turn_off_front_porch, new)
 
         # If the override time, but the boolean wasn't turned on, turn on the boolean. Only set if time wasn't set to default.
-        if (not self.utils.is_entity_on(self.should_override_time) and self.parse_time(self.get_state(self.porch_off_time)) != self.default_time):
+        if (not self.utils.is_entity_on(self.should_override_time) and self.utils.get_time(self.porch_off_time) != self.default_time):
             self.log("Override boolean off but should be on. Turning on.")
             self.set_state(self.should_override_time, state = "on")
 

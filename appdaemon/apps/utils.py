@@ -17,3 +17,9 @@ class Utils(hass.Hass):
     """
     def is_entity_home(self, entity):
         return self.get_state(entity) == "home"
+
+    """
+    Gets the time from the entity's state.
+    """
+    def get_time(self, entity):
+        return self.parse_time(self.get_state(entity))
