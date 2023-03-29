@@ -31,7 +31,6 @@ class FrontPorch(hass.Hass):
         self.handle = self.run_daily(self.turn_off_front_porch, new)
 
         # If the override time, but the boolean wasn't turned on, turn on the boolean. Only set if time wasn't set to default.
-        # if (self.get_state(self.should_override_time) == "off" and self.parse_time(self.get_state(self.porch_off_time)) != self.default_time):
         if (not self.utils.is_entity_on(self.should_override_time) and self.parse_time(self.get_state(self.porch_off_time)) != self.default_time):
             self.log("Override boolean off but should be on. Turning on.")
             self.set_state(self.should_override_time, state = "on")
