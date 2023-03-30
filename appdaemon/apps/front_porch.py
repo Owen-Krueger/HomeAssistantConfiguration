@@ -26,7 +26,7 @@ class FrontPorch(hass.Hass):
     at the new time. Sets override boolean if necessary.
     """
     def on_porch_off_time_change(self, entity, attribute, old, new, kwargs):
-        self.log('Setting new execution time: {}'.format(new))
+        self.log("Setting new execution time: {}".format(new))
         self.cancel_timer(self.handle)
         self.handle = self.run_daily(self.turn_off_front_porch, new)
 
@@ -40,7 +40,7 @@ class FrontPorch(hass.Hass):
     the execution time to the default time of 10:00 PM.
     """
     def on_override_boolean_turned_off(self, entity, attribute, old, new, kwargs):
-        self.log('Override turned off. Resetting time to 10:00 PM')
+        self.log("Override turned off. Resetting time to 10:00 PM")
         self.set_state(self.porch_off_time, state=self.default_time)
 
     """
@@ -48,7 +48,7 @@ class FrontPorch(hass.Hass):
     """
     def turn_on_front_porch(self, kwargs):
         if not self.utils.is_entity_on(self.front_porch_switch):
-            self.log('Turning porch lights on.')
+            self.log("Turning porch lights on.")
             self.turn_on(self.front_porch_switch)
 
     """
@@ -58,10 +58,10 @@ class FrontPorch(hass.Hass):
     """
     def turn_off_front_porch(self, kwargs):
         if self.utils.is_entity_on(self.front_porch_switch):
-            self.log('Turning porch lights off.')
+            self.log("Turning porch lights off.")
             self.turn_off(self.front_porch_switch)
 
         if self.get_state(self.should_override_time):
-            self.log('Time overriden. Resetting execution time to default.')
+            self.log("Time overriden. Resetting execution time to default.")
             self.set_state(self.should_override_time, state="off")
             self.set_state(self.porch_off_time, state = self.default_time)

@@ -1,3 +1,13 @@
+away_lighting:
+  module: away_lighting
+  class: AwayLighting
+  dependencies: utils
+  all_off: scene.all_off
+  allison: person.allison
+  should_turn_off_lights: input_boolean.lights_turn_off_lights_when_nobody_home
+  day_office: scene.day_office
+  is_work_day: binary_sensor.workday_sensor
+  owen: person.owen
 front_porch:
   module: front_porch
   class: FrontPorch
@@ -14,16 +24,6 @@ laundry:
   owen: person.owen
   should_notify: input_boolean.laundry_notify_on_job_completion
   washer: sensor.washer_washer_job_state
-away_lighting:
-  module: away_lighting
-  class: AwayLighting
-  dependencies: utils
-  all_off: scene.all_off
-  allison: person.allison
-  should_turn_off_lights: input_boolean.lights_turn_off_lights_when_nobody_home
-  day_office: scene.day_office
-  is_workday: binary_sensor.workday_sensor
-  owen: person.owen
 utils:
   module: utils
   class: Utils

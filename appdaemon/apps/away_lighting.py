@@ -15,8 +15,9 @@ class AwayLighting(hass.Hass):
         self.owen = self.args["owen"]
         self.all_off = self.args["all_off"]
         self.day_office = self.args["day_office"]
+        self.is_work_day = self.args["is_work_day"]
 
-        if self.utils.is_entity_on(should_turn_off_lights): # Only run automations if boolean is on
+        if self.utils.is_entity_on(self.should_turn_off_lights): # Only run automations if boolean is on
             self.set_up_triggers()
 
         self.listen_state(self.on_should_turn_off_lights_change, self.should_turn_off_lights, duration = 60) # Only update the automation triggers when boolean has been set for 60 seconds.
@@ -31,10 +32,10 @@ class AwayLighting(hass.Hass):
 
     """
     On automation boolean change, cancel triggers if they're active and
-    re-set them up if users should be notified on load completion.
+    re-set them up if they're currently disabled.
     """
     def on_should_turn_off_lights_change(self, entity, attribute, old, new, kwargs):
-        self.log('Automation turned {}'.format(new))
+        self.log("Automation turned {}".format(new))
 
         if (old == "on"): # Cancel old triggers if they were active.
             self.cancel_timer(self.office_time_handler)
@@ -51,8 +52,8 @@ class AwayLighting(hass.Hass):
     def away_lighting(self, entity, attribute, old, new, kwargs):
         owen_home = self.utils.is_entity_home(self.owen)
         allison_home = self.utils.is_entity_home(self.allison)
-        work_time = (self.utils.is_entity_on("is_workday") and
-            self.now_is_between("08:00:00", "12:00:00") or
+        work_time = (self.utils.is_entity_on(self.is_work_day) and
+            self.now_is_between("07:45:00", "12:00:00") or
             self.now_is_between("13:00:00", "15:00:00"))
 
         if (not owen_home and not allison_home):
