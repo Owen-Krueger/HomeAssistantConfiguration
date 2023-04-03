@@ -24,6 +24,12 @@ laundry:
   owen: person.owen
   should_notify: input_boolean.laundry_notify_on_job_completion
   washer: sensor.washer_washer_job_state
+owen_phone_wifi:
+  module: owen_phone_wifi
+  class: OwenPhoneWifi
+  dependencies: utils
+  owen: person.owen
+  phone_network: sensor.owen_phone_network_type
 utils:
   module: utils
   class: Utils
