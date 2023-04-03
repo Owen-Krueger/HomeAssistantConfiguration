@@ -50,6 +50,7 @@ class AwayLighting(hass.Hass):
     If only Allison is gone and Owen is at work, turn on office lighting.
     """
     def away_lighting(self, entity, attribute, old, new, kwargs):
+        self.log("Executing automation.")
         owen_home = self.utils.is_entity_home(self.owen)
         allison_home = self.utils.is_entity_home(self.allison)
         work_time = (self.utils.is_entity_on(self.is_work_day) and
@@ -57,7 +58,7 @@ class AwayLighting(hass.Hass):
             self.now_is_between("13:00:00", "15:00:00"))
 
         if (not owen_home and not allison_home):
-            self.log("Everyone away. Turning off all lights")
+            self.log("Everyone away. Turning off all lights.")
             self.turn_on(self.all_off)
         elif (owen_home and not allison_home and work_time):
             self.log("Turning on day office lighting.")

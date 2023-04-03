@@ -1,7 +1,7 @@
 import hassapi as hass
 
 """
-Automations to let Owen know when he's home, but not on Wifi.
+Automation to let Owen know when he's home, but not on Wifi.
 """
 class OwenPhoneWifi(hass.Hass):
     
@@ -13,8 +13,8 @@ class OwenPhoneWifi(hass.Hass):
         self.owen = self.args["owen"]
         self.phone_network = self.args["phone_network"]
 
-        self.listen_state(self.notify_owen, self.owen, new = "home", duration = 360) # When home for 30 minutes
-        self.listen_state(self.notify_owen, self.phone_network, new = "cellular", duration = 360) # When on cellular data for 30 minutes
+        self.listen_state(self.notify_owen, self.owen, new = "home", duration = 1800) # When home for 30 minutes
+        self.listen_state(self.notify_owen, self.phone_network, new = "cellular", duration = 1800) # When on cellular data for 30 minutes
 
     """
     Notifies Owen if he's at home without Wifi on.

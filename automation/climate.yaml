@@ -158,7 +158,7 @@
 
   trigger:
     - platform: template
-      value_template: "{{ true if (state_attr('climate.kitchen_thermostat', 'current_temperature') - state_attr('climate.kitchen_thermostat', 'temperature'))|abs >= 3 else false }}"
+      value_template: "{{ true if (state_attr('climate.kitchen_thermostat', 'current_temperature') - state_attr('climate.kitchen_thermostat', 'temperature'))|abs >= 2 else false }}"
 
   action:
     - alias: "Set up variables for action"
