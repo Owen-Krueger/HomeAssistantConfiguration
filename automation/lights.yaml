@@ -1,37 +1,4 @@
 ##########################################################
-## All
-##########################################################
-
-# - alias: Lights - Turn off all lights when nobody is home
-#   id: "lights_turn_off_lights_when_nobody_home"
-
-#   initial_state: true
-#   trigger:
-#     - platform: state
-#       entity_id: person.owen
-#       to: "not_home"
-#       for: "00:05:00"
-#     - platform: state
-#       entity_id: person.allison
-#       to: "not_home"
-#       for: "00:05:00"
-
-#   condition:
-#     - condition: state
-#       entity_id: input_boolean.lights_turn_off_lights_when_nobody_home
-#       state: "on"
-#     - condition: state
-#       entity_id: person.owen
-#       state: "not_home"
-#     - condition: state
-#       entity_id: person.allison
-#       state: "not_home"
-
-#   action:
-#     - service: scene.turn_on
-#       entity_id: scene.all_off
-
-##########################################################
 ## Bedroom
 ##########################################################
 
