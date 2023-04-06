@@ -14,7 +14,7 @@ blueprints
 custom_components
 deps
 lutron
-secrets.yaml
+/secrets.yaml
 tts
 www
 
@@ -22,3 +22,7 @@ www
 zigbee.db
 zigbee.db-shm
 zigbee.db-wal
+
+# esphome
+/esphome/.gitignore
+/esphome/.esphome
