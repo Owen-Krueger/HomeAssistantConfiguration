@@ -24,5 +24,4 @@ zigbee.db-shm
 zigbee.db-wal
 
 # esphome
-/esphome/.gitignore
 /esphome/.esphome

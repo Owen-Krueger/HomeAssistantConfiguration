@@ -181,7 +181,7 @@ light:
     name: ${friendly_name} Blue LED
     output: blue_output
     id: blue_led
-    restore_mode: ALWAYS_OFF #Start with light off after reboot/power-loss event.
+    restore_mode: ${light_restore_mode} #Start with light off after reboot/power-loss event.
     #RESTORE_DEFAULT_OFF (Default) - Attempt to restore state and default to OFF if not possible to restore. Uses flash write cycles.
     #RESTORE_DEFAULT_ON - Attempt to restore state and default to ON. Uses flash write cycles.
     #ALWAYS_OFF - Always initialize the pin as OFF on bootup. Does not use flash write cycles.

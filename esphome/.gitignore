@@ -1,0 +1,5 @@
+# Gitignore settings for ESPHome
+# This file is automatically added every time the UI is opened in HA, but
+# isn't needed, because the gitignore file at the root directory takes care
+# of everything. Let's just all pretent this gitignore is special and needed,
+# even though it accomplishes nothing. Way to go, little gitignore file.
