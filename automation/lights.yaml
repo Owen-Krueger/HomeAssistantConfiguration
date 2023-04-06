@@ -2,34 +2,34 @@
 ## All
 ##########################################################
 
-- alias: Lights - Turn off all lights when nobody is home
-  id: "lights_turn_off_lights_when_nobody_home"
+# - alias: Lights - Turn off all lights when nobody is home
+#   id: "lights_turn_off_lights_when_nobody_home"
 
-  initial_state: true
-  trigger:
-    - platform: state
-      entity_id: person.owen
-      to: "not_home"
-      for: "00:05:00"
-    - platform: state
-      entity_id: person.allison
-      to: "not_home"
-      for: "00:05:00"
+#   initial_state: true
+#   trigger:
+#     - platform: state
+#       entity_id: person.owen
+#       to: "not_home"
+#       for: "00:05:00"
+#     - platform: state
+#       entity_id: person.allison
+#       to: "not_home"
+#       for: "00:05:00"
 
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_turn_off_lights_when_nobody_home
-      state: "on"
-    - condition: state
-      entity_id: person.owen
-      state: "not_home"
-    - condition: state
-      entity_id: person.allison
-      state: "not_home"
+#   condition:
+#     - condition: state
+#       entity_id: input_boolean.lights_turn_off_lights_when_nobody_home
+#       state: "on"
+#     - condition: state
+#       entity_id: person.owen
+#       state: "not_home"
+#     - condition: state
+#       entity_id: person.allison
+#       state: "not_home"
 
-  action:
-    - service: scene.turn_on
-      entity_id: scene.all_off
+#   action:
+#     - service: scene.turn_on
+#       entity_id: scene.all_off
 
 ##########################################################
 ## Bedroom
@@ -423,37 +423,3 @@
     - service: switch.turn_off
       target:
         entity_id: switch.garage_lights
-
-#########################################################
-# Outside
-#########################################################
-
-# Turn on front porch lights
-- alias: Lights - Turn on front porch lights
-  id: "lights_turn_on_front_porch_lights"
-
-  initial_state: true
-  trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: 3
-
-  action:
-    - service: switch.turn_on
-      entity_id:
-        - switch.front_porch_lights
-
-# Turn off front porch lights
-- alias: Lights - Turn off front porch lights
-  id: "lights_turn_off_front_porch_lights"
-
-  initial_state: true
-  trigger:
-    - platform: time
-      at: "22:00:00"
-
-  action:
-    - service: switch.turn_off
-      entity_id:
-        - switch.front_porch_lights
