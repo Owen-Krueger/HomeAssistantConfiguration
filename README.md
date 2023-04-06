@@ -36,7 +36,7 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 | Phillips Hue Smart Dimmer Switch | [Link](https://www.amazon.com/Philips-Dimmer-Switch-Installation-Free-Exclusively/dp/B076MGKTGS) | Light switch for controlling the Phillips Hue lights. Can be mounted to the wall or used wirelessly as a remote. |
 | TP-Link Kasa HS103P2 | [Link](https://www.amazon.com/TP-LINK-HS103P2-Required-Google-Assistant/dp/B07B8W2KHZ) | Two outlet outdoor smart switch. Can be controlled from the device and through Home Assistant.
 | TP-Link Kasa KP400 | [Link](https://www.amazon.com/Kasa-Smart-Outlet-Outdoor-TP-Link/dp/B07M6RS2LC) | Two outlet outdoor smart switch. Can be controlled from the device and through Home Assistant. |
-| CloudFree Smart Plug 2 | [Link](https://cloudfree.shop/product/cloudfree-smart-plug-runs-tasmota/) | Wifi connected smart plugs, flashed with ESPHome |
+| CloudFree Smart Plug 2 | [Link](https://cloudfree.shop/product/cloudfree-smart-plug-runs-tasmota/) | Wifi connected smart plugs. Flashed with ESPHome |
 
 ### Echos
 | Device | Link | Use |
@@ -50,6 +50,6 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 | Device | Link | Use |
 | --- | :---: | --- |
 | Unifi Dream Machine | [Link](https://store.ui.com/collections/unifi-network-routing-switching/products/unifi-dream-machine) | Unifi Router by Ubiquiti. Contains an access point, a four port switch, and the Unifi manage software. |
-| Unifi Switch 24 PoE | [Link](https://store.ui.com/collections/unifi-network-switching/products/usw-24-poe) | Rack-mountable power over ethernet level 2 switch |
-| Unifi Switch 8 60W | [Link](https://store.ui.com/collections/unifi-network-routing-switching/products/unifi-switch-8-60w) | 8 ethernet port switch. 4 POE ports. |
-| Unifi USW Flex Mini | [Link](https://store.ui.com/collections/unifi-network-routing-switching/products/usw-flex-mini) | 4 ethernet port switch. Powered via POE. |
+| Unifi Switch 24 PoE | [Link](https://store.ui.com/collections/unifi-network-switching/products/usw-24-poe) | Rack-mountable, Power over Ethernet, Layer 2 switch. 16 PoE ports. |
+| Unifi Switch 8 60W | [Link](https://store.ui.com/collections/unifi-network-routing-switching/products/unifi-switch-8-60w) | 8 ethernet port switch. 4 PoE ports. |
+| Unifi USW Flex Mini | [Link](https://store.ui.com/collections/unifi-network-routing-switching/products/usw-flex-mini) | 4 ethernet port switch. Powered via PoE. |
