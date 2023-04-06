@@ -36,7 +36,7 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 | Phillips Hue Smart Dimmer Switch | [Link](https://www.amazon.com/Philips-Dimmer-Switch-Installation-Free-Exclusively/dp/B076MGKTGS) | Light switch for controlling the Phillips Hue lights. Can be mounted to the wall or used wirelessly as a remote. |
 | TP-Link Kasa HS103P2 | [Link](https://www.amazon.com/TP-LINK-HS103P2-Required-Google-Assistant/dp/B07B8W2KHZ) | Two outlet outdoor smart switch. Can be controlled from the device and through Home Assistant.
 | TP-Link Kasa KP400 | [Link](https://www.amazon.com/Kasa-Smart-Outlet-Outdoor-TP-Link/dp/B07M6RS2LC) | Two outlet outdoor smart switch. Can be controlled from the device and through Home Assistant. |
-| CloudFree Smart Plug 2 | [Link](https://cloudfree.shop/product/cloudfree-smart-plug-runs-tasmota/) | Wifi connected smart plugs. Flashed with ESPHome |
+| CloudFree Smart Plug 2 | [Link](https://cloudfree.shop/product/cloudfree-smart-plug-runs-tasmota/) | Wifi connected smart plugs. Flashed with ESPHome and offers power monitoring. |
 
 ### Echos
 | Device | Link | Use |

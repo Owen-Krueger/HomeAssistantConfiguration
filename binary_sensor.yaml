@@ -2,3 +2,13 @@
   country: US
   workdays: [mon, tue, wed, thu, fri]
   excludes: [sat, sun, holiday]
+- platform: template
+  sensors:
+    upstairs_tv_on:
+      friendly_name: "Upstairs TV on"
+      value_template: "{{ states('sensor.upstairs_tv_power')|float > 5 }}"
+- platform: template
+  sensors:
+    downstairs_tv_on:
+      friendly_name: "Downstairs TV on"
+      value_template: "{{ states('sensor.downstairs_tv_power')|float > 5 }}"
