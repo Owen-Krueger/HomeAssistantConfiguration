@@ -13,7 +13,6 @@ input_number: !include input_number.yaml
 light: !include_dir_merge_list light
 notify: !include notify.yaml
 proximity: !include proximity.yaml
-samsungtv: !include samsung-tv.yaml
 script: !include_dir_merge_named script
 sensor: !include sensor.yaml
 scene: !include scene.yaml
