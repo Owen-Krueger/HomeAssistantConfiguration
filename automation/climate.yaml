@@ -54,6 +54,7 @@
 - alias: Climate - Away from Home Notification
   id: climate_away_from_home_notification
 
+  initial_state: true
   trigger:
     - platform: numeric_state
       entity_id: proximity.owen
@@ -103,6 +104,7 @@
 - alias: Climate - Coming Back Home
   id: climate_coming_back_home
 
+  initial_state: true
   trigger:
     - platform: numeric_state
       entity_id: proximity.owen
