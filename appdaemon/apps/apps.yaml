@@ -30,6 +30,15 @@ owen_phone_wifi:
   dependencies: utils
   owen: person.owen
   phone_network: sensor.owen_phone_network_type
+television_lighting:
+  module: television_lighting
+  class: TelevisionLighting
+  dependencies: utils
+  downstairs_lights: light.downstairs_lights
+  downstairs_tv_on: binary_sensor.downstairs_tv_on
+  living_room_automations_on: input_boolean.lights_living_room_automations
+  living_room_lamps: group.living_room_lamps
+  upstairs_tv_on: binary_sensor.upstairs_tv_on
 utils:
   module: utils
   class: Utils

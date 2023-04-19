@@ -26,8 +26,8 @@ class AwayLighting(hass.Hass):
     Sets up triggers for presence and time triggers.
     """
     def set_up_triggers(self):
-        self.allison_presence_handler = self.listen_state(self.away_lighting, self.allison, duration = 300) # When away for 5 minutes
-        self.owen_presence_handler = self.listen_state(self.away_lighting, self.owen, duration = 300) # When away for 5 minutes
+        self.allison_presence_handler = self.listen_state(self.away_lighting, self.allison, new = "away", duration = 300) # When away for 5 minutes
+        self.owen_presence_handler = self.listen_state(self.away_lighting, self.owen, new = "away", duration = 300) # When away for 5 minutes
 
     """
     On automation boolean change, cancel triggers if they're active and
@@ -54,7 +54,8 @@ class AwayLighting(hass.Hass):
         work_time = (self.utils.is_entity_on(self.is_work_day) and
             self.now_is_between("07:45:00", "12:00:00") or
             self.now_is_between("13:00:00", "15:00:00"))
-
+        self.log("Owen Home: {} Allison Home: {} Work Time: {}".format(owen_home, allison_home, work_time))
+        
         if (not owen_home and not allison_home):
             self.log("Everyone away. Turning off all lights.")
             self.turn_on(self.all_off)
