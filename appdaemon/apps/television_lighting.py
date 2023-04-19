@@ -23,7 +23,7 @@ class TelevisionLighting(hass.Hass):
         self.listen_state(self.on_boolean_change, self.living_room_automations_on, duration = 30) # Only update the automation triggers when boolean is set for 30 seconds.
 
     """
-    Sets up triggers for washer and dryer finishing.
+    Sets up triggers for downstairs and upstairs TVs.
     """
     def set_up_triggers(self):
         self.downstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.downstairs_tv_on, new = "on")
@@ -47,11 +47,14 @@ class TelevisionLighting(hass.Hass):
     Turn on lights depending on which TV is on.
     """
     def turn_on_lights(self, entity, attribute, old, new, kwargs):
-        if not self.now_is_between("05:30:00", "21:00:00"):
+        if not self.now_is_between("05:30:00", "21:00:00"): # So lights don't turn on while we're sleeping.
             self.log("{} on but it's late. Not turning lights on.".format(entity))
             return
         
         entity_to_turn_on = self.downstairs_lights if entity == self.downstairs_tv_on else self.living_room_lamps
         self.log("{} turned on. Turning on {}.".format(entity, entity_to_turn_on))
 
-        self.turn_on(self.entity_to_turn_on)
+        if not self.utils.is_entity_on(entity_to_turn_on):
+            self.turn_on(entity_to_turn_on)
+        else:
+            self.log("{} already on.".format(entity_to_turn_on))
