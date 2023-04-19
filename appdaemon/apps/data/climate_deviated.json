@@ -1,0 +1,10 @@
+{
+    "title": "House is too {state}",
+    "message": "Current Temp: {current_temp} | Set Temp: {set_temp}",
+    "actions": [
+        {
+        "action": "climate_switch",
+        "title": "Switch HVAC Mode to {hvac_mode}"
+        }
+    ]
+}

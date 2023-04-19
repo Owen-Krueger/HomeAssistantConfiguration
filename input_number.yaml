@@ -20,6 +20,18 @@ climate_away_temp:
   max: 80
   step: 1
 
+climate_away_offset:
+  name: Away Offset
+  min: 0
+  max: 5
+  step: 1
+
+climate_vacation_offset:
+  name: Vacation Offset
+  min: 0
+  max: 10
+  step: 1
+
 ##########################################################
 ## Lights
 ##########################################################

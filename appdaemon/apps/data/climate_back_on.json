@@ -1,0 +1,9 @@
+{
+    "message": "Climate automation turned back on",
+    "actions": [
+        {
+        "action": "climate_off",
+        "title": "Please don't"
+        }
+    ]
+}

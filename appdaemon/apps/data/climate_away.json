@@ -1,0 +1,9 @@
+{
+    "message": "You appear to be away from home",
+    "actions": [
+        {
+        "action": "climate_off",
+        "title": "Set Away Temperature"
+        }
+    ]
+}
