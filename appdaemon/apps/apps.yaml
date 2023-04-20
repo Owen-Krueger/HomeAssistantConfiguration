@@ -39,6 +39,7 @@ television_lighting:
   living_room_automations_on: input_boolean.lights_living_room_automations
   living_room_lamps: group.living_room_lamps
   upstairs_tv_on: binary_sensor.upstairs_tv_on
+  vacation_mode: input_boolean.mode_vacation
 utils:
   module: utils
   class: Utils

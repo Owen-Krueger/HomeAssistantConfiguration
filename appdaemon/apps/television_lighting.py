@@ -16,6 +16,7 @@ class TelevisionLighting(hass.Hass):
         self.living_room_automations_on = self.args["living_room_automations_on"]
         self.living_room_lamps = self.args["living_room_lamps"]
         self.upstairs_tv_on = self.args["upstairs_tv_on"]
+        self.vacation_mode = self.args["vacation_mode"]
 
         if self.utils.is_entity_on(self.living_room_automations_on):
             self.set_up_triggers() # Sets up listeners for TV statuses
@@ -49,6 +50,10 @@ class TelevisionLighting(hass.Hass):
     def turn_on_lights(self, entity, attribute, old, new, kwargs):
         if not self.now_is_between("05:30:00", "21:00:00"): # So lights don't turn on while we're sleeping.
             self.log("{} on but it's late. Not turning lights on.".format(entity))
+            return
+
+        if self.utils.is_entity_on(self.vacation_mode): # So lights don't turn on in vacation mode.
+            self.log("{} on, but in vacation mode. Not turning lights on.".format(entity))
             return
         
         entity_to_turn_on = self.downstairs_lights if entity == self.downstairs_tv_on else self.living_room_lamps
