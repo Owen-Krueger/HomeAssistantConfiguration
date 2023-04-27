@@ -1,8 +1,7 @@
 import hassapi as hass
 
 """
-Turns on downstairs lights on if downstairs TV on or living room lamps if
-upstairs TV is on.
+Turns lights on and off due to state of televisions.
 """
 class TelevisionLighting(hass.Hass):
     
@@ -27,8 +26,9 @@ class TelevisionLighting(hass.Hass):
     Sets up triggers for downstairs and upstairs TVs.
     """
     def set_up_triggers(self):
-        self.downstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.downstairs_tv_on, new = "on")
-        self.upstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.upstairs_tv_on, new = "on")
+        self.downstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.downstairs_tv_on, new = "on", duration = 30) # Only turn on lights when TV on for 30 seconds.
+        self.upstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.upstairs_tv_on, new = "on", duration = 30) # Only turn on lights when TV on for 30 seconds.
+        self.upstairs_tv_off_handler = self.listen_state(self.turn_off_living_room_lamps, self.upstairs_tv_on, new = "off", duration = 120) # Only turn off lamps when TV off for 2 minutes.
 
     """
     On living room automations boolean change, cancel listeners if they're active and
@@ -63,3 +63,11 @@ class TelevisionLighting(hass.Hass):
             self.turn_on(entity_to_turn_on)
         else:
             self.log("{} already on.".format(entity_to_turn_on))
+
+    """
+    Turn off living room lamps if they're currently on.
+    """
+    def turn_off_living_room_lamps(self, entity, attribute, old, new, kwargs):
+        if self.utils.is_entity_on(self.living_room_lamps):
+            self.log("Turning off living room lamps due to Upstairs TV being off.")
+            self.turn_off(self.living_room_lamps)
