@@ -46,10 +46,13 @@ toggleable_lighting:
   dependencies: utils
   dictionary:
     - event_device_id: !secret dining_room_button_id
+      command: "single"
       light: light.office_lamp
     - event_device_id: !secret allison_living_room_button_id
+      command: "on"
       light: group.living_room_lamps
     - event_device_id: !secret owen_living_room_button_id
+      command: "on"
       light: group.living_room_lamps
 utils:
   module: utils

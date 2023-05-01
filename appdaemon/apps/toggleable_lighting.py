@@ -11,8 +11,8 @@ class ToggleableLighting(hass.Hass):
     def initialize(self):
         self.utils = self.get_app("utils")
 
-        for pair in self.args["dictionary"]:
-            self.listen_event(self.toggle_light, "zha_event", device_id = pair["event_device_id"], light = pair["light"])
+        for event in self.args["dictionary"]:
+            self.listen_event(self.toggle_light, "zha_event", device_id = event["event_device_id"], command = event["command"], light = event["light"])
 
     """
     Turns light on if currently off and turns light off if currently on.
