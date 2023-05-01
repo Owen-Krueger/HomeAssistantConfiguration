@@ -31,5 +31,5 @@ wifi:
 
   manual_ip:
     gateway: !secret router_gateway_ip
-    static_ip: !secret standing_desk_monitor
+    static_ip: !secret standing_desk_monitor_ip
     subnet: 255.255.255.0

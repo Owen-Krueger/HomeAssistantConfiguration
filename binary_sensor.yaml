@@ -6,9 +6,9 @@
   sensors:
     upstairs_tv_on:
       friendly_name: "Upstairs TV on"
-      value_template: "{{ states('sensor.upstairs_tv_power')|float > 10 }}"
+      value_template: "{{ states('sensor.upstairs_tv_smart_plug_power')|float > 10 }}"
 - platform: template
   sensors:
     downstairs_tv_on:
       friendly_name: "Downstairs TV on"
-      value_template: "{{ states('sensor.downstairs_tv_power')|float > 10 }}"
+      value_template: "{{ states('sensor.downstairs_tv_smart_plug_power')|float > 10 }}"
