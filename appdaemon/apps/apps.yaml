@@ -45,8 +45,12 @@ toggleable_lighting:
   class: ToggleableLighting
   dependencies: utils
   dictionary:
-    - event: !secret dining_room_button_id
+    - event_device_id: !secret dining_room_button_id
       light: light.office_lamp
+    - event_device_id: !secret allison_living_room_button_id
+      light: group.living_room_lamps
+    - event_device_id: !secret owen_living_room_button_id
+      light: group.living_room_lamps
 utils:
   module: utils
   class: Utils
