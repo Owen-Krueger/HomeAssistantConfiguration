@@ -40,6 +40,13 @@ television_lighting:
   living_room_lamps: group.living_room_lamps
   upstairs_tv_on: binary_sensor.upstairs_tv_on
   vacation_mode: input_boolean.mode_vacation
+toggleable_lighting:
+  module: toggleable_lighting
+  class: ToggleableLighting
+  dependencies: utils
+  dictionary:
+    - event: !secret dining_room_button_id
+      light: light.office_lamp
 utils:
   module: utils
   class: Utils

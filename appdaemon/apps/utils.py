@@ -9,13 +9,13 @@ class Utils(hass.Hass):
     """
     Returns if the entity state is currently "on".
     """
-    def is_entity_on(self, entity):
+    def is_entity_on(self, entity) -> bool:
         return self.get_state(entity) == "on"
 
     """
     Returns if the entity state is currently "home".
     """
-    def is_entity_home(self, entity):
+    def is_entity_home(self, entity) -> bool:
         return self.get_state(entity) == "home"
 
     """
