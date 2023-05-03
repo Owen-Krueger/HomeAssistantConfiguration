@@ -26,8 +26,8 @@ class TelevisionLighting(hass.Hass):
     Sets up triggers for downstairs and upstairs TVs.
     """
     def set_up_triggers(self):
-        self.downstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.downstairs_tv_on, new = "on", duration = 30) # Only turn on lights when TV on for 30 seconds.
-        self.upstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.upstairs_tv_on, new = "on", duration = 30) # Only turn on lights when TV on for 30 seconds.
+        self.downstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.downstairs_tv_on, new = "on", duration = 15) # Only turn on lights when TV on for 15 seconds.
+        self.upstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.upstairs_tv_on, new = "on", duration = 15) # Only turn on lights when TV on for 15 seconds.
         self.upstairs_tv_off_handler = self.listen_state(self.turn_off_living_room_lamps, self.upstairs_tv_on, new = "off", duration = 120) # Only turn off lamps when TV off for 2 minutes.
 
     """
