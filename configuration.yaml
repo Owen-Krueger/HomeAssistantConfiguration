@@ -6,7 +6,6 @@ binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
 cloud: !include cloud.yaml
 group: !include group.yaml
-hue: !include hue.yaml
 input_boolean: !include input_boolean.yaml
 input_datetime: !include input_datetime.yaml
 input_number: !include input_number.yaml

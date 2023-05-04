@@ -54,6 +54,9 @@ toggleable_lighting:
     - event_device_id: !secret owen_living_room_button_id
       command: "on"
       light: group.living_room_lamps
+    - event_device_id: !secret bedroom_lamp_button_id
+      command: "single"
+      light: light.bedroom_lamps
 utils:
   module: utils
   class: Utils
