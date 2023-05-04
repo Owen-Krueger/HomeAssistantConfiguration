@@ -17,3 +17,6 @@
     owen_computer_active:
       friendly_name: "Owen Computer active"
       value_template: "{{ states('sensor.owen_computer_smart_plug_power')|float > 130 }}"
+- platform: ping
+  name: "Internet Up"
+  host: 8.8.8.8

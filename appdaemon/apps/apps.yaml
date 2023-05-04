@@ -30,6 +30,13 @@ owen_phone_wifi:
   dependencies: utils
   owen: person.owen
   phone_network: sensor.owen_phone_network_type
+modem:
+  module: modem
+  class: Modem
+  dependencies: utils
+  internet_up: binary_sensor.internet_up
+  internet_modem_smart_plug: switch.internet_modem_smart_plug
+  restart_modem: script.restart_modem
 television_lighting:
   module: television_lighting
   class: TelevisionLighting
