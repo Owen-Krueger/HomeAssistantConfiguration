@@ -14,7 +14,11 @@ class Modem(hass.Hass):
         self.restart_modem_script = self.args["restart_modem_script"]
         self.internet_modem_smart_plug = self.args["internet_modem_smart_plug"]
 
-        self.listen_state(self.restart_modem, self.internet_up, new = "off", duration = 300) # When no internet detected for 5 minutes
+        # Restarts modem when no internet is detected for 5.5 minutes. Ping
+        # checks if we have internet access every 5.5 minutes, so this time
+        # allows for a second check to happen and confirm that we have no
+        # internet access.
+        self.listen_state(self.restart_modem, self.internet_up, new = "off", duration = 330)
 
     """
     Restarts the modem via the restart modem script.
