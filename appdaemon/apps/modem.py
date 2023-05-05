@@ -11,7 +11,7 @@ class Modem(hass.Hass):
     def initialize(self):
         self.utils = self.get_app("utils")
         self.internet_up = self.args["internet_up"]
-        self.restart_modem_script = self.args["restart_modem"]
+        self.restart_modem_script = self.args["restart_modem_script"]
         self.internet_modem_smart_plug = self.args["internet_modem_smart_plug"]
 
         self.listen_state(self.restart_modem, self.internet_up, new = "off", duration = 300) # When no internet detected for 5 minutes

@@ -36,7 +36,7 @@ modem:
   dependencies: utils
   internet_up: binary_sensor.internet_up
   internet_modem_smart_plug: switch.internet_modem_smart_plug
-  restart_modem: script.restart_modem
+  restart_modem_script: script.restart_modem
 television_lighting:
   module: television_lighting
   class: TelevisionLighting

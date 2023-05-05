@@ -1,7 +1,3 @@
-- platform: workday
-  country: US
-  workdays: [mon, tue, wed, thu, fri]
-  excludes: [sat, sun, holiday]
 - platform: template
   sensors:
     upstairs_tv_on:
