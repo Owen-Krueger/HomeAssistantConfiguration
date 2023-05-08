@@ -54,7 +54,7 @@ toggleable_lighting:
   dictionary:
     - event_device_id: !secret dining_room_button_id
       command: "single"
-      light: light.office_lamp
+      light: switch.dining_room_lights
     - event_device_id: !secret allison_living_room_button_id
       command: "on"
       light: group.living_room_lamps

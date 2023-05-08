@@ -13,6 +13,7 @@
     switch.stairway_lights: "off"
     switch.christmas_tree: "off"
     switch.bedroom_lights: "off"
+    switch.dining_room_lights: "off"
 - name: Day Office
   icon: "mdi:office-building"
   entities:
@@ -28,6 +29,7 @@
     switch.stairway_lights: "off"
     switch.christmas_tree: "off"
     switch.bedroom_lights: "off"
+    switch.dining_room_lights: "off"
 - name: Night Lighting
   icon: "mdi:weather-night"
   entities:
@@ -47,6 +49,7 @@
     switch.stairway_lights: "off"
     switch.christmas_tree: "off"
     switch.bedroom_lights: "off"
+    switch.dining_room_lights: "off"
 - name: Dim Bedroom
   icon: "mdi:lamp"
   entities:
