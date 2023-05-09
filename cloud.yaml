@@ -5,6 +5,7 @@ alexa:
       - light.owen_bedroom_lamp
       - light.bedroom_lamps
       - switch.allison_living_room_lamp
+      - switch.dining_room_lights
       - switch.owen_living_room_lamp
       - light.office_lamp
       - light.downstairs_lights
