@@ -37,9 +37,10 @@ class TelevisionLighting(hass.Hass):
     def on_boolean_change(self, entity, attribute, old, new, kwargs):
         self.log("Living room automations boolean changed: {}".format(new))
 
-        if old == "on": # Cancel old listeners if they were active. 
+        if old == "on": # Cancel old listeners if they were active.
             self.cancel_listen_state(self.downstairs_tv_on_handler)
             self.cancel_listen_state(self.upstairs_tv_on_handler)
+            self.cancel_listen_state(self.upstairs_tv_off_handler)
 
         if new == "on":
             self.set_up_triggers()
