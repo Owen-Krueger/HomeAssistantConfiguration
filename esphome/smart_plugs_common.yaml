@@ -3,6 +3,7 @@ esphome:
   comment: ${device_description}
   platform: ESP8266
   board: esp01_1m
+  esp8266_restore_from_flash : True
 
 wifi:
   ssid: !secret wifi_ssid
@@ -123,7 +124,7 @@ switch:
     name: ${friendly_name}
     pin: GPIO4
     id: relay
-    restore_mode: ${switch_restore_mode} #Try to restore relay state after reboot/power-loss event.
+    restore_mode: ${restore_mode} #Try to restore relay state after reboot/power-loss event.
     #RESTORE_DEFAULT_OFF (Default) - Attempt to restore state and default to OFF if not possible to restore. Uses flash write cycles.
     #RESTORE_DEFAULT_ON - Attempt to restore state and default to ON. Uses flash write cycles.
     #ALWAYS_OFF - Always initialize the pin as OFF on bootup. Does not use flash write cycles.
@@ -181,7 +182,7 @@ light:
     name: ${friendly_name} Blue LED
     output: blue_output
     id: blue_led
-    restore_mode: ${light_restore_mode} #Start with light off after reboot/power-loss event.
+    restore_mode: ${restore_mode} #Start with light off after reboot/power-loss event.
     #RESTORE_DEFAULT_OFF (Default) - Attempt to restore state and default to OFF if not possible to restore. Uses flash write cycles.
     #RESTORE_DEFAULT_ON - Attempt to restore state and default to ON. Uses flash write cycles.
     #ALWAYS_OFF - Always initialize the pin as OFF on bootup. Does not use flash write cycles.

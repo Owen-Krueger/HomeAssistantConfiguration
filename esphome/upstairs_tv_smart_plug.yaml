@@ -7,7 +7,6 @@ substitutions:
     amperage_calibration: 0.12 -> 0.08
     voltage_calibration1: 0.0 -> 0.0
     voltage_calibration2: 322.4 -> 118.3
-    switch_restore_mode: ALWAYS_ON
-    light_restore_mode: ALWAYS_ON
+    restore_mode: ALWAYS_ON
 
 <<: !include smart_plugs_common.yaml
