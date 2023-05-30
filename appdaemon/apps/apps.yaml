@@ -64,6 +64,14 @@ toggleable_lighting:
     - event_device_id: !secret bedroom_lamp_button_id
       command: "single"
       light: light.bedroom_lamps
+unavailable_entities:
+  module: unavailable_entities
+  class: UnavailableEntities
+  list:
+    - switch.downstairs_tv_smart_plug
+    - switch.internet_modem_smart_plug
+    - switch.owen_computer_smart_plug
+    - switch.upstairs_tv_smart_plug
 utils:
   module: utils
   class: Utils

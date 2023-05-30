@@ -249,6 +249,10 @@
       to: "opening"
     - platform: state
       entity_id:
+        - cover.primary_garage_door
+      to: "open"
+    - platform: state
+      entity_id:
         - binary_sensor.garage_lights_motion_detection
       to: "on"
 
