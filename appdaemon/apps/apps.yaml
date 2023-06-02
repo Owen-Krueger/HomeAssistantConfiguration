@@ -1,3 +1,4 @@
+# Apps
 away_lighting:
   module: away_lighting
   class: AwayLighting
@@ -72,6 +73,17 @@ unavailable_entities:
     - switch.internet_modem_smart_plug
     - switch.owen_computer_smart_plug
     - switch.upstairs_tv_smart_plug
+work_lighting:
+  module: work_lighting
+  class: WorkLighting
+  dependencies: utils
+  dining_room_lights: switch.dining_room_lights
+  is_work_day: binary_sensor.workday_sensor
+  office_lights: switch.office_lights
+  owen: person.owen
+  owen_computer_active: binary_sensor.owen_computer_active
+
+# Shared
 utils:
   module: utils
   class: Utils

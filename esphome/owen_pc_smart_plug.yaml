@@ -1,5 +1,5 @@
 substitutions:
-    device_name: "owen-computer-smart-plug"
+    device_name: owen-computer-smart-plug
     device_description: Power monitoring plug for Owen's computer
     friendly_name: Owen Computer Smart Plug
     ip_address: !secret owen_computer_smart_plug_ip

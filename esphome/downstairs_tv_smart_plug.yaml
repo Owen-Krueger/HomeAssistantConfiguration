@@ -1,5 +1,5 @@
 substitutions:
-    device_name: "downstairs-tv-smart-plug"
+    device_name: downstairs-tv-smart-plug
     device_description: Power monitoring plug for downstairs TV
     friendly_name: Downstairs TV Smart Plug
     ip_address: !secret downstairs_tv_smart_plug_ip

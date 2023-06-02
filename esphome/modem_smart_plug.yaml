@@ -1,5 +1,5 @@
 substitutions:
-    device_name: "modem-smart-plug"
+    device_name: modem-smart-plug
     device_description: Power monitoring plug for modem
     friendly_name: Internet Modem Smart Plug
     ip_address: !secret modem_smart_plug_ip

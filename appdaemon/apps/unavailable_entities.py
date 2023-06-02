@@ -10,7 +10,7 @@ class UnavailableEntities(hass.Hass):
     """
     def initialize(self):
         for entity in self.args["list"]:
-            self.listen_state(self.notify_owen, entity, new = "unavailable")
+            self.listen_state(self.notify_owen, entity, new = "unavailable", duration = 30) # When unavailable for 30 seconds.
 
     """
     Notify Owen that the entity has become unavailable.
