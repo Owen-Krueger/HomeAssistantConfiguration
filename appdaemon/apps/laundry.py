@@ -49,13 +49,13 @@ class Laundry(hass.Hass):
     def notify_users(self, entity, attribute, old, new, kwargs):
         device = "washer" if entity == self.washer else "dryer"
         message = "The {} has completed!".format(device)
-        self.log("Notifying users that {} has completed.".format(device))
 
         if (not self.owen_home and not self.allison_home):
-            self.log("Nobody home. Sending notification to both.")
             self.owen_home = True
             self.allison_home = True
-        
+
+        self.log("Notifying users that {} has completed. Owen: {} Allison: {}".format(device, self.owen_home, self.allison_home))
+
         if (self.owen_home):
             self.notify(message, name="owen")
 
