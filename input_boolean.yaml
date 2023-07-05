@@ -42,6 +42,14 @@ mode_vacation:
   name: Vacation Mode
   icon: mdi:airplane
 
+mode_guest:
+  name: Guest Mode
+  icon: mdi:clipboard-account
+
+holiday_mode:
+  name: Holiday Mode
+  icon: mdi:string-lights
+
 ##########################################################
 ## Sleep
 ##########################################################
@@ -57,14 +65,6 @@ night_automations:
 vacation_lighting_automation:
   name: Automate lights while on vacation
   icon: mdi:airplane
-
-##########################################################
-## Holiday
-##########################################################
-
-holiday_mode:
-  name: Holiday Mode
-  icon: mdi:string-lights
 
 ##########################################################
 ## Laundry

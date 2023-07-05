@@ -12,6 +12,7 @@ class WorkLighting(hass.Hass):
         self.utils = self.get_app("utils")
         self.dining_room_lights = self.args["dining_room_lights"]
         self.is_work_day = self.args["is_work_day"]
+        self.mode_guest = self.args["mode_guest"]
         self.office_lights = self.args["office_lights"]
         self.owen = self.args["owen"]
         self.owen_computer_active = self.args["owen_computer_active"]
@@ -35,7 +36,9 @@ class WorkLighting(hass.Hass):
     if they're currently off.
     """
     def on_computer_inactive(self, entity, attribute, old, new, kwargs):
-        self.log("Executing automatinos due to computer being inactive.")
+        self.log("Executing automations due to computer being inactive.")
+        if self.utils.is_entity_on(self.mode_guest):
+            return
 
         if self.utils.is_entity_on(self.office_lights):
             self.log("Turning off office lights.")

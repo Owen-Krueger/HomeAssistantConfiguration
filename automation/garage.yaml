@@ -39,4 +39,5 @@
         - conditions: "{{ wait.trigger.event.data.action == action_close }}"
           sequence:
             - service: cover.close_cover
-              target: cover.primary_garage_door
+              target: 
+                entity_id: cover.primary_garage_door

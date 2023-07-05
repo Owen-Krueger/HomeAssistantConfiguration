@@ -4,6 +4,11 @@ family:
     - device_tracker.allison_phone_10
   tolerance: 50
   unit_of_measurement: mi
+allison:
+  devices:
+    - device_tracker.allison_phone_10
+  tolerance: 50
+  unit_of_measurement: mi
 owen:
   devices:
     - device_tracker.owen_phone

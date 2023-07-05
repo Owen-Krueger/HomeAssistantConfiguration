@@ -16,6 +16,7 @@ class AwayLighting(hass.Hass):
         self.all_off = self.args["all_off"]
         self.day_office = self.args["day_office"]
         self.is_work_day = self.args["is_work_day"]
+        self.mode_guest = self.args["mode_guest"]
 
         if self.utils.is_entity_on(self.should_turn_off_lights): # Only run automations if boolean is on
             self.set_up_triggers()
@@ -49,13 +50,15 @@ class AwayLighting(hass.Hass):
     """
     def away_lighting(self, entity, attribute, old, new, kwargs):
         self.log("Executing automation.")
+        if self.utils.is_entity_on(self.mode_guest):
+            return
+
         owen_home = self.utils.is_entity_home(self.owen)
         allison_home = self.utils.is_entity_home(self.allison)
         work_time = (self.utils.is_entity_on(self.is_work_day) and
             self.now_is_between("07:45:00", "12:00:00") or
             self.now_is_between("13:00:00", "15:00:00"))
-        self.log("Owen Home: {} Allison Home: {} Work Time: {}".format(owen_home, allison_home, work_time))
-        
+
         if (not owen_home and not allison_home):
             self.log("Everyone away. Turning off all lights.")
             self.turn_on(self.all_off)

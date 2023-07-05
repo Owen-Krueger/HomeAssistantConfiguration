@@ -5,6 +5,7 @@ away_lighting:
   dependencies: utils
   all_off: scene.all_off
   allison: person.allison
+  mode_guest: input_boolean.mode_guest
   should_turn_off_lights: input_boolean.lights_turn_off_lights_when_nobody_home
   day_office: scene.day_office
   is_work_day: binary_sensor.workday_sensor
@@ -13,9 +14,13 @@ front_porch:
   module: front_porch
   class: FrontPorch
   depedencies: utils
+  allison: person.allison
   porch_off_time: input_datetime.light_front_porch_off_time
   front_porch_switch: switch.front_porch_lights
+  owen: person.owen
   should_override_time: input_boolean.light_override_front_porch_off
+  proximity_allison: proximity.allison
+  proximity_owen: proximity.owen
 laundry:
   module: laundry
   class: Laundry
@@ -79,6 +84,7 @@ work_lighting:
   dependencies: utils
   dining_room_lights: switch.dining_room_lights
   is_work_day: binary_sensor.workday_sensor
+  mode_guest: input_boolean.mode_guest
   office_lights: switch.office_lights
   owen: person.owen
   owen_computer_active: binary_sensor.owen_computer_active
