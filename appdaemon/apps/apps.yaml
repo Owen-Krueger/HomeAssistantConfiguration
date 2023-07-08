@@ -10,6 +10,13 @@ away_lighting:
   day_office: scene.day_office
   is_work_day: binary_sensor.workday_sensor
   owen: person.owen
+cameras:
+  module: cameras
+  class: Cameras
+  dependencies: utils
+  allison: person.allison
+  cat_camera_smart_plug: switch.cat_camera_smart_plug
+  owen: person.owen
 front_porch:
   module: front_porch
   class: FrontPorch
