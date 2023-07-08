@@ -1,0 +1,8 @@
+substitutions:
+    device_name: router-smart-plug
+    device_description: Power monitoring plug for router
+    friendly_name: Internet Router Smart Plug
+    ip_address: !secret router_smart_plug_ip
+    restore_mode: ALWAYS_ON
+  
+<<: !include sonoff_s31_common.yaml
