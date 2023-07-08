@@ -15,7 +15,8 @@ cameras:
   class: Cameras
   dependencies: utils
   allison: person.allison
-  cat_camera_smart_plug: switch.cat_camera_smart_plug
+  cat_camera_up_smart_plug: switch.cat_camera_up_smart_plug
+  cat_camera_down_smart_plug: switch.cat_camera_down_smart_plug
   owen: person.owen
 front_porch:
   module: front_porch

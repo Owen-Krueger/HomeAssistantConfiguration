@@ -1,8 +1,8 @@
 substitutions:
-    device_name: cat-camera-smart-plug
-    device_description: Power monitoring plug for Cat Camera
-    friendly_name: Cat Camera Smart Plug
-    ip_address: !secret cat_camera_smart_plug_ip
+    device_name: cat-camera-up-smart-plug
+    device_description: Power monitoring plug for Upstairs Cat Camera
+    friendly_name: Cat Camera Up Smart Plug
+    ip_address: !secret cat_camera_up_smart_plug_ip
     wattage_calibration: 67.6 -> 11.0
     amperage_calibration: 0.12 -> 0.08
     voltage_calibration1: 0.0 -> 0.0

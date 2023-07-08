@@ -1,12 +1,12 @@
 substitutions:
-    device_name: downstairs-tv-smart-plug
-    device_description: Power monitoring plug for downstairs TV
-    friendly_name: Downstairs TV Smart Plug
-    ip_address: !secret downstairs_tv_smart_plug_ip
+    device_name: cat-camera-down-smart-plug
+    device_description: Power monitoring plug for Downstairs Cat Camera
+    friendly_name: Cat Camera Down Smart Plug
+    ip_address: !secret cat_camera_down_smart_plug_ip
     wattage_calibration: 67.6 -> 11.0
     amperage_calibration: 0.12 -> 0.08
     voltage_calibration1: 0.0 -> 0.0
     voltage_calibration2: 322.4 -> 118.3
     restore_mode: ALWAYS_ON
-  
+
 <<: !include common/cloudfree_smart_plug_common.yaml
