@@ -5,4 +5,4 @@ substitutions:
     ip_address: !secret router_smart_plug_ip
     restore_mode: ALWAYS_ON
   
-<<: !include sonoff_s31_common.yaml
+<<: !include common/sonoff_s31_common.yaml

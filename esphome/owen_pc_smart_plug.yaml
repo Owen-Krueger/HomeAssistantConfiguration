@@ -9,4 +9,4 @@ substitutions:
     voltage_calibration2: 322.4 -> 118.3
     restore_mode: ALWAYS_ON
   
-<<: !include cloudfree_smart_plug_common.yaml
+<<: !include common/cloudfree_smart_plug_common.yaml

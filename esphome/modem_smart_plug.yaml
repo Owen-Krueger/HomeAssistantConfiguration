@@ -3,10 +3,6 @@ substitutions:
     device_description: Power monitoring plug for modem
     friendly_name: Internet Modem Smart Plug
     ip_address: !secret modem_smart_plug_ip
-    wattage_calibration: 67.6 -> 11.0
-    amperage_calibration: 0.12 -> 0.08
-    voltage_calibration1: 0.0 -> 0.0
-    voltage_calibration2: 322.4 -> 118.3
     restore_mode: ALWAYS_ON
   
-<<: !include cloudfree_smart_plug_common.yaml
+<<: !include common/sonoff_s31_common.yaml
