@@ -29,6 +29,14 @@ front_porch:
   should_override_time: input_boolean.light_override_front_porch_off
   proximity_allison: proximity.allison
   proximity_owen: proximity.owen
+internet:
+  module: internet
+  class: Internet
+  dependencies: utils
+  internet_up: binary_sensor.internet_up
+  internet_modem_smart_plug: switch.internet_modem_smart_plug_relay
+  internet_router_smart_plug: switch.internet_router_smart_plug_relay
+  restart_modem_script: script.restart_modem
 laundry:
   module: laundry
   class: Laundry
@@ -44,13 +52,6 @@ owen_phone_wifi:
   dependencies: utils
   owen: person.owen
   phone_network: sensor.owen_phone_network_type
-modem:
-  module: modem
-  class: Modem
-  dependencies: utils
-  internet_up: binary_sensor.internet_up
-  internet_modem_smart_plug: switch.internet_modem_smart_plug
-  restart_modem_script: script.restart_modem
 television_lighting:
   module: television_lighting
   class: TelevisionLighting
