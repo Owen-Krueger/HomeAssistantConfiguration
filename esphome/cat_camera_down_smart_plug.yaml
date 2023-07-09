@@ -7,6 +7,6 @@ substitutions:
     amperage_calibration: 0.12 -> 0.08
     voltage_calibration1: 0.0 -> 0.0
     voltage_calibration2: 322.4 -> 118.3
-    restore_mode: ALWAYS_ON
+    restore_mode: RESTORE_DEFAULT_OFF
 
 <<: !include common/cloudfree_smart_plug_common.yaml
