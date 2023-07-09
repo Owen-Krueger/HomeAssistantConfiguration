@@ -11,7 +11,6 @@ class Internet(hass.Hass):
     def initialize(self):
         self.utils = self.get_app("utils")
         self.internet_up = self.args["internet_up"]
-        self.restart_modem_script = self.args["restart_modem_script"]
         self.internet_modem_smart_plug = self.args["internet_modem_smart_plug"]
         # self.internet_router_smart_plug = self.args["internet_router_smart_plug"]
 

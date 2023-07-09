@@ -15,8 +15,9 @@ cameras:
   class: Cameras
   dependencies: utils
   allison: person.allison
-  cat_camera_up_smart_plug: switch.cat_camera_up_smart_plug
-  cat_camera_down_smart_plug: switch.cat_camera_down_smart_plug
+  cameras:
+    - switch.cat_camera_up_smart_plug
+    - switch.cat_camera_down_smart_plug
   owen: person.owen
 front_porch:
   module: front_porch
@@ -34,9 +35,8 @@ internet:
   class: Internet
   dependencies: utils
   internet_up: binary_sensor.internet_up
-  internet_modem_smart_plug: switch.internet_modem_smart_plug_relay
-  internet_router_smart_plug: switch.internet_router_smart_plug_relay
-  restart_modem_script: script.restart_modem
+  internet_modem_smart_plug: switch.internet_modem_smart_plug
+  # internet_router_smart_plug: switch.internet_router_smart_plug
 laundry:
   module: laundry
   class: Laundry
