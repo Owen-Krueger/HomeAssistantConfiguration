@@ -10,6 +10,13 @@ away_lighting:
   day_office: scene.day_office
   is_work_day: binary_sensor.workday_sensor
   owen: person.owen
+bedroom_lighting:
+  module: bedroom_lighting
+  class: BedroomLighting
+  dependencies: utils
+  bedroom_button_device_id: !secret bedroom_lamp_button_id
+  bedroom_lamps: light.bedroom_lamps
+  bedroom_lights: switch.bedroom_lights
 cameras:
   module: cameras
   class: Cameras
@@ -76,9 +83,6 @@ toggleable_lighting:
     - event_device_id: !secret owen_living_room_button_id
       command: "on"
       light: group.living_room_lamps
-    - event_device_id: !secret bedroom_lamp_button_id
-      command: "single"
-      light: light.bedroom_lamps
 unavailable_entities:
   module: unavailable_entities
   class: UnavailableEntities

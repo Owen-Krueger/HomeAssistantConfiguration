@@ -18,7 +18,7 @@ class WorkLighting(hass.Hass):
         self.owen_computer_active = self.args["owen_computer_active"]
 
         self.listen_state(self.on_computer_active, self.owen_computer_active, new = "on", duration = 60) # When computer active for 60 seconds
-        self.listen_state(self.on_office_light_off, self.office_lights, new = "off", duration = 30) # When office lights turned off
+        self.listen_state(self.on_office_light_off, self.office_lights, new = "off", duration = 30) # When office lights turned off for 30 seconds
 
     """
     Automations when computer is active.

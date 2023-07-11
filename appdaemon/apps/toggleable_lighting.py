@@ -28,7 +28,4 @@ class ToggleableLighting(hass.Hass):
         current_state = self.utils.is_entity_on(light)
         self.log("Toggle triggered for {}. Turning light {}.".format(light, "off" if current_state else "on"))
 
-        if (current_state):
-            self.turn_off(light)
-        else:
-            self.turn_on(light)
+        self.toggle(light)
