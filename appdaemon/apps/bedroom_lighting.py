@@ -40,4 +40,4 @@ class BedroomLighting(hass.Hass):
     Returns if it's late at night.
     """
     def is_late(self) -> bool:
-        return self.now_is_between("21:00:00", "11:59:99")
+        return self.now_is_between("21:00:00", "23:59:59")
