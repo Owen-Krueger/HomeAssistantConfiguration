@@ -18,7 +18,7 @@ class WorkLighting(hass.Hass):
         self.owen_computer_active = self.args["owen_computer_active"]
 
         self.listen_state(self.on_computer_active, self.owen_computer_active, new = "on", duration = 60) # When computer active for 60 seconds
-        self.listen_state(self.on_computer_inactive, self.owen_computer_active, new = "off", duration = 120) # When computer inactive for 120 seconds
+        self.listen_state(self.on_office_light_off, self.office_lights, new = "off", duration = 30) # When office lights turned off
 
     """
     Automations when computer is active.
@@ -31,21 +31,15 @@ class WorkLighting(hass.Hass):
             self.turn_on(self.office_lights)
 
     """
-    Automations when computer is inactive.
-    Turns off office lights if they're currently on. Turns on dining room lights
-    if they're currently off.
+    Automations office lights turned off. Turns on dining room lights
+    if lunchtime and they're currently off.
     """
-    def on_computer_inactive(self, entity, attribute, old, new, kwargs):
-        self.log("Executing automations due to computer being inactive.")
-        if self.utils.is_entity_on(self.mode_guest):
-            return
-
-        if self.utils.is_entity_on(self.office_lights):
-            self.log("Turning off office lights.")
-            self.turn_off(self.office_lights)
+    def on_office_light_off(self, entity, attribute, old, new, kwargs):
+        self.log("Executing automations due to office lights being turned off.")
 
         # If Owen is home, it's a work day, and it's around lunch time.
-        if (not self.utils.is_entity_on(self.dining_room_lights) and
+        if (not self.utils.is_entity_on(self.mode_guest) and
+            not self.utils.is_entity_on(self.dining_room_lights) and
             self.utils.is_entity_home(self.owen) and
             self.utils.is_entity_on(self.is_work_day) and
             self.now_is_between("11:00:00", "13:30:00")):

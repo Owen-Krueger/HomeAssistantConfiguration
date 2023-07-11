@@ -16,8 +16,8 @@ class Cameras(hass.Hass):
 
         self.listen_state(self.turn_off_on_cameras, self.allison, new = "home")
         self.listen_state(self.turn_off_on_cameras, self.owen, new = "home")
-        self.listen_state(self.turn_off_on_cameras, self.allison, new = "not_home", duration = 10) # When away for 10 minutes.
-        self.listen_state(self.turn_off_on_cameras, self.owen, new = "not_home", duration = 10) # When away for 10 minutes.
+        self.listen_state(self.turn_off_on_cameras, self.allison, new = "not_home", duration = 600) # When away for 10 minutes.
+        self.listen_state(self.turn_off_on_cameras, self.owen, new = "not_home", duration = 600) # When away for 10 minutes.
 
     """
     Turns off cameras if anyone home and cameras are on.
