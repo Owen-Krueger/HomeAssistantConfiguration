@@ -26,6 +26,8 @@ cameras:
     - switch.cat_camera_up_smart_plug
     - switch.cat_camera_down_smart_plug
   owen: person.owen
+  proximity_allison: proximity.allison
+  proximity_owen: proximity.owen
 front_porch:
   module: front_porch
   class: FrontPorch
@@ -76,13 +78,18 @@ toggleable_lighting:
   dictionary:
     - event_device_id: !secret dining_room_button_id
       command: "single"
-      light: switch.dining_room_lights
+      lights:
+        - switch.dining_room_lights
     - event_device_id: !secret allison_living_room_button_id
       command: "on"
-      light: group.living_room_lamps
+      lights:
+        - switch.allison_living_room_lamp
+        - switch.owen_living_room_lamp
     - event_device_id: !secret owen_living_room_button_id
       command: "on"
-      light: group.living_room_lamps
+      lights:
+        - switch.allison_living_room_lamp
+        - switch.owen_living_room_lamp
 unavailable_entities:
   module: unavailable_entities
   class: UnavailableEntities
