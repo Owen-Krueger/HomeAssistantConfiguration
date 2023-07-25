@@ -26,7 +26,7 @@ class Cameras(hass.Hass):
     """
     def turn_on_cameras(self, entity, attribute, old, new, kwargs):
         direction = self.get_state(entity, attribute="dir_of_travel")
-        if direction != "towards" or self.someone_home():
+        if direction is "towards" or self.someone_home():
             return
         
         self.turn_off_on_cameras(True)
