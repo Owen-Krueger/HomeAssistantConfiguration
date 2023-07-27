@@ -67,8 +67,11 @@ television_lighting:
   dependencies: utils
   downstairs_lights: light.downstairs_lights
   downstairs_tv_on: binary_sensor.downstairs_tv_on
+  is_work_day: binary_sensor.workday_sensor
   living_room_automations_on: input_boolean.lights_living_room_automations
   living_room_lamps: group.living_room_lamps
+  mode_guest: input_boolean.mode_guest
+  owen: person.owen
   upstairs_tv_on: binary_sensor.upstairs_tv_on
   vacation_mode: input_boolean.mode_vacation
 toggleable_lighting:

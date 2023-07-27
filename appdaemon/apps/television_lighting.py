@@ -14,6 +14,9 @@ class TelevisionLighting(hass.Hass):
         self.downstairs_tv_on = self.args["downstairs_tv_on"]
         self.living_room_automations_on = self.args["living_room_automations_on"]
         self.living_room_lamps = self.args["living_room_lamps"]
+        self.is_work_day = self.args["is_work_day"]
+        self.mode_guest = self.args["mode_guest"]
+        self.owen = self.args["owen"]
         self.upstairs_tv_on = self.args["upstairs_tv_on"]
         self.vacation_mode = self.args["vacation_mode"]
 
@@ -27,8 +30,9 @@ class TelevisionLighting(hass.Hass):
     """
     def set_up_triggers(self):
         self.downstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.downstairs_tv_on, new = "on", duration = 15) # Only turn on lights when TV on for 15 seconds.
-        self.upstairs_tv_on_handler = self.listen_state(self.turn_on_lights, self.upstairs_tv_on, new = "on", duration = 15) # Only turn on lights when TV on for 15 seconds.
-        self.upstairs_tv_off_handler = self.listen_state(self.turn_off_living_room_lamps, self.upstairs_tv_on, new = "off", duration = 120) # Only turn off lamps when TV off for 2 minutes.
+        self.upstairs_tv_on_lamp_handler = self.listen_state(self.turn_on_lights, self.upstairs_tv_on, new = "on", duration = 15) # Only turn on lights when TV on for 15 seconds.
+        self.upstairs_tv_off_lamp_handler = self.listen_state(self.turn_off_living_room_lamps, self.upstairs_tv_on, new = "off", duration = 120) # Only turn off lamps when TV off for 2 minutes.
+        self.upstairs_tv_off_handler = self.listen_state(self.turn_on_downstairs_lights_during_work, self.upstairs_tv_on, new = "off") # Any time the upstairs TV is turned off.
 
     """
     On living room automations boolean change, cancel listeners if they're active and
@@ -39,7 +43,8 @@ class TelevisionLighting(hass.Hass):
 
         if old == "on": # Cancel old listeners if they were active.
             self.cancel_listen_state(self.downstairs_tv_on_handler)
-            self.cancel_listen_state(self.upstairs_tv_on_handler)
+            self.cancel_listen_state(self.upstairs_tv_on_lamp_handler)
+            self.cancel_listen_state(self.upstairs_tv_off_lamp_handler)
             self.cancel_listen_state(self.upstairs_tv_off_handler)
 
         if new == "on":
@@ -72,3 +77,18 @@ class TelevisionLighting(hass.Hass):
         if self.utils.is_entity_on(self.living_room_lamps):
             self.log("Turning off living room lamps due to Upstairs TV being off.")
             self.turn_off(self.living_room_lamps)
+
+    """
+    Turns on the downstairs lights if it's a workday and a period where Owen
+    typically walks from upstairs to downstairs.
+    """
+    def turn_on_downstairs_lights_during_work(self, entity, attribute, old, new, kwargs):
+        # If Owen is home, it's a work day, and it's around lunch time.
+        if (not self.utils.is_entity_on(self.mode_guest) and
+            not self.utils.is_entity_on(self.downstairs_lights) and
+            self.utils.is_entity_home(self.owen) and
+            self.utils.is_entity_on(self.is_work_day) and
+            (self.now_is_between("11:00:00", "13:30:00") or
+            self.now_is_between("06:00:00", "09:00:00"))):
+            self.log("Turning on downstairs lights.")
+            self.turn_on(self.downstairs_lights)
