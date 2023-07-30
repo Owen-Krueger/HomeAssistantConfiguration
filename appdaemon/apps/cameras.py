@@ -18,16 +18,18 @@ class Cameras(hass.Hass):
 
         self.listen_state(self.turn_off_cameras, self.allison, new = "home")
         self.listen_state(self.turn_off_cameras, self.owen, new = "home")
-        self.listen_state(self.turn_on_cameras, self.proximity_allison, new = 30)
-        self.listen_state(self.turn_on_cameras, self.proximity_owen, new = 30)
+        self.listen_state(self.turn_on_cameras, self.proximity_allison, 
+            old = lambda x : x < 30,
+            new = lambda x : x >= 30) # More than 30 miles away from home.
+        self.listen_state(self.turn_on_cameras, self.proximity_owen, 
+            old = lambda x : x < 30,
+            new = lambda x : x >= 30) # More than 30 miles away from home.
 
     """
     Turns on the cameras if nobody is home and the triggered is moving away.
     """
     def turn_on_cameras(self, entity, attribute, old, new, kwargs):
-        direction = self.get_state(entity, attribute="dir_of_travel")
-        if direction == "towards" or self.someone_home():
-            self.log("Direction: {direction} Someone Home: {home}", direction, self.someone_home())
+        if self.someone_home():
             return
         
         self.turn_off_on_cameras(True)
