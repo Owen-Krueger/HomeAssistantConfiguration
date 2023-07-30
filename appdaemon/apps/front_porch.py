@@ -20,8 +20,6 @@ class FrontPorch(hass.Hass):
         self.proximity_allison = self.args["proximity_allison"]
         self.proximity_owen = self.args["proximity_owen"]
 
-        self.log(self.utils.close_to_home(self.proximity_owen))
-
         self.run_at_sunset(self.turn_on_front_porch, offset = datetime.timedelta(minutes =- 45).total_seconds()) # Turn lights on 45 minutes before sunset.
         self.handle = self.run_daily(self.turn_off_front_porch_time_based, self.utils.get_time(self.porch_off_time))
         self.listen_state(self.on_porch_off_time_change, self.porch_off_time, duration = 30) # Only update the next execution time when time has been set for 30 seconds.
