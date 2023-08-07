@@ -25,11 +25,11 @@ class FrontPorch(hass.Hass):
         self.listen_state(self.on_porch_off_time_change, self.porch_off_time, duration = 30) # Only update the next execution time when time has been set for 30 seconds.
         self.listen_state(self.on_override_boolean_turned_off, self.should_override_time, new = "off", duration = 30) # Only check if execution time needs defaulting when boolean has been off for 30 seconds.
         self.listen_state(self.turn_on_front_porch_location_based, self.proximity_owen, 
-            old = lambda x : x > 5,
-            new = lambda x : x <= 5) # When getting close to home.
+            old = lambda x : int(x) > 5,
+            new = lambda x : int(x) <= 5) # When getting close to home.
         self.listen_state(self.turn_on_front_porch_location_based, self.proximity_allison, 
-            old = lambda x : x > 5,
-            new = lambda x : x <= 5) # When getting close to home.
+            old = lambda x : int(x) > 5,
+            new = lambda x : int(x) <= 5) # When getting close to home.
         self.listen_state(self.turn_off_front_porch_location_based, self.allison, new = "home", duration = 300) # When home for 5 minutes.
         self.listen_state(self.turn_off_front_porch_location_based, self.owen, new = "home", duration = 300) # When home for 5 minutes.
 
