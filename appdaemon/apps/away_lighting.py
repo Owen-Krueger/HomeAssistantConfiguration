@@ -11,12 +11,17 @@ class AwayLighting(hass.Hass):
     def initialize(self):
         self.utils = self.get_app("utils")
         self.should_turn_off_lights = self.args["should_turn_off_lights"]
-        self.allison = self.args["allison"]
-        self.owen = self.args["owen"]
         self.all_off = self.args["all_off"]
-        self.day_office = self.args["day_office"]
-        self.is_work_day = self.args["is_work_day"]
+        self.all_off_dynamic = self.args["all_off_dynamic"]
+        self.allison = self.args["allison"]
+        self.downstairs_lights = self.args["downstairs_lights"]
+        self.downstairs_tv_on = self.args["downstairs_tv_on"]
         self.mode_guest = self.args["mode_guest"]
+        self.office_lights = self.args["office_lights"]
+        self.owen = self.args["owen"]
+        self.owen_computer_active = self.args["owen_computer_active"]
+        self.upstairs_tv_on = self.args["upstairs_tv_on"]
+        self.uptsairs_living_area_off = self.args["uptsairs_living_area_off"]
 
         if self.utils.is_entity_on(self.should_turn_off_lights): # Only run automations if boolean is on
             self.set_up_triggers()
@@ -55,13 +60,31 @@ class AwayLighting(hass.Hass):
 
         owen_home = self.utils.is_entity_home(self.owen)
         allison_home = self.utils.is_entity_home(self.allison)
-        work_time = (self.utils.is_entity_on(self.is_work_day) and
-            self.now_is_between("07:45:00", "12:00:00") or
-            self.now_is_between("13:00:00", "15:00:00"))
 
-        if (not owen_home and not allison_home):
+        if not owen_home and not allison_home:
             self.log("Everyone away. Turning off all lights.")
             self.turn_on(self.all_off)
-        elif (owen_home and not allison_home and work_time):
-            self.log("Turning on day office lighting.")
-            self.turn_on(self.day_office)
+        else:
+            self.log("Turning off lights depending on state.")
+            self.away_lighting_dynamic()
+
+    """
+    Turns off all lights that don't change based on logic, and then
+    turns off any lights that are on and don't have activity in that room.
+    """
+    def away_lighting_dynamic(self):
+        self.turn_on(self.all_off_dynamic)
+
+        # Upstairs Living Area (Kitchen and living room)
+        if not self.utils.is_entity_on(self.upstairs_tv_on):
+            self.turn_on(self.uptsairs_living_area_off)
+        
+        # Downstairs Lights
+        if (self.utils.is_entity_on(self.downstairs_lights) and
+            not self.utils.is_entity_on(self.downstairs_tv_on)):
+            self.turn_off(self.downstairs_lights)
+
+        # Office Lights
+        if (self.utils.is_entity_on(self.office_lights) and
+            not self.utils.is_entity_on(self.owen_computer_active)):
+            self.turn_off(self.office_lights)
