@@ -44,18 +44,14 @@
     light.owen_bedroom_lamp:
       state: "on"
       brightness_pct: 30
-    switch.allison_living_room_lamp: "off"
     switch.bedroom_lights: "off"
     switch.christmas_tree: "off"
     switch.counter_lights: "off"
     switch.dining_room_lights: "off"
-    light.downstairs_lights: "off"
     switch.garage_lights: "off"
     switch.kitchen_lights: "off"
     switch.laundry_room_lights: "off"
     light.office_lamp: "off"
-    switch.office_lights: "off"
-    switch.owen_living_room_lamp: "off"
     switch.stairway_lights: "off"
 - name: Dim Bedroom
   icon: "mdi:lamp"

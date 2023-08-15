@@ -1,20 +1,4 @@
 # Apps
-away_lighting:
-  module: away_lighting
-  class: AwayLighting
-  dependencies: utils
-  all_off: scene.all_off
-  all_off_dynamic: scene.all_off_dynamic
-  allison: person.allison
-  downstairs_lights: light.downstairs_lights
-  downstairs_tv_on: binary_sensor.downstairs_tv_on
-  mode_guest: input_boolean.mode_guest
-  should_turn_off_lights: input_boolean.lights_turn_off_lights_when_nobody_home
-  office_lights: switch.office_lights
-  owen: person.owen
-  owen_computer_active: binary_sensor.owen_computer_active
-  uptsairs_living_area_off: scene.upstairs_living_area_off
-  upstairs_tv_on: binary_sensor.upstairs_tv_on
 bedroom_lighting:
   module: bedroom_lighting
   class: BedroomLighting
@@ -60,6 +44,24 @@ laundry:
   owen: person.owen
   should_notify: input_boolean.laundry_notify_on_job_completion
   washer: sensor.washer_washer_job_state
+off_lighting:
+  module: off_lighting
+  class: OffLighting
+  dependencies: utils
+  all_off: scene.all_off
+  all_off_dynamic: scene.all_off_dynamic
+  allison: person.allison
+  downstairs_lights: light.downstairs_lights
+  downstairs_tv_on: binary_sensor.downstairs_tv_on
+  mode_guest: input_boolean.mode_guest
+  office_lights: switch.office_lights
+  owen: person.owen
+  owen_computer_active: binary_sensor.owen_computer_active
+  owen_phone_charger_type: sensor.owen_phone_charger_type
+  night_lighting: scene.night_lighting
+  upstairs_living_area_off: scene.upstairs_living_area_off
+  upstairs_tv_on: binary_sensor.upstairs_tv_on
+  vacation_mode: input_boolean.mode_vacation
 owen_phone_wifi:
   module: owen_phone_wifi
   class: OwenPhoneWifi
