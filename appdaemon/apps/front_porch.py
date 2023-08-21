@@ -70,7 +70,7 @@ class FrontPorch(hass.Hass):
     def turn_on_front_porch_location_based(self, entity, attribute, old, new, kwargs):
         if self.is_late() and not self.utils.is_entity_on(self.front_porch_switch):
             self.log("Turning on front porch lights due to someone getting close to home at night.")
-            self.turn_on_front_porch()
+            self.turn_on_front_porch({})
 
     """
     Turns off the front porch lights if they are on and nobody is close to

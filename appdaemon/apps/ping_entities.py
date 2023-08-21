@@ -18,7 +18,7 @@ class PingEntities(hass.Hass):
     Pings the entity and then waits 5 seconds to see if it comes online.
     """
     def ping_entity(self, entity, attribute, old, new, kwargs):
-        self.log("Pinging {} because it's unavailable".format(entity))
+        self.log("Pinging {} because it's unavailable.".format(entity))
 
         self.call_service("button/press", entity_id = kwargs["ping"])
         self.run_in(self.ensure_entity_on, 5, entity = entity, sync_entity = kwargs["sync_entity"])
