@@ -68,6 +68,39 @@ owen_phone_wifi:
   dependencies: utils
   owen: person.owen
   phone_network: sensor.owen_phone_network_type
+ping_entities:
+  module: ping_entities
+  class: PingEntities
+  dependencies: utils
+  dictionary:
+    - entity: switch.allison_living_room_lamp
+      ping: button.allison_living_room_lamp_ping
+      sync_entity: switch.owen_living_room_lamp
+    - entity: switch.bedroom_lights
+      ping: button.bedroom_lights_ping
+    - entity: switch.counter_lights
+      ping: button.counter_lights_ping
+    - entity: switch.dining_room_lights
+      ping: button.dining_room_lights_ping
+    - entity: light.downstairs_lights
+      ping: button.downstairs_lights_ping
+    - entity: switch.front_porch_lights
+      ping: button.front_porch_lights_ping
+    - entity: switch.garage_lights
+      ping: button.garage_lights_ping
+    - entity: switch.kitchen_lights
+      ping: button.kitchen_lights_ping
+    - entity: switch.laundry_room_lights
+      ping: button.laundry_room_lights_ping
+    - entity: switch.office_lights
+      ping: button.office_lights_ping
+    - entity: switch.owen_living_room_lamp
+      ping: button.owen_living_room_lamp_ping
+      sync_entity: switch.allison_living_room_lamp
+    - entity: switch.stairway_lights
+      ping: button.stairway_lights_ping
+    - entity: switch.utility_room_lights
+      ping: button.utility_room_lights_ping
 television_lighting:
   module: television_lighting
   class: TelevisionLighting

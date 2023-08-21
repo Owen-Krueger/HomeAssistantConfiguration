@@ -42,3 +42,18 @@ class Utils(hass.Hass):
         last_changed = datetime.strptime(self.get_state(entity, attribute="last_changed"), "%Y-%m-%dT%H:%M:%S.%f%z")
 
         return self.datetime(True) <= last_changed + timedelta(seconds=seconds)
+
+    """
+    Syncs the states between two entities. `correct_entity` is the one to get state from.
+    `entity_to_sync` is the entity to set to the state of the `correct_entity`.
+    """
+    def sync_entities(self, correct_entity, entity_to_sync):
+        correct_entity_state = self.is_entity_on(correct_entity)
+
+        if correct_entity_state == self.is_entity_on(entity_to_sync):
+            return
+
+        if correct_entity_state:
+            self.turn_on(entity_to_sync)
+        else:
+            self.turn_off(entity_to_sync)
