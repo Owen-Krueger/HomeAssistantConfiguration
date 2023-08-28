@@ -38,11 +38,9 @@ internet:
 laundry:
   module: laundry
   class: Laundry
-  dependencies: utils
   allison: person.allison
   dryer: sensor.dryer_dryer_job_state
   owen: person.owen
-  should_notify: input_boolean.laundry_notify_on_job_completion
   washer: sensor.washer_washer_job_state
 off_lighting:
   module: off_lighting

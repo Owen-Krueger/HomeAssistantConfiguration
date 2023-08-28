@@ -66,10 +66,6 @@ vacation_lighting_automation:
 ## Laundry
 ##########################################################
 
-laundry_notify_on_job_completion:
-  name: Laundry Notify on Job Completion
-  icon: mdi:washing-machine
-
 laundry_start_washer_automatically:
   name: Laundry Start Washer Automatically
   icon: mdi:washing-machine
