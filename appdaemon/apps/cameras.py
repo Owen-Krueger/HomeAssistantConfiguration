@@ -51,12 +51,13 @@ class Cameras(hass.Hass):
         camera_state_log_message = "on" if turn_on else "off"
 
         cameras_updated = False
-        self.log("Turning {} cameras due to occcupancy.".format(camera_state_log_message))
         for camera in self.cameras:
             cameras_updated = self.turn_off_on_camera(camera, turn_on) or cameras_updated
 
         if cameras_updated:
-            self.notify("Cameras turned {}.".format(camera_state_log_message), name="owen")
+            message = "Cameras turned {}.".format(camera_state_log_message)
+            self.log(message)
+            self.notify(message, name="owen")
 
     """
     Turns off or on the camera, depending on input and current state.
