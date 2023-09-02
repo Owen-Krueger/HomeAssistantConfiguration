@@ -70,6 +70,7 @@ ping_entities:
   module: ping_entities
   class: PingEntities
   dependencies: utils
+  use_dictionary_unpacking: true
   dictionary:
     - entity: switch.allison_living_room_lamp
       ping: button.allison_living_room_lamp_ping
