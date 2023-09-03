@@ -2,6 +2,15 @@ from unittest import mock
 from appdaemon_testing.pytest import automation_fixture
 from apps.laundry import Laundry
 
+def test_callbacks_are_registered(hass_driver, laundry: Laundry):
+    listen_state = hass_driver.get_mock("listen_state")
+    listen_state.assert_any_call(
+        laundry.notify_users, "sensor.washer_washer_job_state", new = "finish"
+    )
+    listen_state.assert_any_call(
+        laundry.notify_users, "sensor.dryer_dryer_job_state", new = "finished"
+    )
+
 def test_washer_finished(hass_driver, laundry: Laundry):
     hass_driver.set_state("sensor.washer_washer_job_state", "finish")
 
