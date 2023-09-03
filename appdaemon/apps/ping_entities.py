@@ -30,7 +30,7 @@ class PingEntities(hass.Hass):
         self.log("Pinging {} because it's unavailable".format(entity))
 
         self.call_service("button/press", entity_id = ping)
-        self.run_in(self.ensure_entity_on, 2, **kwargs)
+        self.run_in(self.ensure_entity_on, 5, **kwargs)
 
     """
     Checks if the entity has stopped being unavailable. If `sync_entity` provided,

@@ -17,6 +17,11 @@ cameras:
   owen: person.owen
   proximity_allison: proximity.allison
   proximity_owen: proximity.owen
+downstairs_sun_lighting:
+  module: downstairs_sun_lighting
+  class: DownstairsSunLighting
+  downstairs_lights: light.downstairs_lights
+  sun: sun.sun
 front_porch:
   module: front_porch
   class: FrontPorch
