@@ -33,6 +33,7 @@ def test_dryer_finished(hass_driver, laundry: Laundry):
          mock.call(message, name='allison')]
     )
 
+
 @automation_fixture(
     Laundry,
     args={

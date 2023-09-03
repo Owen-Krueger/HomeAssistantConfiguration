@@ -1,4 +1,4 @@
-import hassapi as hass
+import appdaemon.plugins.hass.hassapi as hass
 
 """
 Sets downstairs light level depending on the elevation of the sun.
