@@ -43,9 +43,7 @@ internet:
 laundry:
   module: laundry
   class: Laundry
-  allison: person.allison
   dryer: sensor.dryer_dryer_job_state
-  owen: person.owen
   washer: sensor.washer_washer_job_state
 off_lighting:
   module: off_lighting
