@@ -217,9 +217,11 @@
     - condition: state
       entity_id: binary_sensor.garage_lights_motion_detection
       state: "off"
-    - condition: state
-      entity_id: cover.primary_garage_door
-      state: "closed"
+    - condition: not # We want lights to turn off if garage door is unavailable.
+      conditions:
+        - condition: state
+          entity_id: cover.primary_garage_door
+          state: "open"
 
   action:
     - service: switch.turn_off
