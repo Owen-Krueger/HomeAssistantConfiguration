@@ -15,7 +15,7 @@ class BedroomLighting(hass.Hass):
         self.bedroom_lights = self.args["bedroom_lights"]
 
         self.listen_event(self.on_bedside_button_click, "zha_event", device_id = self.bedroom_button_device_id, command = "single")
-        self.listen_state(self.on_bedroom_lights_turned_off, self.bedroom_lights, new = "off")
+        self.listen_state(self.on_bedroom_lights_turned_off, self.bedroom_lights, old = "on", new = "off")
 
     """
     On bedroom bedside button clicked, toggle the bedroom lamps.

@@ -27,12 +27,14 @@ front_porch:
   class: FrontPorch
   depedencies: utils
   allison: person.allison
-  porch_off_time: input_datetime.light_front_porch_off_time
   front_porch_switch: switch.front_porch_lights
+  holiday_lights: group.holiday_lights
+  holiday_mode: input_boolean.holiday_mode
   owen: person.owen
-  should_override_time: input_boolean.light_override_front_porch_off
+  porch_off_time: input_datetime.light_front_porch_off_time
   proximity_allison: proximity.allison
   proximity_owen: proximity.owen
+  should_override_time: input_boolean.light_override_front_porch_off
 internet:
   module: internet
   class: Internet

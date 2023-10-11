@@ -19,6 +19,8 @@ class FrontPorch(hass.Hass):
         self.front_porch_switch = self.args["front_porch_switch"]
         self.proximity_allison = self.args["proximity_allison"]
         self.proximity_owen = self.args["proximity_owen"]
+        self.holiday_lights = self.args["holiday_lights"]
+        self.holiday_mode = self.args["holiday_mode"]
 
         self.run_at_sunset(self.turn_on_front_porch, offset = datetime.timedelta(minutes =- 15).total_seconds()) # Turn lights on 15 minutes before sunset.
         self.handle = self.run_daily(self.turn_off_front_porch_time_based, self.utils.get_time(self.porch_off_time))
@@ -62,6 +64,9 @@ class FrontPorch(hass.Hass):
         if not self.utils.is_entity_on(self.front_porch_switch):
             self.log("Turning porch lights on.")
             self.turn_on(self.front_porch_switch)
+
+        if self.utils.is_entity_on(self.holiday_mode) and not self.utils.is_entity_on(self.holiday_lights):
+            self.turn_on(self.holiday_lights)
 
     """
     Turns on porch if someone is close to home, lights are off, and it's late at
@@ -107,6 +112,9 @@ class FrontPorch(hass.Hass):
             self.set_state(self.should_override_time, state="off")
             self.set_state(self.porch_off_time, state = self.default_time)
         pass
+
+        if self.utils.is_entity_on(self.holiday_mode) and self.utils.is_entity_on(self.holiday_lights):
+            self.turn_off(self.holiday_lights)
 
     """
     Returns if someone is close to home.
