@@ -10,6 +10,7 @@ home-assistant*
 node_modules
 
 # Config - User created files and folders
+homeassistant/blueprints/
 homeassistant/custom_components
 homeassistant/secrets.yaml
 homeassistant/tts
