@@ -1,15 +1,1 @@
----
-secrets: /homeassistant/secrets.yaml
-appdaemon:
-  latitude: !secret latitude
-  longitude: !secret longitude
-  elevation: !secret elevation
-  time_zone: !secret time_zone
-  plugins:
-    HASS:
-      type: hass
-http:
-  url: http://127.0.0.1:5050
-admin:
-api:
-hadashboard:
+/addon_configs/a0d7b954_appdaemon/appdaemon.yaml

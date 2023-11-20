@@ -1,0 +1,1 @@
+**Please Note**: appdaemon has been moved from "/config" to "addon_configs/a0d7b954_appdaemon". To keep my git similar, I created a symlink to that directory. If you're configuring your own HomeAssistant instance, appdaemon changes should be done to the addon folder, not the root config as you see here.
