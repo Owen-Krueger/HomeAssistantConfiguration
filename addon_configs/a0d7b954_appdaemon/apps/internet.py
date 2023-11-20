@@ -14,11 +14,11 @@ class Internet(hass.Hass):
         self.internet_modem_smart_plug = self.args["internet_modem_smart_plug"]
         # self.internet_router_smart_plug = self.args["internet_router_smart_plug"]
 
-        # Restarts modem when no internet is detected for 5.5 minutes. Ping
-        # checks if we have internet access every 5 minutes, so this time
+        # Restarts modem when no internet is detected for 1.5 minutes. Ping
+        # checks if we have internet access every minute, so this time
         # allows for a second check to happen and confirm that we have no
         # internet access.
-        self.listen_state(self.restart_modem, self.internet_up, new = "off", duration = 330)
+        self.listen_state(self.restart_modem, self.internet_up, new = "off", duration = 90)
 
     """
     Restarts modem smart plug. Then, sets a callback to check if the internet
