@@ -1,7 +1,7 @@
 esphome:
   name: ${device_name}
   comment: ${device_description}
-  platform: ESP8266
+  platform: ESP32
   board: esp01_1m
 
 wifi:
@@ -20,12 +20,12 @@ ota:
 
 switch:
 - platform: gpio
-    name: "Open Garage Door"
-    pin: 5
+    name: ${friendly_name} Press Button
+    pin: 4
 
 binary_sensor:
   - platform: gpio
-    name: "Garaga Door is closed"
+    name: ${friendly_name} State
     pin:
       number: 16
       mode: INPUT_PULLUP

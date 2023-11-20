@@ -1,0 +1,7 @@
+substitutions:
+    device_name: garage-door-primary
+    device_description: Tracks door state and open/closes primary garage door.
+    friendly_name: Primary Garage Door
+    ip_address: !secret primary_garage_door_ip
+
+<<: !include common/garage_door.yaml
