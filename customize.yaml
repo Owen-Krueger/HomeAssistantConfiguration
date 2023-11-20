@@ -27,6 +27,10 @@ group.living_room_lamps:
   friendly_name: Living Room Lamps
   icon: mdi:lamp
 
+group.holiday_lights:
+  friendly_name: Holiday Lights
+  icon: mdi:string-lights
+
 ##################################################
 ### Lights
 ##################################################

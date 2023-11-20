@@ -16,3 +16,4 @@
 - platform: ping
   name: "Internet Up"
   host: 8.8.8.8
+  scan_interval: 60
