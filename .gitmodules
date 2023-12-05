@@ -1,0 +1,3 @@
+[submodule "appdaemon"]
+	path = appdaemon
+	url = https://github.com/Owen-Krueger/HomeAssistantConfiguration-AppDaemon.git
