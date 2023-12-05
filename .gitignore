@@ -12,7 +12,7 @@ node_modules
 # Config - User created files and folders
 blueprints/
 custom_components
-secrets.yaml
+/secrets.yaml
 tts
 www
 
