@@ -2,7 +2,7 @@ esphome:
   name: ${device_name}
   comment: ${device_description}
   platform: ESP32
-  board: esp01_1m
+  board: esp32dev
 
 wifi:
   ssid: !secret wifi_ssid
@@ -19,13 +19,45 @@ ota:
   password: !secret esp_ota_password
 
 switch:
-- platform: gpio
-    name: ${friendly_name} Press Button
+  - platform: gpio
+    id: ${device_id}_button
+    name: ${friendly_name} Button
     pin: 4
+    on_turn_on:
+      - delay: 250ms
+      - switch.turn_off: ${device_id}_button
 
+# On = Garage Door Open
 binary_sensor:
   - platform: gpio
+    id: ${device_id}_state
     name: ${friendly_name} State
     pin:
       number: 16
       mode: INPUT_PULLUP
+
+cover:
+  - platform: template
+    id: ${device_id}
+    name: ${friendly_name}
+    device_class: garage
+    lambda: |-
+      if (id(${device_id}_state).state) {
+        return COVER_OPEN;
+      } else {
+        return COVER_CLOSED;
+      }
+    open_action:
+      then:
+        if:
+          condition:
+            binary_sensor.is_off: ${device_id}_state # Door closed
+          then:
+            switch.turn_on: ${device_id}_button
+    close_action:
+      then:
+        if:
+          condition:
+            binary_sensor.is_on: ${device_id}_state # Door open
+          then:
+            switch.turn_on: ${device_id}_button

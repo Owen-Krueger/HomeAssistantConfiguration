@@ -60,3 +60,4 @@ var/
 init
 .dockerenv
 =1.21.3-1+b2
+*.jsonl
