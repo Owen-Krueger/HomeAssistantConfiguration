@@ -22,7 +22,9 @@ switch:
   - platform: gpio
     id: ${device_id}_button
     name: ${friendly_name} Button
-    pin: 4
+    pin:
+      number: 4
+      inverted: true
     on_turn_on:
       - delay: 250ms
       - switch.turn_off: ${device_id}_button
