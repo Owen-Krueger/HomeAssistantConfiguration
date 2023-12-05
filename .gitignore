@@ -10,17 +10,17 @@ home-assistant*
 node_modules
 
 # Config - User created files and folders
-homeassistant/blueprints/
-homeassistant/custom_components
-homeassistant/secrets.yaml
-homeassistant/tts
-homeassistant/www
+blueprints/
+custom_components
+secrets.yaml
+tts
+www
 
 # Config - esphome
-homeassistant/esphome/.esphome
+esphome/.esphome
 
 # Config - Appdaemon. This is a symlink to the real files in "addon_configs"
-homeassistant/appdaemon/
+appdaemon/
 
 # Appdaemon
 addon_configs/a0d7b954_appdaemon/compiled/
@@ -31,32 +31,32 @@ zigbee.db-shm
 zigbee.db-wal
 
 # Home Assistant sub-directories and random files
-addons/
-backup/
-bin
-config
-boot/
-command/
-data/
-dev/
-etc/
-home/
-lib
-media/
-mnt/
-opt/
-package/
-proc/
-root/
-run/
-sbin
-share/
-srv/
-ssl/
-sys/
-tmp/
-usr/
-var/
-init
-.dockerenv
-=1.21.3-1+b2
+# addons/
+# backup/
+# bin
+# config
+# boot/
+# command/
+# data/
+# dev/
+# etc/
+# home/
+# lib
+# media/
+# mnt/
+# opt/
+# package/
+# proc/
+# root/
+# run/
+# sbin
+# share/
+# srv/
+# ssl/
+# sys/
+# tmp/
+# usr/
+# var/
+# init
+# .dockerenv
+# =1.21.3-1+b2
