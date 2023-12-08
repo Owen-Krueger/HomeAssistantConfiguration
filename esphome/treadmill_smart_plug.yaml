@@ -1,0 +1,8 @@
+substitutions:
+    device_name: treadmill-smart-plug
+    device_description: Power monitoring plug for the treadmill
+    friendly_name: Treadmill Smart Plug
+    ip_address: !secret treadmill_smart_plug_ip
+    restore_mode: ALWAYS_ON
+  
+<<: !include common/sonoff_s31_common.yaml

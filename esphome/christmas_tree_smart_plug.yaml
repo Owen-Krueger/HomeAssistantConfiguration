@@ -1,0 +1,8 @@
+substitutions:
+    device_name: christmas-tree-smart-plug
+    device_description: Power monitoring plug for the Christmas tree
+    friendly_name: Christmas Tree Smart Plug
+    ip_address: !secret christmas_tree_smart_plug_ip
+    restore_mode: RESTORE_DEFAULT_OFF
+  
+<<: !include common/sonoff_s31_common.yaml
