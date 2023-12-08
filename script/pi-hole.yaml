@@ -2,14 +2,20 @@
 ## Pi-Hole
 #################################################
 
-# Disable both for 30 seconds
-pihole_disable_both_for_30_seconds:
-  alias: Pi-Hole - Disable both for 30 seconds
+# Disable both for 1 minute
+pihole_temporarily_disable:
+  alias: Pi-Hole - Temporarily Disable
   icon: mdi:pi-hole
 
   sequence:
-    - service: pi_hole.disable
+    - service: switch.turn_off
       target:
-        entity_id: all
-      data:
-        duration: "00:00:30"
+        entity_id:
+        - switch.primary_pi_hole
+        - switch.secondary_pi_hole
+    - delay: "00:01:00"
+    - service: switch.turn_on
+      target:
+        entity_id:
+        - switch.primary_pi_hole
+        - switch.secondary_pi_hole
