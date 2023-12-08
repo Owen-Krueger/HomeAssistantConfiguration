@@ -5,4 +5,4 @@ substitutions:
     friendly_name: Primary Garage Door
     ip_address: !secret primary_garage_door_ip
 
-<<: !include common/garage_door.yaml
+<<: !include common/garage_door_common.yaml

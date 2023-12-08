@@ -19,7 +19,7 @@
       entity_id: input_boolean.holiday_mode
       state: "on"
     - condition: state
-      entity_id: switch.christmas_tree
+      entity_id: switch.christmas_tree_smart_plug
       state: "off"
     - condition: state
       entity_id: input_boolean.mode_vacation
@@ -28,8 +28,7 @@
   action:
     - service: switch.turn_on
       entity_id:
-        - switch.christmas_tree
-        - switch.strip_light
+        - switch.christmas_tree_smart_plug
 
 # Turn off Christmas tree
 - alias: Holiday - Turn off Christmas tree
@@ -49,7 +48,7 @@
       entity_id: input_boolean.holiday_mode
       state: "on"
     - condition: state
-      entity_id: switch.christmas_tree
+      entity_id: switch.christmas_tree_smart_plug
       state: "on"
     - condition: state
       entity_id: input_boolean.mode_vacation
@@ -59,4 +58,3 @@
     - service: switch.turn_off
       entity_id:
         - switch.christmas_tree
-        - switch.strip_light
