@@ -3,13 +3,12 @@
     upstairs_tv_on:
       friendly_name: "Upstairs TV on"
       value_template: "{{ states('sensor.upstairs_tv_smart_plug_power')|float > 30 }}"
-- platform: template
-  sensors:
     downstairs_tv_on:
       friendly_name: "Downstairs TV on"
       value_template: "{{ states('sensor.downstairs_tv_smart_plug_power')|float > 30 }}"
-- platform: template
-  sensors:
     owen_computer_active:
       friendly_name: "Owen Computer active"
       value_template: "{{ states('sensor.owen_computer_smart_plug_power')|float > 130 }}"
+    treadmill_active:
+      friendly_name: "Treadmill active"
+      value_template: "{{ states('sensor.treadmill_smart_plug_power')|float > 150 }}"
