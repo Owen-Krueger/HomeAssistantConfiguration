@@ -41,7 +41,7 @@
       to: "not_home"
       for: "00:05:00"
     - platform: time
-      at: "23:00:00"
+      at: "22:00:00"
 
   condition:
     - condition: state
