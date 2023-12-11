@@ -31,3 +31,16 @@ device_batteries:
   name: Device Batteries
   entities:
     - sensor.philips_remote_battery
+
+# On if any device is on downstairs that would mean someone is actively in the basement.
+downstairs_active:
+  name: Downstairs Active
+  entities:
+    - binary_sensor.downstairs_tv_on
+    - binary_sensor.treadmill_active
+
+# On if any device is on upstairs that would mean someone is actively upstairs.
+upstairs_active:
+  name: Upstairs Active
+  entities:
+    - binary_sensor.upstairs_tv_on
