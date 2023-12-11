@@ -25,6 +25,7 @@ holiday_lights:
     - switch.outside_front_right_plug
     - switch.outside_back_left_plug
     - switch.outside_back_right_plug
+    - switch.deck_string_lights
 
 device_batteries:
   name: Device Batteries

@@ -20,7 +20,8 @@ alexa:
       - switch.counter_lights
       - switch.stairway_lights
       - switch.bedroom_lights
-      - switch.christmas_tree
+      - switch.christmas_tree_smart_plug
+      - switch.deck_string_lights
       - switch.strip_light
       - switch.bedroom_lights
       - switch.front_porch_lights
