@@ -24,6 +24,9 @@
     - condition: state
       entity_id: input_boolean.mode_vacation
       state: "off"
+    - condition: state
+      entity_id: person.allison
+      state: "home"
 
   action:
     - service: switch.turn_on
