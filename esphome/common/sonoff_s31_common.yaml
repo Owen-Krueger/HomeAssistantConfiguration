@@ -8,13 +8,14 @@ wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
   use_address: ${ip_address}
+  fast_connect: true # Needed to access hidden networks
 
 logger:
   baud_rate: 0 # (UART logging interferes with cse7766)
-  
+
 api:
   encryption:
-      key: !secret esp_api_key
+    key: !secret esp_api_key
 
 ota:
   password: !secret esp_ota_password
