@@ -13,6 +13,5 @@ light: !include_dir_merge_list light
 notify: !include notify.yaml
 proximity: !include proximity.yaml
 script: !include_dir_merge_named script
-sensor: !include sensor.yaml
 scene: !include scene.yaml
 tts: !include tts.yaml
