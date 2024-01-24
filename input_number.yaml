@@ -20,6 +20,24 @@ climate_away_temp:
   max: 80
   step: 1
 
+climate_away_offset:
+  name: Away Temperature Offset
+  min: 0
+  max: 5
+  step: 1
+
+climate_gone_offset:
+  name: Gone Temperature Offset
+  min: 0
+  max: 10
+  step: 1
+
+climate_away_minutes:
+  name: Away Minutes
+  min: 5
+  max: 30
+  step: 5
+
 ##########################################################
 ## Lights
 ##########################################################

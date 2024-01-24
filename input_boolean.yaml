@@ -6,6 +6,10 @@ climate_automations:
   name: Climate Automations
   icon: mdi:thermostat
 
+climate_notify_user:
+  name: Climate Notify User
+  icon: mdi:thermostat
+
 ##########################################################
 ## Lights
 ##########################################################
