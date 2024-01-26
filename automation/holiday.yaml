@@ -41,7 +41,7 @@
   trigger:
     - platform: state
       entity_id: person.allison
-      to: "not_home"
+      from: "home"
       for: "00:05:00"
     - platform: time
       at: "22:00:00"
