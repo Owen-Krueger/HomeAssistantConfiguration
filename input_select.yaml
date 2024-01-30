@@ -1,0 +1,7 @@
+thermostat_state:
+  name: Thermostat State
+  icon: mdi:thermostat
+  options:
+    - Home
+    - Away
+    - Gone
