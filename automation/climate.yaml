@@ -21,14 +21,14 @@
       event: leave
 
   condition:
-    - condition: state
-      entity_id: input_select.thermostat_state
-      state: "Away"
     - condition: not
       conditions:
         - condition: state
           entity_id: person.allison
           state: "home"
+        - condition: state
+          entity_id: input_select.thermostat_state
+          state: "Gone"
 
   action:
     - service: input_select.select_option
@@ -53,9 +53,11 @@
       event: enter
 
   condition:
-    - condition: state
-      entity_id: input_select.thermostat_state
-      state: "Gone"
+    - condition: not
+      conditions:
+        condition: state
+        entity_id: input_select.thermostat_state
+        state: "Away"
 
   action:
     - service: input_select.select_option
@@ -64,7 +66,7 @@
       data:
         option: "Away"
 
-# If someone enters Cambridge and we're currently "Away", set to "Home"
+# If someone enters Cambridge and the thermostat is not in "Home" mode, set to "Home"
 - alias: Climate - People in Cambridge
   id: "climate_people_in_cambridge"
 
@@ -80,9 +82,11 @@
       event: enter
 
   condition:
-    - condition: state
-      entity_id: input_select.thermostat_state
-      state: "Away"
+    - condition: not
+      conditions:
+        condition: state
+        entity_id: input_select.thermostat_state
+        state: "Home"
 
   action:
     - service: input_select.select_option
