@@ -55,9 +55,15 @@
   condition:
     - condition: not
       conditions:
-        condition: state
-        entity_id: input_select.thermostat_state
-        state: "Away"
+        - condition: state
+          entity_id: input_select.thermostat_state
+          state: "Away"
+        - condition: state
+          entity_id: person.allison
+          state: "home"
+        - condition: state
+          entity_id: person.owen
+          state: "home"
 
   action:
     - service: input_select.select_option
