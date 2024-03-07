@@ -3,18 +3,31 @@
   id: garage_open_while_away
 
   trigger:
-    - platform: numeric_state
-      entity_id: proximity.family
-      above: 5
+    - platform: state
+      entity_id: person.owen
+      from: "home"
+      for:
+        minutes: 5
+    - platform: state
+      entity_id: person.allison
+      from: "home"
+      for:
+        minutes: 5
 
   condition:
-    - condition: state
-      entity_id: proximity.family
-      attribute: dir_of_travel
-      state: away_from
-    - condition: state
-      entity_id: cover.primary_garage_door
-      state: "open"
+    condition: and
+    conditions:
+      - condition: not
+        conditions:
+          - condition: state
+            entity_id: person.owen
+            state: "home"
+          - condition: state
+            entity_id: person.allison
+            state: "home"
+      - condition: state
+        entity_id: cover.primary_garage_door
+        state: "open"
 
   action:
     - alias: "Set up variables for actions"

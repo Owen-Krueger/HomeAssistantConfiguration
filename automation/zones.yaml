@@ -1,5 +1,5 @@
 #################################################
-## Climate Helper Automations
+## Zone Helper Automations
 #################################################
 
 # These automations are used in conjunction with the Climate automations in AppDaemon
@@ -10,8 +10,8 @@
 # AppDaemon climate scripts: https://github.com/Owen-Krueger/HomeAssistantConfiguration-AppDaemon/blob/main/apps/climate.py
 
 # If Allison and Owen are both gone, set the state to "Gone"
-- alias: Climate - People Gone
-  id: "climate_people_gone"
+- alias: Zone - People Gone
+  id: "zone_people_gone"
 
   initial_state: true
   trigger:
@@ -36,10 +36,13 @@
         entity_id: input_select.thermostat_state
       data:
         option: "Gone"
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.cat_cameras_on
 
 # If someone is near home, set the state to "Away"
-- alias: Climate - People Near Home
-  id: "climate_people_near_home"
+- alias: Zone - People Near Home
+  id: "zone_people_near_home"
 
   initial_state: true
   trigger:
@@ -73,8 +76,8 @@
         option: "Away"
 
 # If someone enters Cambridge and the thermostat is not in "Home" mode, set to "Home"
-- alias: Climate - People in Cambridge
-  id: "climate_people_in_cambridge"
+- alias: Zone - People in Cambridge (Climate)
+  id: "zone_people_in_cambridge_climate"
 
   initial_state: true
   trigger:

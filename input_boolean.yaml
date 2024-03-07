@@ -55,17 +55,16 @@ night_automations:
   icon: mdi:weather-night
 
 ##########################################################
-## Vacation
-##########################################################
-
-vacation_lighting_automation:
-  name: Automate lights while on vacation
-  icon: mdi:airplane
-
-##########################################################
 ## Laundry
 ##########################################################
 
 laundry_start_washer_automatically:
   name: Laundry Start Washer Automatically
   icon: mdi:washing-machine
+
+##########################################################
+## Cameras
+##########################################################
+cat_cameras_on:
+  name: Cat Cameras On
+  icon: mdi:cat

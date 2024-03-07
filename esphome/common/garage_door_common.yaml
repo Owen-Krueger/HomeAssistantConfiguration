@@ -27,7 +27,7 @@ switch:
       number: 4
       inverted: true
     on_turn_on:
-      - delay: 250ms
+      - delay: 200ms
       - switch.turn_off: ${device_id}_button
 
 # On = Garage Door Open
