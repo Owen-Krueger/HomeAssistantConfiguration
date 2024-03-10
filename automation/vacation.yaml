@@ -63,7 +63,7 @@
     - service: light.turn_off
       target:
         entity_id:
-          - light.downstairs
+          - light.downstairs_lights
     - service: light.turn_on
       target:
         entity_id:
