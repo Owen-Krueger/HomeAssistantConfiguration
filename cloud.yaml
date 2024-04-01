@@ -37,6 +37,8 @@ alexa:
       display_categories: ACTIVITY_TRIGGER
     script.restart_modem:
       display_categories: ACTIVITY_TRIGGER
+    script.restart_nextcloud:
+      display_categotries: ACTIVITY_TRIGGER
     script.turn_on_all_living_room:
       display_categories: ACTIVITY_TRIGGER
     script.turn_off_bedroom_lamps:

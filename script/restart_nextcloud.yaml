@@ -1,0 +1,8 @@
+restart_nextcloud:
+  alias: Restart Nextcloud
+  sequence:
+    - service: truenas.jail_restart
+      target:
+        entity_id: binary_sensor.nextcloud_2023
+  mode: single
+  icon: mdi:cloud
