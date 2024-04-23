@@ -8,10 +8,10 @@ climate_day_temp:
   max: 80
   step: 1
 
-climate_night_temp:
-  name: Night Temperature
-  min: 60
-  max: 80
+climate_night_offset:
+  name: Night Temperature Offset
+  min: 0
+  max: 5
   step: 1
 
 climate_away_temp:
