@@ -19,15 +19,26 @@ api:
 ota:
   password: !secret esp_ota_password
 
+sensor:
+  - platform: uptime
+    name: "${friendly_name} Uptime"
+    disabled_by_default: true
+
+  - platform: wifi_signal
+    name: "${friendly_name} WiFi Signal"
+    update_interval: 60s
+
 switch:
   - platform: gpio
     id: ${device_id}_button
     name: ${friendly_name} Button
+    disabled_by_default: true
     pin:
       number: 4
       inverted: true
+      mode: INPUT_PULLUP
     on_turn_on:
-      - delay: 200ms
+      - delay: 250ms
       - switch.turn_off: ${device_id}_button
 
 # On = Garage Door Open
@@ -35,6 +46,7 @@ binary_sensor:
   - platform: gpio
     id: ${device_id}_state
     name: ${friendly_name} State
+    disabled_by_default: true
     pin:
       number: 16
       mode: INPUT_PULLUP
@@ -64,3 +76,13 @@ cover:
             binary_sensor.is_on: ${device_id}_state # Door open
           then:
             switch.turn_on: ${device_id}_button
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${friendly_name} IP Address"
+      disabled_by_default: true
+
+time:
+  - platform: sntp
+    id: ${device_id}_time
