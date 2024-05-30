@@ -1,3 +1,8 @@
+# WARNING
+# This is mostly here for historic purposes. I opted to use Ratgos instead of
+# custom ESP boards, because they were easier. You can use this, but note that
+# this configuration is largely untested.
+
 esphome:
   name: ${device_name}
   comment: ${device_description}
@@ -35,8 +40,7 @@ switch:
     disabled_by_default: true
     pin:
       number: 4
-      inverted: true
-      mode: INPUT_PULLUP
+      inverted: false
     on_turn_on:
       - delay: 250ms
       - switch.turn_off: ${device_id}_button

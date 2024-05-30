@@ -1,8 +1,17 @@
 substitutions:
-    device_name: garage-door-primary
-    device_id: garage_door_primary
-    device_description: Tracks door state and open/closes primary garage door.
-    friendly_name: Primary Garage Door
-    ip_address: !secret primary_garage_door_ip
+  name: garage-door-primary
+  friendly_name: Garage Door Primary
+packages:
+  ratgdo.esphome: github://ratgdo/esphome-ratgdo/v25iboard.yaml@main
+esphome:
+  name: ${name}
+  name_add_mac_suffix: false
+  friendly_name: ${friendly_name}
+api:
+  encryption:
+    key: qQqQn/ZI1M1GASWABGYqhIzynwCxFMYbO89wEHFOdpE=
 
-<<: !include common/garage_door_common.yaml
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
