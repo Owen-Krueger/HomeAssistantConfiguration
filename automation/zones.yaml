@@ -16,6 +16,10 @@
   initial_state: true
   trigger:
     - platform: zone
+      entity_id: person.allison
+      zone: zone.near_home
+      event: leave
+    - platform: zone
       entity_id: person.owen
       zone: zone.near_home
       event: leave
@@ -25,6 +29,9 @@
       conditions:
         - condition: state
           entity_id: person.allison
+          state: "home"
+        - condition: state
+          entity_id: person.owen
           state: "home"
         - condition: state
           entity_id: input_select.thermostat_state
