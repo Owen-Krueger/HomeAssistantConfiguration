@@ -16,7 +16,7 @@
           entity_id: person.allison
           state: "home"
     - condition: template
-      value_template: "{{ states('sensor.bedroom_temperature_sensor_temperature') | float > states_attr('climate.main', 'temperature') | int }}"
+      value_template: "{{ states('sensor.bedroom_temperature_sensor_temperature') | float > state_attr('climate.main', 'temperature') | int }}"
 
   action:
     - service: switch.turn_on
