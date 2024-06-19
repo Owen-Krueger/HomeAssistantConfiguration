@@ -63,11 +63,11 @@
       event: enter
 
   condition:
+    - condition: state
+      entity_id: input_select.themostat_state
+      state: "Gone"
     - condition: not
       conditions:
-        - condition: state
-          entity_id: input_select.thermostat_state
-          state: "Away"
         - condition: state
           entity_id: person.allison
           state: "home"
@@ -80,7 +80,10 @@
       target:
         entity_id: input_select.thermostat_state
       data:
-        option: "Away"
+        # It takes longer to cool the house than heat it, so, in the summer, we
+        # set the state to "Home" to give the house more time to get to the
+        # correct temperature.
+        option: "{{ iif(is_state('climate.main', 'cool'), 'Home', 'Away')}}"
 
 # If someone enters Cambridge and the thermostat is not in "Home" mode, set to "Home"
 - alias: Zone - People in Cambridge (Climate)
