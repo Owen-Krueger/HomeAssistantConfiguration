@@ -64,7 +64,7 @@
 
   condition:
     - condition: state
-      entity_id: input_select.themostat_state
+      entity_id: input_select.thermostat_state
       state: "Gone"
     - condition: not
       conditions:

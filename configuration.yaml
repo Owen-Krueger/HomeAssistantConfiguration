@@ -5,6 +5,8 @@ automation: !include_dir_merge_list automation
 binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
 cloud: !include cloud.yaml
+frontend:
+  themes: !include_dir_merge_named themes
 group: !include group.yaml
 input_boolean: !include input_boolean.yaml
 input_datetime: !include input_datetime.yaml
