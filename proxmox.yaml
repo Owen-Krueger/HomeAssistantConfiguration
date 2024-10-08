@@ -1,0 +1,13 @@
+- host: !secret proxmox_ip
+  username: !secret proxmox_username
+  password: !secret proxmox_password
+  nodes:
+    - node: pve
+      vms:
+        - 100
+        - 102
+      containers:
+        - 101
+        - 103
+        - 104
+        - 105

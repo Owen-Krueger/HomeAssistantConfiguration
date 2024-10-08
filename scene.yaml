@@ -19,9 +19,12 @@
 - name: All Off (Dynamic)
   icon: "mdi:home-off"
   entities:
+    light.allison_bedroom_lamp: "off"
+    switch.bedroom_lights: "off"
     switch.garage_lights: "off"
     switch.laundry_room_lights: "off"
     light.office_lamp: "off"
+    light.owen_bedroom_lamp: "off"
 - name: Upstairs Living Area Off
   icon: "mdi:sofa"
   entities:

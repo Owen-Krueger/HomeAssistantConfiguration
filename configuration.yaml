@@ -14,6 +14,8 @@ input_number: !include input_number.yaml
 input_select: !include input_select.yaml
 light: !include_dir_merge_list light
 notify: !include notify.yaml
+proxmoxve: !include proxmox.yaml
 script: !include_dir_merge_named script
+sensor: !include sensor.yaml
 scene: !include scene.yaml
 tts: !include tts.yaml

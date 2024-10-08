@@ -1,0 +1,12 @@
+- platform: template
+  sensors:
+    owen_distance_miles:
+      friendly_name: "Owen Distance (Miles)"
+      value_template: "{{ (states('sensor.home_owen_distance') | float / 5280) | round(2) }}"
+      unit_of_measurement: "mi"
+- platform: template
+  sensors:
+    allison_distance_miles:
+      friendly_name: "Allison Distance (Miles)"
+      value_template: "{{ (states('sensor.home_allison_distance') | float / 5280) | round(2) }}"
+      unit_of_measurement: "mi"
