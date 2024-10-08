@@ -3,16 +3,13 @@
 <a href="https://github.com/Owen-Krueger/HomeAssistantConfiguration/commits/master"><img src="https://img.shields.io/github/last-commit/Owen-Krueger/HomeAssistantConfiguration.svg"/></a>
 </div>
 
-This is my personal [Home Assistant](https://www.home-assistant.io/) configuration, running on a [Raspberry Pi 4 (4GB)](https://www.digikey.com/product-detail/en/raspberry-pi/RASPBERRY-PI-4B-4GB/1690-RASPBERRYPI4B-4GB-ND/10258781). Most of what I learned was inspired from Home Assistant's documentation or by exploring the configuration examples provided by [Awesome Home Assistant](https://www.awesome-ha.com/).
+This is my personal [Home Assistant](https://www.home-assistant.io/) configuration, running on a Proxmox VM. Most of what I learned was inspired from Home Assistant's documentation or by exploring the configuration examples provided by [Awesome Home Assistant](https://www.awesome-ha.com/).
 
 ## Devices
 
 ### Home Assistant
 | Device | Link | Notes |
 | ---  | :---: | --- |
-| Raspberry Pi 4 (4GB) | [Link](https://www.digikey.com/product-detail/en/raspberry-pi/RASPBERRY-PI-4B-4GB/1690-RASPBERRYPI4B-4GB-ND/10258781) | Flashed with Home Assistant. Powered via POE. Interacts with all smart home devices. |
-| Samsung MicroSDKC Card (64 GB) | [Link](https://www.amazon.com/gp/product/B06XX29S9Q) | Flashed with the Home Assistant image |
-| USB C PoE Splitter | [Link](https://www.amazon.com/gp/product/B07TJ3ZNJ4) | Power Raspberry Pi from PoE switch instead of standard charger |
 | SkyConnect Controller | [Link](https://www.home-assistant.io/skyconnect/) | Controller for ZigBee and Matter devices |
 | Aeotec Z-Stick 7 Plus Gateway | [Link](https://www.amazon.com/Controller-SmartStart-Raspberry-Compatible-Assistant/dp/B094NW5B68) | Controller for Z-Wave devices |
 
@@ -28,7 +25,7 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 ### Climate
 | Device | Link | Use |
 | --- | :---: | --- |
-| Nest Thermostat | [Link](https://www.nest-thermostat.com/) | Smart thermostat that can be controlled from the device and through Home Assistant.
+| Honeywell T6 Pro (Z-Wave) | [Link](https://a.co/d/hZ3jWm6) | Z-Wave thermostat that can be controlled locally. |
 
 ### Switches
 | Device | Link | Use |
@@ -37,6 +34,7 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 | TP-Link Kasa HS103P2 | [Link](https://www.amazon.com/TP-LINK-HS103P2-Required-Google-Assistant/dp/B07B8W2KHZ) | Two outlet outdoor smart switch. Can be controlled from the device and through Home Assistant.
 | TP-Link Kasa KP400 | [Link](https://www.amazon.com/Kasa-Smart-Outlet-Outdoor-TP-Link/dp/B07M6RS2LC) | Two outlet outdoor smart switch. Can be controlled from the device and through Home Assistant. |
 | CloudFree Smart Plug 2 | [Link](https://cloudfree.shop/product/cloudfree-smart-plug-runs-tasmota/) | Wifi connected smart plugs. Flashed with ESPHome and offers power monitoring. |
+| Sonoff S31 Smart Plug | [Lin](https://cloudfree.shop/product/sonoff-s31/) | Wifi connect smart plugs. Flashed with ESPHome and offers power monitoring. |
 
 ### Echos
 | Device | Link | Use |
@@ -53,3 +51,10 @@ This is my personal [Home Assistant](https://www.home-assistant.io/) configurati
 | Unifi Switch 24 PoE | [Link](https://store.ui.com/collections/unifi-network-switching/products/usw-24-poe) | Rack-mountable, Power over Ethernet, Layer 2 switch. 16 PoE ports. |
 | Unifi Switch 8 60W | [Link](https://store.ui.com/collections/unifi-network-routing-switching/products/unifi-switch-8-60w) | 8 ethernet port switch. 4 PoE ports. |
 | Unifi USW Flex Mini | [Link](https://store.ui.com/collections/unifi-network-routing-switching/products/usw-flex-mini) | 4 ethernet port switch. Powered via PoE. |
+
+### Security
+| Device | Link | Use |
+| --- | :---: | --- |
+| Unifi NVR | [Link](https://store.ui.com/us/en/category/all-cameras-nvrs/products/unvr) | Network Video Recorder |
+| Unifi G4 Doorbell Pro | [Link](https://store.ui.com/us/en/category/cameras-doorbells/collections/pro-store-doorbells-chimes/products/uvc-g4-doorbell-pro?variant=uvc-g4+doorbell+pro-us) | Smart doorbell tied into Unifi Protect |
+| Schlage Connect Smart Deadbolt (Z-Wave) | [Link](https://a.co/d/aT5H8hc) | Z-Wave enabled smart deadbolt. |
