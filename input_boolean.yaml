@@ -34,6 +34,10 @@ light_override_front_porch_off:
   name: Override Front Porch Off Time
   icon: mdi:outdoor-lamp
 
+light_automatically_dim_downstairs_lights:
+  name: Automatically Dim Downstairs Lights
+  icon: mdi:ceiling-light
+
 ##########################################################
 ## Mode
 ##########################################################
@@ -67,8 +71,8 @@ laundry_start_washer_automatically:
   icon: mdi:washing-machine
 
 ##########################################################
-## Cameras
+## States
 ##########################################################
-cat_cameras_on:
-  name: Cat Cameras On
-  icon: mdi:cat
+owen_on_morning_walk:
+  name: Owen on Morning Walk
+  icon: mdi:walk

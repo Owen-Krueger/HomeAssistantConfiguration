@@ -2,7 +2,7 @@
   name: family
   services:
     - service: mobile_app_pixel_7
-    - service: mobile_app_iphone_68
+    - service: mobile_app_allisons_phone
 - platform: group
   name: owen
   services:
@@ -10,4 +10,4 @@
 - platform: group
   name: allison
   services:
-    - service: mobile_app_iphone_68
+    - service: mobile_app_allisons_phone

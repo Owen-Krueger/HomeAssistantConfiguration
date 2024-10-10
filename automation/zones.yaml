@@ -1,115 +1,115 @@
-#################################################
-## Zone Helper Automations
-#################################################
+# #################################################
+# ## Zone Helper Automations
+# #################################################
 
-# These automations are used in conjunction with the Climate automations in AppDaemon
-# due to a limitation with the AppDaemon library, where it currently can't poll zone
-# enter/leave events. The functions below check for those events, and set the
-# thermostat state accordingly. The AppDaemon scripts trigger events based on the
-# thermostat state.
-# AppDaemon climate scripts: https://github.com/Owen-Krueger/HomeAssistantConfiguration-AppDaemon/blob/main/apps/climate.py
+# # These automations are used in conjunction with the Climate automations in AppDaemon
+# # due to a limitation with the AppDaemon library, where it currently can't poll zone
+# # enter/leave events. The functions below check for those events, and set the
+# # thermostat state accordingly. The AppDaemon scripts trigger events based on the
+# # thermostat state.
+# # AppDaemon climate scripts: https://github.com/Owen-Krueger/HomeAssistantConfiguration-AppDaemon/blob/main/apps/climate.py
 
-# If Allison and Owen are both gone, set the state to "Gone"
-- alias: Zone - People Gone
-  id: "zone_people_gone"
+# # If Allison and Owen are both gone, set the state to "Gone"
+# - alias: Zone - People Gone
+#   id: "zone_people_gone"
 
-  initial_state: true
-  trigger:
-    - platform: zone
-      entity_id: person.allison
-      zone: zone.near_home
-      event: leave
-    - platform: zone
-      entity_id: person.owen
-      zone: zone.near_home
-      event: leave
+#   initial_state: true
+#   trigger:
+#     - platform: zone
+#       entity_id: person.allison
+#       zone: zone.near_home
+#       event: leave
+#     - platform: zone
+#       entity_id: person.owen
+#       zone: zone.near_home
+#       event: leave
 
-  condition:
-    - condition: not
-      conditions:
-        - condition: state
-          entity_id: person.allison
-          state: "home"
-        - condition: state
-          entity_id: person.owen
-          state: "home"
-        - condition: state
-          entity_id: input_select.thermostat_state
-          state: "Gone"
+#   condition:
+#     - condition: not
+#       conditions:
+#         - condition: state
+#           entity_id: person.allison
+#           state: "home"
+#         - condition: state
+#           entity_id: person.owen
+#           state: "home"
+#         - condition: state
+#           entity_id: input_select.thermostat_state
+#           state: "Gone"
 
-  action:
-    - service: input_select.select_option
-      target:
-        entity_id: input_select.thermostat_state
-      data:
-        option: "Gone"
-    - service: input_boolean.turn_on
-      target:
-        entity_id: input_boolean.cat_cameras_on
+#   action:
+#     - service: input_select.select_option
+#       target:
+#         entity_id: input_select.thermostat_state
+#       data:
+#         option: "Gone"
+#     - service: input_boolean.turn_on
+#       target:
+#         entity_id: input_boolean.cat_cameras_on
 
-# If someone is near home, set the state to "Away"
-- alias: Zone - People Near Home
-  id: "zone_people_near_home"
+# # If someone is near home, set the state to "Away"
+# - alias: Zone - People Near Home
+#   id: "zone_people_near_home"
 
-  initial_state: true
-  trigger:
-    - platform: zone
-      entity_id: person.allison
-      zone: zone.near_home
-      event: enter
-    - platform: zone
-      entity_id: person.owen
-      zone: zone.near_home
-      event: enter
+#   initial_state: true
+#   trigger:
+#     - platform: zone
+#       entity_id: person.allison
+#       zone: zone.near_home
+#       event: enter
+#     - platform: zone
+#       entity_id: person.owen
+#       zone: zone.near_home
+#       event: enter
 
-  condition:
-    - condition: state
-      entity_id: input_select.thermostat_state
-      state: "Gone"
-    - condition: not
-      conditions:
-        - condition: state
-          entity_id: person.allison
-          state: "home"
-        - condition: state
-          entity_id: person.owen
-          state: "home"
+#   condition:
+#     - condition: state
+#       entity_id: input_select.thermostat_state
+#       state: "Gone"
+#     - condition: not
+#       conditions:
+#         - condition: state
+#           entity_id: person.allison
+#           state: "home"
+#         - condition: state
+#           entity_id: person.owen
+#           state: "home"
 
-  action:
-    - service: input_select.select_option
-      target:
-        entity_id: input_select.thermostat_state
-      data:
-        # It takes longer to cool the house than heat it, so, in the summer, we
-        # set the state to "Home" to give the house more time to get to the
-        # correct temperature.
-        option: "{{ iif(is_state('climate.main', 'cool'), 'Home', 'Away')}}"
+#   action:
+#     - service: input_select.select_option
+#       target:
+#         entity_id: input_select.thermostat_state
+#       data:
+#         # It takes longer to cool the house than heat it, so, in the summer, we
+#         # set the state to "Home" to give the house more time to get to the
+#         # correct temperature.
+#         option: "{{ iif(is_state('climate.main', 'cool'), 'Home', 'Away')}}"
 
-# If someone enters Cambridge and the thermostat is not in "Home" mode, set to "Home"
-- alias: Zone - People in Cambridge (Climate)
-  id: "zone_people_in_cambridge_climate"
+# # If someone enters Cambridge and the thermostat is not in "Home" mode, set to "Home"
+# - alias: Zone - People in Cambridge (Climate)
+#   id: "zone_people_in_cambridge_climate"
 
-  initial_state: true
-  trigger:
-    - platform: zone
-      entity_id: person.allison
-      zone: zone.cambridge
-      event: enter
-    - platform: zone
-      entity_id: person.owen
-      zone: zone.cambridge
-      event: enter
+#   initial_state: true
+#   trigger:
+#     - platform: zone
+#       entity_id: person.allison
+#       zone: zone.cambridge
+#       event: enter
+#     - platform: zone
+#       entity_id: person.owen
+#       zone: zone.cambridge
+#       event: enter
 
-  condition:
-    - condition: not
-      conditions:
-        condition: state
-        entity_id: input_select.thermostat_state
-        state: "Home"
+#   condition:
+#     - condition: not
+#       conditions:
+#         condition: state
+#         entity_id: input_select.thermostat_state
+#         state: "Home"
 
-  action:
-    - service: input_select.select_option
-      target:
-        entity_id: input_select.thermostat_state
-      data:
-        option: "Home"
+#   action:
+#     - service: input_select.select_option
+#       target:
+#         entity_id: input_select.thermostat_state
+#       data:
+#         option: "Home"

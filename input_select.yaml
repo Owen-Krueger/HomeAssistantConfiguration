@@ -4,4 +4,3 @@ thermostat_state:
   options:
     - Home
     - Away
-    - Gone

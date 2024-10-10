@@ -13,20 +13,6 @@ bedroom_lamp_off:
   has_time: true
 
 ##########################################################
-## Climate
-##########################################################
-
-climate_day_start:
-  name: Day Temperature Start Time
-  has_date: false
-  has_time: true
-
-climate_night_start:
-  name: Night Temperature Start Time
-  has_date: false
-  has_time: true
-
-##########################################################
 ## Lighting
 ##########################################################
 light_bedroom_motion_daytime:
