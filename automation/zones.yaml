@@ -113,3 +113,25 @@
 #         entity_id: input_select.thermostat_state
 #       data:
 #         option: "Home"
+
+- alias: Zone - Owen on Walk
+  id: "zone_owen_on_walk"
+
+  trigger:
+    - platform: zone
+      entity_id: person.owen
+      zone: zone.walk
+      event: enter
+
+  condition:
+    - condition: time
+      after: "07:30:00"
+      before: "8:30:00"
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: "on"
+
+  action:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.owen_on_morning_walk
