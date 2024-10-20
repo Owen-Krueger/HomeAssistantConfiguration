@@ -3,6 +3,7 @@ living_room_lamps:
   entities:
     - switch.allison_living_room_lamp
     - switch.owen_living_room_lamp
+    - switch.living_room_lamp_1
 
 interior_lights:
   name: Interior Lights

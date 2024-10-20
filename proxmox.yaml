@@ -1,13 +1,15 @@
 - host: !secret proxmox_ip
   username: !secret proxmox_username
   password: !secret proxmox_password
+  verify_ssl: false
+  realm: pve
   nodes:
     - node: pve
       vms:
         - 100
         - 102
+        - 106
       containers:
         - 101
         - 103
         - 104
-        - 106
