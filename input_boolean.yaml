@@ -10,6 +10,10 @@ climate_notify_location_based:
   name: Climate Notify (Location Based)
   icon: mdi:thermostat
 
+climate_away_automations:
+  name: Climate Away Automations
+  icon: mdi:thermostat
+
 ##########################################################
 ## Lights
 ##########################################################

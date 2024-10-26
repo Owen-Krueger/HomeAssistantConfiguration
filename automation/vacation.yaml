@@ -1,89 +1,89 @@
-##########################################################
-## Vacation Lighting
-##########################################################
+# ##########################################################
+# ## Vacation Lighting
+# ##########################################################
 
-- alias: Vacation - Turn on kitchen lights
-  id: "vacation_kitchen_lights_on"
+# - alias: Vacation - Turn on kitchen lights
+#   id: "vacation_kitchen_lights_on"
 
-  initial_state: true
-  trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: 5
+#   initial_state: true
+#   trigger:
+#     - platform: numeric_state
+#       entity_id: sun.sun
+#       attribute: elevation
+#       below: 5
 
-  condition:
-    - condition: state
-      entity_id: input_boolean.mode_vacation
-      state: "on"
+#   condition:
+#     - condition: state
+#       entity_id: input_boolean.mode_vacation
+#       state: "on"
 
-  action:
-    - service: switch.turn_on
-      target:
-        entity_id:
-          - switch.kitchen_lights
+#   action:
+#     - service: switch.turn_on
+#       target:
+#         entity_id:
+#           - switch.kitchen_lights
 
-- alias: Vacation - Turn off kitchen lights and turn on downstairs lights
-  id: "vacation_kitchen_off_downstairs_on"
+# - alias: Vacation - Turn off kitchen lights and turn on downstairs lights
+#   id: "vacation_kitchen_off_downstairs_on"
 
-  initial_state: true
-  trigger:
-    - platform: time
-      at: "20:14:00"
+#   initial_state: true
+#   trigger:
+#     - platform: time
+#       at: "20:14:00"
 
-  condition:
-    - condition: state
-      entity_id: input_boolean.mode_vacation
-      state: "on"
+#   condition:
+#     - condition: state
+#       entity_id: input_boolean.mode_vacation
+#       state: "on"
 
-  action:
-    - service: switch.turn_off
-      target:
-        entity_id:
-          - switch.kitchen_lights
-    - service: light.turn_on
-      target:
-        entity_id:
-          - light.downstairs_lights
+#   action:
+#     - service: switch.turn_off
+#       target:
+#         entity_id:
+#           - switch.kitchen_lights
+#     - service: light.turn_on
+#       target:
+#         entity_id:
+#           - light.downstairs_lights
 
-- alias: Vacation - Turn off downstairs lights and turn on bedroom lamps
-  id: "vacation_downstairs_off_bedroom_on"
+# - alias: Vacation - Turn off downstairs lights and turn on bedroom lamps
+#   id: "vacation_downstairs_off_bedroom_on"
 
-  initial_state: true
-  trigger:
-    - platform: time
-      at: "21:43:00"
+#   initial_state: true
+#   trigger:
+#     - platform: time
+#       at: "21:43:00"
 
-  condition:
-    - condition: state
-      entity_id: input_boolean.mode_vacation
-      state: "on"
+#   condition:
+#     - condition: state
+#       entity_id: input_boolean.mode_vacation
+#       state: "on"
 
-  action:
-    - service: light.turn_off
-      target:
-        entity_id:
-          - light.downstairs_lights
-    - service: light.turn_on
-      target:
-        entity_id:
-          - light.bedroom_lamps
+#   action:
+#     - service: light.turn_off
+#       target:
+#         entity_id:
+#           - light.downstairs_lights
+#     - service: light.turn_on
+#       target:
+#         entity_id:
+#           - light.bedroom_lamps
 
-- alias: Vacation - Turn off bedroom lamps
-  id: "vacation_bedroom_off"
+# - alias: Vacation - Turn off bedroom lamps
+#   id: "vacation_bedroom_off"
 
-  initial_state: true
-  trigger:
-    - platform: time
-      at: "22:39:00"
+#   initial_state: true
+#   trigger:
+#     - platform: time
+#       at: "22:39:00"
 
-  condition:
-    - condition: state
-      entity_id: input_boolean.mode_vacation
-      state: "on"
+#   condition:
+#     - condition: state
+#       entity_id: input_boolean.mode_vacation
+#       state: "on"
 
-  action:
-    - service: light.turn_off
-      target:
-        entity_id:
-          - light.bedroom_lamps
+#   action:
+#     - service: light.turn_off
+#       target:
+#         entity_id:
+#           - light.bedroom_lamps

@@ -1,9 +1,8 @@
 living_room_lamps:
   name: Living Room Lights
   entities:
-    - switch.allison_living_room_lamp
-    - switch.owen_living_room_lamp
     - switch.living_room_lamp_1
+    - switch.living_room_lamp_2
 
 interior_lights:
   name: Interior Lights
@@ -12,12 +11,14 @@ interior_lights:
     - switch.kitchen_lights
     - switch.counter_lights
     - switch.stairway_lights
-    - switch.allison_living_room_lamp
-    - switch.owen_living_room_lamp
+    - switch.living_room_lamp_1
+    - switch.living_room_lamp_2
     - light.downstairs_lights
     - light.bedroom_lamps
     - switch.bedroom_lights
     - light.office_lamp
+    - switch.entry_lights
+    - switch.hallway_lights
 
 holiday_lights:
   name: Holiday Lights
